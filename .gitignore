@@ -3,3 +3,6 @@
 checkpoints/
 .DS_Store
 venv/
+DataCollection/videos/
+DataCollection/train/
+model/
