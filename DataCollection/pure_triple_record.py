@@ -12,6 +12,7 @@ from gsrobotics.utilities.reconstruction import Reconstruction3D
 from gsrobotics.utilities.visualization import Visualize3D
 from gsrobotics.utilities.gelsightmini import GelSightMini
 from gsrobotics.utilities.logger import log_message
+import time
 
 
 def UpdateView(
@@ -105,88 +106,112 @@ def View3D(config: ConfigModel):
     devices = cam1.get_device_list()
     log_message(f"Available camera devices: {devices}")
     # For testing, select device index 0 (adjust if needed).
-    cam1.select_device(1)
-    cam1.fps = 15  # Set FPS for the camera
+    cam1.select_device(list(devices.keys())[1])
+    cam1.fps = 30  # Set FPS for the camera
 
     cam2 = GelSightMini(target_width=config.camera_width, target_height=config.camera_height)
-    cam2.select_device(2)
-    cam2.fps = 15  # Set FPS for the camera
+    cam2.select_device(list(devices.keys())[2])
+    cam2.fps = 30  # Set FPS for the camera
     cam3 = GelSightMini(target_width=config.camera_width, target_height=config.camera_height)
-    cam3.select_device(3)
-    cam3.fps = 15  # Set FPS for the camera
+    cam3.select_device(list(devices.keys())[0])
+    cam3.fps = 30  # Set FPS for the camera
 
-    # Main loop: capture frames, compute depth map, and update the 3D view.
-    dirname = os.path.dirname(os.path.abspath(__file__))
-    path = os.path.join(dirname, config.video_save_path) 
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    base, ext = os.path.splitext(path)
-    path = f"{base}{timestamp}{ext}/"
-    print(f"Saving video to {path}")
-    print(os.path.isdir(path))
-    # Create the directory for saving the video if it doesn't exist
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    cam1.start_recording(filepath=path)
-    cam2.start_recording(filepath=path)
-    cam3.start_recording(filepath=path)
-
-
-    import time
-    t = time.time()
-
-    # Create a window for displaying the images.
-    # cv2.namedWindow(WINDOW_TITLE, cv2.WINDOW_NORMAL)
-    # cv2.resizeWindow(WINDOW_TITLE, 640, 480)
+    # # Main loop: capture frames, compute depth map, and update the 3D view.
+    # dirname = os.path.dirname(os.path.abspath(__file__))
+    # video_save_path = os.path.join(dirname, config.video_save_path) 
+    # timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    # base, ext = os.path.splitext(video_save_path)
+    # path = f"{base}{timestamp}{ext}\\"
+    # # Create the directory for saving the video if it doesn't exist
+    # os.makedirs(os.path.dirname(path), exist_ok=True)
+    # print(f"Saving video to {path}")
+    # print(os.path.isdir(path))
+    # # cam1.start_recording(filepath=path)
+    # # cam2.start_recording(filepath=path)
+    # # cam3.start_recording(filepath=path)
+    # cam1.start_recording_frames(folderpath=path)
+    # cam2.start_recording_frames(folderpath=path)
+    # cam3.start_recording_frames(folderpath=path)
 
 
+    # Print the amount of folders in config.video_save_path
+    # if os.path.isdir(video_save_path):
+    #     num_folders = len([name for name in os.listdir(video_save_path) if os.path.isdir(os.path.join(video_save_path, name))])
+    #     print(f"Number of folders in '{video_save_path}': {num_folders}")
+    # else:
+    #     print(f"'{video_save_path}' is not a valid directory.")
     
+    
+    dirname = os.path.dirname(os.path.abspath(__file__))
+    video_save_path = os.path.join(dirname, config.video_save_path) 
+    os.makedirs(video_save_path, exist_ok=True)
     try:
-        while True:
-            # Get a new frame from the camera.
-            # frame1 = cam1.update(dt=0)
-            # frame2 = cam2.update(dt=0)
-            # frame3 = cam3.update(dt=0)
+        # --------------------------- COLLECT N_RECORDINGS --------------------------- #
+        while len([name for name in os.listdir(video_save_path) if os.path.isdir(os.path.join(video_save_path, name))]) < config.n_recordings:
+            log_message(f"RECORDING number: {len([name for name in os.listdir(video_save_path) if os.path.isdir(os.path.join(video_save_path, name))])}")
+            # Main loop: capture frames, compute depth map, and update the 3D view.
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            base, ext = os.path.splitext(video_save_path)
+            path = f"{base}{timestamp}{ext}\\"
+            # Create the directory for saving the video if it doesn't exist
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            print(f"Saving video to {path}")
+            print(os.path.isdir(path))
+            cam1.start_recording_frames(folderpath=path)
+            cam2.start_recording_frames(folderpath=path)
+            cam3.start_recording_frames(folderpath=path)
 
+            # --------------------------------- RECORDING -------------------------------- #
+            while True:
+
+
+                frames = [cam1.update_frame(dt=0, max_frame=config.n_frames), cam2.update_frame(dt=0, max_frame=config.n_frames), cam3.update_frame(dt=0, max_frame=config.n_frames)]
+                # frames = [cam1.update_frame(dt=0)]
+                # print(frames[0].shape, frames[1].shape, frames[2].shape)
+                if frames[0] is None or frames[1] is None or frames[2] is None:
+                    continue
+
+                # Convert color
+                # frames = [cv2.cvtColor(frame, cv2.COLOR_BGR2RGB) for frame in frames]
+                
+                UpdateView(
+                    images=frames,
+                    cam_stream=cam1,
+                    reconstruction=reconstruction,
+                    visualizer3D=visualizer3D,
+                    cmap=cmap,
+                    config=config,
+                    window_title=WINDOW_TITLE,
+                )
+                if  cam1.frame_count >= config.n_frames and cam2.frame_count >= config.n_frames and cam3.frame_count >= config.n_frames:
+                    break
+                # if time.time() - t > 10:
+                #     break
+
+                # # Exit conditions.
+                # # When press 'q' on keyboard
+                if cv2.waitKey(1) & 0xFF == ord("q"):
+                    break
+
+                # # Check if the window has been closed by the user.
+                # # cv2.getWindowProperty returns a value < 1 when the window is closed.
+                if cv2.getWindowProperty(WINDOW_TITLE, cv2.WND_PROP_VISIBLE) < 1:
+                    # workaround to better catch widnow exit request
+                    for _ in range(5):
+                        cv2.waitKey(1)
+                    break
+            cam1.stop_recording()
+            cam2.stop_recording()
+            cam3.stop_recording()
+
+            log_message(f"Video saved to {path}")
+            # log_message(f"3 second break")
+            # time.sleep(3)
+            cv2.destroyAllWindows()
+            if visualizer3D:
+                visualizer3D.visualizer.destroy_window()
+            input("Press enter to continue:")
             
-
-
-            frames = [cam1.update(dt=0), cam2.update(dt=0), cam3.update(dt=0)]
-            # print(frames[0].shape, frames[1].shape, frames[2].shape)
-            if frames[0] is None or frames[1] is None or frames[2] is None:
-                continue
-
-            # Convert color
-            frames = [cv2.cvtColor(frame, cv2.COLOR_BGR2RGB) for frame in frames]
-
-            UpdateView(
-                images=frames,
-                cam_stream=cam1,
-                reconstruction=reconstruction,
-                visualizer3D=visualizer3D,
-                cmap=cmap,
-                config=config,
-                window_title=WINDOW_TITLE,
-            )
-
-            if time.time() - t > 10:
-                break
-
-            # Exit conditions.
-            # When press 'q' on keyboard
-            if cv2.waitKey(1) & 0xFF == ord("q"):
-                break
-
-            # Check if the window has been closed by the user.
-            # cv2.getWindowProperty returns a value < 1 when the window is closed.
-            if cv2.getWindowProperty(WINDOW_TITLE, cv2.WND_PROP_VISIBLE) < 1:
-                # workaround to better catch widnow exit request
-                for _ in range(5):
-                    cv2.waitKey(1)
-                break
-        cam1.stop_recording()
-        cam2.stop_recording()
-        cam3.stop_recording()
-
-        log_message(f"Video saved to {path}")
 
     except KeyboardInterrupt:
         log_message("Exiting...")

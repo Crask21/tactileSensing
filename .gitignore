@@ -6,3 +6,5 @@ venv/
 DataCollection/videos/
 DataCollection/train/
 model/
+video-contrastive-learning/results**
+video-contrastive-learning/pretrain/

@@ -13,9 +13,5 @@
     "nn_model_path": "./gsrobotics/models/nnmini.pt",
     "cmap_txt_path": "./gsrobotics/cmap.txt",
     "cmap_in_BGR_format": true,
-    "use_gpu": true,
-    "video_save_path": "videos\\control\\",
-    "use_device_id": true,
-    "n_recordings": 60,
-    "n_frames": 150
+    "use_gpu": true
 }
