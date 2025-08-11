@@ -3,8 +3,10 @@
 checkpoints/
 .DS_Store
 venv/
-DataCollection/videos/
+venv1/
+DataCollection/videos**
 DataCollection/train/
+DataCollection/val/
 model/
 video-contrastive-learning/results**
 video-contrastive-learning/pretrain/

@@ -6,7 +6,8 @@ MIT License
 Copyright (c) 2020 YihengZhang-CV
 """
 
-from mmcv.utils import Registry
+# from mmcv.utils import Registry
+from mmengine.registry import Registry
 
 DATASETS = Registry('datasets')
 

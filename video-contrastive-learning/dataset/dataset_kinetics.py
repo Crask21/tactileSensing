@@ -60,7 +60,7 @@ class KineticsClipFolderDataset(torch.utils.data.Dataset):
         self.transform = None
 
     def _get_aug_frame(self, frame_root, frame_idx):
-        frame = Image.open(os.path.join(frame_root, 'frame_{:05d}.jpg'.format(frame_idx)))
+        frame = Image.open(os.path.join(frame_root, 'frame_{:05d}.png'.format(frame_idx-1)))
         frame.convert('RGB')
         if self.transform is not None:
             frame_aug = self.transform(frame)
