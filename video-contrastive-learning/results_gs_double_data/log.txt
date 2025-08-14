@@ -1,0 +1,1668 @@
+[08/11 22:43:49] vclr INFO: Full config saved to ./video-contrastive-learning/results_gs_double_data\config.json
+[08/11 22:43:49] vclr INFO: length of training dataset: 400
+[08/11 22:43:53] vclr INFO: ResNet(
+  (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (relu): ReLU(inplace=True)
+  (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+  (layer1): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer2): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (3): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer3): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (3): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (4): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (5): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer4): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
+  (fc_inter): Head(
+    (0): Linear(in_features=2048, out_features=2048, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Linear(in_features=2048, out_features=128, bias=True)
+  )
+  (fc_intra): Head(
+    (0): Linear(in_features=2048, out_features=2048, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Linear(in_features=2048, out_features=128, bias=True)
+  )
+  (fc_order): Head(
+    (0): Linear(in_features=2048, out_features=2048, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Linear(in_features=2048, out_features=128, bias=True)
+  )
+  (fc_order_classifier): Linear(in_features=768, out_features=4, bias=True)
+  (fc_tsn): Head(
+    (0): Linear(in_features=2048, out_features=2048, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Linear(in_features=2048, out_features=128, bias=True)
+  )
+)
+[08/11 22:43:53] vclr INFO: Training
+[08/11 22:52:39] vclr INFO: Train: [  1]/[   0/  25] BT=526.307/526.307 Loss=13.712 7.007 0.699 1.437 4.570/13.712
+[08/11 22:53:57] vclr INFO: Train: [  1]/[  10/  25] BT=604.159/569.228 Loss=12.470 5.347 1.119 1.432 4.571/12.520
+[08/11 22:56:54] vclr INFO: Train: [  1]/[  20/  25] BT=780.778/621.998 Loss=14.065 6.444 0.686 1.435 5.501/12.926
+[08/11 22:59:26] vclr INFO: epoch 1, total time 932.66, loss=13.154863586425781
+[08/11 22:59:26] vclr INFO: ==> Saving...
+[08/11 23:05:03] vclr INFO: Train: [  2]/[   0/  25] BT=307.564/307.564 Loss=14.544 6.761 0.691 1.313 5.779/14.544
+[08/11 23:06:39] vclr INFO: Train: [  2]/[  10/  25] BT=404.238/356.793 Loss=15.601 7.197 0.691 1.535 6.178/15.128
+[08/11 23:08:07] vclr INFO: Train: [  2]/[  20/  25] BT=492.482/402.703 Loss=16.069 7.502 0.697 1.408 6.463/15.472
+[08/11 23:10:07] vclr INFO: epoch 2, total time 1573.66, loss=15.600436515808106
+[08/11 23:10:08] vclr INFO: ==> Saving...
+[08/11 23:19:57] vclr INFO: Train: [  3]/[   0/  25] BT=546.547/546.547 Loss=16.423 7.626 0.694 1.524 6.580/16.423
+[08/11 23:56:43] seco INFO: Full config saved to ./video-contrastive-learning/results_gs_double_data\config.json
+[08/11 23:56:43] seco INFO: using data: 400
+[08/11 23:56:52] seco INFO: model init done
+[08/11 23:57:28] seco INFO: 0/400
+[08/11 23:57:35] seco INFO: 1/400
+[08/11 23:57:35] seco INFO: 2/400
+[08/11 23:57:36] seco INFO: 3/400
+[08/11 23:57:36] seco INFO: 4/400
+[08/11 23:57:36] seco INFO: 5/400
+[08/11 23:57:36] seco INFO: 6/400
+[08/11 23:57:36] seco INFO: 7/400
+[08/11 23:57:36] seco INFO: 8/400
+[08/11 23:57:36] seco INFO: 9/400
+[08/11 23:57:36] seco INFO: 10/400
+[08/11 23:57:36] seco INFO: 11/400
+[08/11 23:57:36] seco INFO: 12/400
+[08/11 23:57:36] seco INFO: 13/400
+[08/11 23:57:36] seco INFO: 14/400
+[08/11 23:57:36] seco INFO: 15/400
+[08/11 23:57:36] seco INFO: 16/400
+[08/11 23:57:37] seco INFO: 17/400
+[08/11 23:57:37] seco INFO: 18/400
+[08/11 23:57:37] seco INFO: 19/400
+[08/11 23:57:37] seco INFO: 20/400
+[08/11 23:57:37] seco INFO: 21/400
+[08/11 23:57:38] seco INFO: 22/400
+[08/11 23:57:38] seco INFO: 23/400
+[08/11 23:57:38] seco INFO: 24/400
+[08/11 23:57:38] seco INFO: 25/400
+[08/11 23:57:38] seco INFO: 26/400
+[08/11 23:57:39] seco INFO: 27/400
+[08/11 23:57:39] seco INFO: 28/400
+[08/11 23:57:40] seco INFO: 29/400
+[08/11 23:57:40] seco INFO: 30/400
+[08/11 23:57:40] seco INFO: 31/400
+[08/11 23:57:40] seco INFO: 32/400
+[08/11 23:57:41] seco INFO: 33/400
+[08/11 23:57:41] seco INFO: 34/400
+[08/11 23:57:41] seco INFO: 35/400
+[08/11 23:57:42] seco INFO: 36/400
+[08/11 23:57:43] seco INFO: 37/400
+[08/11 23:57:43] seco INFO: 38/400
+[08/11 23:57:43] seco INFO: 39/400
+[08/11 23:57:43] seco INFO: 40/400
+[08/11 23:57:43] seco INFO: 41/400
+[08/11 23:57:44] seco INFO: 42/400
+[08/11 23:57:44] seco INFO: 43/400
+[08/11 23:57:44] seco INFO: 44/400
+[08/11 23:57:44] seco INFO: 45/400
+[08/11 23:57:44] seco INFO: 46/400
+[08/11 23:57:45] seco INFO: 47/400
+[08/11 23:57:45] seco INFO: 48/400
+[08/11 23:57:45] seco INFO: 49/400
+[08/11 23:57:45] seco INFO: 50/400
+[08/11 23:57:46] seco INFO: 51/400
+[08/11 23:57:46] seco INFO: 52/400
+[08/11 23:57:47] seco INFO: 53/400
+[08/11 23:57:47] seco INFO: 54/400
+[08/11 23:57:47] seco INFO: 55/400
+[08/11 23:57:47] seco INFO: 56/400
+[08/11 23:57:47] seco INFO: 57/400
+[08/11 23:57:47] seco INFO: 58/400
+[08/11 23:57:47] seco INFO: 59/400
+[08/11 23:57:48] seco INFO: 60/400
+[08/11 23:57:48] seco INFO: 61/400
+[08/11 23:57:49] seco INFO: 62/400
+[08/11 23:57:49] seco INFO: 63/400
+[08/11 23:57:49] seco INFO: 64/400
+[08/11 23:57:49] seco INFO: 65/400
+[08/11 23:57:49] seco INFO: 66/400
+[08/11 23:57:49] seco INFO: 67/400
+[08/11 23:57:51] seco INFO: 68/400
+[08/11 23:57:51] seco INFO: 69/400
+[08/11 23:57:51] seco INFO: 70/400
+[08/11 23:57:51] seco INFO: 71/400
+[08/11 23:57:51] seco INFO: 72/400
+[08/11 23:57:51] seco INFO: 73/400
+[08/11 23:57:52] seco INFO: 74/400
+[08/11 23:57:52] seco INFO: 75/400
+[08/11 23:57:54] seco INFO: 76/400
+[08/11 23:57:54] seco INFO: 77/400
+[08/11 23:57:54] seco INFO: 78/400
+[08/11 23:57:54] seco INFO: 79/400
+[08/11 23:57:54] seco INFO: 80/400
+[08/11 23:57:54] seco INFO: 81/400
+[08/11 23:57:54] seco INFO: 82/400
+[08/11 23:57:54] seco INFO: 83/400
+[08/11 23:57:57] seco INFO: 84/400
+[08/11 23:57:57] seco INFO: 85/400
+[08/11 23:57:58] seco INFO: 86/400
+[08/11 23:57:58] seco INFO: 87/400
+[08/11 23:57:58] seco INFO: 88/400
+[08/11 23:57:58] seco INFO: 89/400
+[08/11 23:57:58] seco INFO: 90/400
+[08/11 23:57:58] seco INFO: 91/400
+[08/11 23:57:59] seco INFO: 92/400
+[08/11 23:58:00] seco INFO: 93/400
+[08/11 23:58:00] seco INFO: 94/400
+[08/11 23:58:00] seco INFO: 95/400
+[08/11 23:58:00] seco INFO: 96/400
+[08/11 23:58:00] seco INFO: 97/400
+[08/11 23:58:00] seco INFO: 98/400
+[08/11 23:58:00] seco INFO: 99/400
+[08/11 23:58:02] seco INFO: 100/400
+[08/11 23:58:02] seco INFO: 101/400
+[08/11 23:58:02] seco INFO: 102/400
+[08/11 23:58:02] seco INFO: 103/400
+[08/11 23:58:02] seco INFO: 104/400
+[08/11 23:58:02] seco INFO: 105/400
+[08/11 23:58:02] seco INFO: 106/400
+[08/11 23:58:02] seco INFO: 107/400
+[08/11 23:58:04] seco INFO: 108/400
+[08/11 23:58:04] seco INFO: 109/400
+[08/11 23:58:04] seco INFO: 110/400
+[08/11 23:58:04] seco INFO: 111/400
+[08/11 23:58:04] seco INFO: 112/400
+[08/11 23:58:04] seco INFO: 113/400
+[08/11 23:58:04] seco INFO: 114/400
+[08/11 23:58:04] seco INFO: 115/400
+[08/11 23:58:05] seco INFO: 116/400
+[08/11 23:58:05] seco INFO: 117/400
+[08/11 23:58:05] seco INFO: 118/400
+[08/11 23:58:06] seco INFO: 119/400
+[08/11 23:58:06] seco INFO: 120/400
+[08/11 23:58:06] seco INFO: 121/400
+[08/11 23:58:06] seco INFO: 122/400
+[08/11 23:58:06] seco INFO: 123/400
+[08/11 23:58:09] seco INFO: 124/400
+[08/11 23:58:09] seco INFO: 125/400
+[08/11 23:58:09] seco INFO: 126/400
+[08/11 23:58:09] seco INFO: 127/400
+[08/11 23:58:09] seco INFO: 128/400
+[08/11 23:58:09] seco INFO: 129/400
+[08/11 23:58:09] seco INFO: 130/400
+[08/11 23:58:09] seco INFO: 131/400
+[08/11 23:58:11] seco INFO: 132/400
+[08/11 23:58:11] seco INFO: 133/400
+[08/11 23:58:11] seco INFO: 134/400
+[08/11 23:58:11] seco INFO: 135/400
+[08/11 23:58:12] seco INFO: 136/400
+[08/11 23:58:12] seco INFO: 137/400
+[08/11 23:58:12] seco INFO: 138/400
+[08/11 23:58:12] seco INFO: 139/400
+[08/11 23:58:13] seco INFO: 140/400
+[08/11 23:58:13] seco INFO: 141/400
+[08/11 23:58:13] seco INFO: 142/400
+[08/11 23:58:13] seco INFO: 143/400
+[08/11 23:58:14] seco INFO: 144/400
+[08/11 23:58:14] seco INFO: 145/400
+[08/11 23:58:14] seco INFO: 146/400
+[08/11 23:58:14] seco INFO: 147/400
+[08/11 23:58:16] seco INFO: 148/400
+[08/11 23:58:16] seco INFO: 149/400
+[08/11 23:58:16] seco INFO: 150/400
+[08/11 23:58:16] seco INFO: 151/400
+[08/11 23:58:16] seco INFO: 152/400
+[08/11 23:58:16] seco INFO: 153/400
+[08/11 23:58:16] seco INFO: 154/400
+[08/11 23:58:17] seco INFO: 155/400
+[08/11 23:58:18] seco INFO: 156/400
+[08/11 23:58:18] seco INFO: 157/400
+[08/11 23:58:18] seco INFO: 158/400
+[08/11 23:58:18] seco INFO: 159/400
+[08/11 23:58:18] seco INFO: 160/400
+[08/11 23:58:18] seco INFO: 161/400
+[08/11 23:58:18] seco INFO: 162/400
+[08/11 23:58:19] seco INFO: 163/400
+[08/11 23:58:21] seco INFO: 164/400
+[08/11 23:58:21] seco INFO: 165/400
+[08/11 23:58:21] seco INFO: 166/400
+[08/11 23:58:21] seco INFO: 167/400
+[08/11 23:58:21] seco INFO: 168/400
+[08/11 23:58:21] seco INFO: 169/400
+[08/11 23:58:21] seco INFO: 170/400
+[08/11 23:58:22] seco INFO: 171/400
+[08/11 23:58:23] seco INFO: 172/400
+[08/11 23:58:23] seco INFO: 173/400
+[08/11 23:58:23] seco INFO: 174/400
+[08/11 23:58:23] seco INFO: 175/400
+[08/11 23:58:23] seco INFO: 176/400
+[08/11 23:58:24] seco INFO: 177/400
+[08/11 23:58:24] seco INFO: 178/400
+[08/11 23:58:24] seco INFO: 179/400
+[08/11 23:58:25] seco INFO: 180/400
+[08/11 23:58:25] seco INFO: 181/400
+[08/11 23:58:25] seco INFO: 182/400
+[08/11 23:58:25] seco INFO: 183/400
+[08/11 23:58:25] seco INFO: 184/400
+[08/11 23:58:25] seco INFO: 185/400
+[08/11 23:58:26] seco INFO: 186/400
+[08/11 23:58:26] seco INFO: 187/400
+[08/11 23:58:27] seco INFO: 188/400
+[08/11 23:58:27] seco INFO: 189/400
+[08/11 23:58:27] seco INFO: 190/400
+[08/11 23:58:27] seco INFO: 191/400
+[08/11 23:58:27] seco INFO: 192/400
+[08/11 23:58:27] seco INFO: 193/400
+[08/11 23:58:27] seco INFO: 194/400
+[08/11 23:58:27] seco INFO: 195/400
+[08/11 23:58:29] seco INFO: 196/400
+[08/11 23:58:29] seco INFO: 197/400
+[08/11 23:58:29] seco INFO: 198/400
+[08/11 23:58:29] seco INFO: 199/400
+[08/11 23:58:29] seco INFO: 200/400
+[08/11 23:58:29] seco INFO: 201/400
+[08/11 23:58:29] seco INFO: 202/400
+[08/11 23:58:29] seco INFO: 203/400
+[08/11 23:58:31] seco INFO: 204/400
+[08/11 23:58:31] seco INFO: 205/400
+[08/11 23:58:31] seco INFO: 206/400
+[08/11 23:58:31] seco INFO: 207/400
+[08/11 23:58:31] seco INFO: 208/400
+[08/11 23:58:31] seco INFO: 209/400
+[08/11 23:58:31] seco INFO: 210/400
+[08/11 23:58:31] seco INFO: 211/400
+[08/11 23:58:34] seco INFO: 212/400
+[08/11 23:58:34] seco INFO: 213/400
+[08/11 23:58:34] seco INFO: 214/400
+[08/11 23:58:34] seco INFO: 215/400
+[08/11 23:58:34] seco INFO: 216/400
+[08/11 23:58:34] seco INFO: 217/400
+[08/11 23:58:34] seco INFO: 218/400
+[08/11 23:58:34] seco INFO: 219/400
+[08/11 23:58:34] seco INFO: 220/400
+[08/11 23:58:35] seco INFO: 221/400
+[08/11 23:58:35] seco INFO: 222/400
+[08/11 23:58:35] seco INFO: 223/400
+[08/11 23:58:35] seco INFO: 224/400
+[08/11 23:58:35] seco INFO: 225/400
+[08/11 23:58:36] seco INFO: 226/400
+[08/11 23:58:36] seco INFO: 227/400
+[08/11 23:58:36] seco INFO: 228/400
+[08/11 23:58:36] seco INFO: 229/400
+[08/11 23:58:37] seco INFO: 230/400
+[08/11 23:58:38] seco INFO: 231/400
+[08/11 23:58:38] seco INFO: 232/400
+[08/11 23:58:39] seco INFO: 233/400
+[08/11 23:58:39] seco INFO: 234/400
+[08/11 23:58:39] seco INFO: 235/400
+[08/11 23:58:39] seco INFO: 236/400
+[08/11 23:58:39] seco INFO: 237/400
+[08/11 23:58:40] seco INFO: 238/400
+[08/11 23:58:40] seco INFO: 239/400
+[08/11 23:58:41] seco INFO: 240/400
+[08/11 23:58:41] seco INFO: 241/400
+[08/11 23:58:41] seco INFO: 242/400
+[08/11 23:58:41] seco INFO: 243/400
+[08/11 23:58:42] seco INFO: 244/400
+[08/11 23:58:42] seco INFO: 245/400
+[08/11 23:58:44] seco INFO: 246/400
+[08/11 23:58:44] seco INFO: 247/400
+[08/11 23:58:44] seco INFO: 248/400
+[08/11 23:58:44] seco INFO: 249/400
+[08/11 23:58:44] seco INFO: 250/400
+[08/11 23:58:44] seco INFO: 251/400
+[08/11 23:58:44] seco INFO: 252/400
+[08/11 23:58:44] seco INFO: 253/400
+[08/11 23:58:46] seco INFO: 254/400
+[08/11 23:58:46] seco INFO: 255/400
+[08/11 23:58:46] seco INFO: 256/400
+[08/11 23:58:46] seco INFO: 257/400
+[08/11 23:58:46] seco INFO: 258/400
+[08/11 23:58:46] seco INFO: 259/400
+[08/11 23:58:46] seco INFO: 260/400
+[08/11 23:58:46] seco INFO: 261/400
+[08/11 23:58:48] seco INFO: 262/400
+[08/11 23:58:48] seco INFO: 263/400
+[08/11 23:58:48] seco INFO: 264/400
+[08/11 23:58:48] seco INFO: 265/400
+[08/11 23:58:49] seco INFO: 266/400
+[08/11 23:58:49] seco INFO: 267/400
+[08/11 23:58:49] seco INFO: 268/400
+[08/11 23:58:49] seco INFO: 269/400
+[08/11 23:58:50] seco INFO: 270/400
+[08/11 23:58:50] seco INFO: 271/400
+[08/11 23:58:50] seco INFO: 272/400
+[08/11 23:58:50] seco INFO: 273/400
+[08/11 23:58:50] seco INFO: 274/400
+[08/11 23:58:50] seco INFO: 275/400
+[08/11 23:58:50] seco INFO: 276/400
+[08/11 23:58:50] seco INFO: 277/400
+[08/11 23:58:52] seco INFO: 278/400
+[08/11 23:58:52] seco INFO: 279/400
+[08/11 23:58:53] seco INFO: 280/400
+[08/11 23:58:53] seco INFO: 281/400
+[08/11 23:58:53] seco INFO: 282/400
+[08/11 23:58:53] seco INFO: 283/400
+[08/11 23:58:53] seco INFO: 284/400
+[08/11 23:58:53] seco INFO: 285/400
+[08/11 23:58:53] seco INFO: 286/400
+[08/11 23:58:54] seco INFO: 287/400
+[08/11 23:58:54] seco INFO: 288/400
+[08/11 23:58:54] seco INFO: 289/400
+[08/11 23:58:54] seco INFO: 290/400
+[08/11 23:58:54] seco INFO: 291/400
+[08/11 23:58:54] seco INFO: 292/400
+[08/11 23:58:54] seco INFO: 293/400
+[08/11 23:58:56] seco INFO: 294/400
+[08/11 23:58:56] seco INFO: 295/400
+[08/11 23:58:56] seco INFO: 296/400
+[08/11 23:58:56] seco INFO: 297/400
+[08/11 23:58:56] seco INFO: 298/400
+[08/11 23:58:56] seco INFO: 299/400
+[08/11 23:58:56] seco INFO: 300/400
+[08/11 23:58:57] seco INFO: 301/400
+[08/11 23:58:58] seco INFO: 302/400
+[08/11 23:58:58] seco INFO: 303/400
+[08/11 23:58:58] seco INFO: 304/400
+[08/11 23:58:58] seco INFO: 305/400
+[08/11 23:58:58] seco INFO: 306/400
+[08/11 23:58:59] seco INFO: 307/400
+[08/11 23:58:59] seco INFO: 308/400
+[08/11 23:58:59] seco INFO: 309/400
+[08/11 23:59:01] seco INFO: 310/400
+[08/11 23:59:01] seco INFO: 311/400
+[08/11 23:59:01] seco INFO: 312/400
+[08/11 23:59:01] seco INFO: 313/400
+[08/11 23:59:01] seco INFO: 314/400
+[08/11 23:59:02] seco INFO: 315/400
+[08/11 23:59:02] seco INFO: 316/400
+[08/11 23:59:02] seco INFO: 317/400
+[08/11 23:59:04] seco INFO: 318/400
+[08/11 23:59:05] seco INFO: 319/400
+[08/11 23:59:05] seco INFO: 320/400
+[08/11 23:59:05] seco INFO: 321/400
+[08/11 23:59:05] seco INFO: 322/400
+[08/11 23:59:05] seco INFO: 323/400
+[08/11 23:59:05] seco INFO: 324/400
+[08/11 23:59:05] seco INFO: 325/400
+[08/11 23:59:07] seco INFO: 326/400
+[08/11 23:59:07] seco INFO: 327/400
+[08/11 23:59:08] seco INFO: 328/400
+[08/11 23:59:08] seco INFO: 329/400
+[08/11 23:59:08] seco INFO: 330/400
+[08/11 23:59:08] seco INFO: 331/400
+[08/11 23:59:08] seco INFO: 332/400
+[08/11 23:59:08] seco INFO: 333/400
+[08/11 23:59:10] seco INFO: 334/400
+[08/11 23:59:10] seco INFO: 335/400
+[08/11 23:59:11] seco INFO: 336/400
+[08/11 23:59:11] seco INFO: 337/400
+[08/11 23:59:11] seco INFO: 338/400
+[08/11 23:59:11] seco INFO: 339/400
+[08/11 23:59:11] seco INFO: 340/400
+[08/11 23:59:11] seco INFO: 341/400
+[08/11 23:59:13] seco INFO: 342/400
+[08/11 23:59:13] seco INFO: 343/400
+[08/11 23:59:14] seco INFO: 344/400
+[08/11 23:59:14] seco INFO: 345/400
+[08/11 23:59:14] seco INFO: 346/400
+[08/11 23:59:14] seco INFO: 347/400
+[08/11 23:59:14] seco INFO: 348/400
+[08/11 23:59:14] seco INFO: 349/400
+[08/11 23:59:16] seco INFO: 350/400
+[08/11 23:59:16] seco INFO: 351/400
+[08/11 23:59:16] seco INFO: 352/400
+[08/11 23:59:16] seco INFO: 353/400
+[08/11 23:59:16] seco INFO: 354/400
+[08/11 23:59:16] seco INFO: 355/400
+[08/11 23:59:16] seco INFO: 356/400
+[08/11 23:59:16] seco INFO: 357/400
+[08/11 23:59:19] seco INFO: 358/400
+[08/11 23:59:19] seco INFO: 359/400
+[08/11 23:59:19] seco INFO: 360/400
+[08/11 23:59:19] seco INFO: 361/400
+[08/11 23:59:19] seco INFO: 362/400
+[08/11 23:59:19] seco INFO: 363/400
+[08/11 23:59:19] seco INFO: 364/400
+[08/11 23:59:19] seco INFO: 365/400
+[08/11 23:59:21] seco INFO: 366/400
+[08/11 23:59:21] seco INFO: 367/400
+[08/11 23:59:21] seco INFO: 368/400
+[08/11 23:59:21] seco INFO: 369/400
+[08/11 23:59:21] seco INFO: 370/400
+[08/11 23:59:21] seco INFO: 371/400
+[08/11 23:59:21] seco INFO: 372/400
+[08/11 23:59:21] seco INFO: 373/400
+[08/11 23:59:23] seco INFO: 374/400
+[08/11 23:59:23] seco INFO: 375/400
+[08/11 23:59:23] seco INFO: 376/400
+[08/11 23:59:23] seco INFO: 377/400
+[08/11 23:59:23] seco INFO: 378/400
+[08/11 23:59:23] seco INFO: 379/400
+[08/11 23:59:23] seco INFO: 380/400
+[08/11 23:59:23] seco INFO: 381/400
+[08/11 23:59:25] seco INFO: 382/400
+[08/11 23:59:25] seco INFO: 383/400
+[08/11 23:59:25] seco INFO: 384/400
+[08/11 23:59:25] seco INFO: 385/400
+[08/11 23:59:25] seco INFO: 386/400
+[08/11 23:59:25] seco INFO: 387/400
+[08/11 23:59:25] seco INFO: 388/400
+[08/11 23:59:25] seco INFO: 389/400
+[08/11 23:59:25] seco INFO: 390/400
+[08/11 23:59:25] seco INFO: 391/400
+[08/11 23:59:25] seco INFO: 392/400
+[08/11 23:59:25] seco INFO: 393/400
+[08/11 23:59:26] seco INFO: 394/400
+[08/11 23:59:26] seco INFO: 395/400
+[08/11 23:59:26] seco INFO: 396/400
+[08/11 23:59:26] seco INFO: 397/400
+[08/11 23:59:26] seco INFO: 398/400
+[08/11 23:59:26] seco INFO: 399/400
+[08/11 23:59:34] seco INFO: Full config saved to ./video-contrastive-learning/results_gs_double_data\config.json
+[08/11 23:59:35] seco INFO: using data: 80
+[08/11 23:59:35] seco INFO: model init done
+[08/12 00:00:08] seco INFO: 0/80
+[08/12 00:00:10] seco INFO: 1/80
+[08/12 00:00:10] seco INFO: 2/80
+[08/12 00:00:10] seco INFO: 3/80
+[08/12 00:00:10] seco INFO: 4/80
+[08/12 00:00:10] seco INFO: 5/80
+[08/12 00:00:11] seco INFO: 6/80
+[08/12 00:00:11] seco INFO: 7/80
+[08/12 00:00:11] seco INFO: 8/80
+[08/12 00:00:11] seco INFO: 9/80
+[08/12 00:00:11] seco INFO: 10/80
+[08/12 00:00:11] seco INFO: 11/80
+[08/12 00:00:11] seco INFO: 12/80
+[08/12 00:00:11] seco INFO: 13/80
+[08/12 00:00:11] seco INFO: 14/80
+[08/12 00:00:11] seco INFO: 15/80
+[08/12 00:00:11] seco INFO: 16/80
+[08/12 00:00:12] seco INFO: 17/80
+[08/12 00:00:12] seco INFO: 18/80
+[08/12 00:00:12] seco INFO: 19/80
+[08/12 00:00:13] seco INFO: 20/80
+[08/12 00:00:13] seco INFO: 21/80
+[08/12 00:00:14] seco INFO: 22/80
+[08/12 00:00:14] seco INFO: 23/80
+[08/12 00:00:14] seco INFO: 24/80
+[08/12 00:00:14] seco INFO: 25/80
+[08/12 00:00:15] seco INFO: 26/80
+[08/12 00:00:16] seco INFO: 27/80
+[08/12 00:00:16] seco INFO: 28/80
+[08/12 00:00:17] seco INFO: 29/80
+[08/12 00:00:17] seco INFO: 30/80
+[08/12 00:00:17] seco INFO: 31/80
+[08/12 00:00:17] seco INFO: 32/80
+[08/12 00:00:18] seco INFO: 33/80
+[08/12 00:00:18] seco INFO: 34/80
+[08/12 00:00:18] seco INFO: 35/80
+[08/12 00:00:18] seco INFO: 36/80
+[08/12 00:00:20] seco INFO: 37/80
+[08/12 00:00:20] seco INFO: 38/80
+[08/12 00:00:20] seco INFO: 39/80
+[08/12 00:00:20] seco INFO: 40/80
+[08/12 00:00:20] seco INFO: 41/80
+[08/12 00:00:20] seco INFO: 42/80
+[08/12 00:00:21] seco INFO: 43/80
+[08/12 00:00:21] seco INFO: 44/80
+[08/12 00:00:24] seco INFO: 45/80
+[08/12 00:00:25] seco INFO: 46/80
+[08/12 00:00:25] seco INFO: 47/80
+[08/12 00:00:25] seco INFO: 48/80
+[08/12 00:00:25] seco INFO: 49/80
+[08/12 00:00:25] seco INFO: 50/80
+[08/12 00:00:25] seco INFO: 51/80
+[08/12 00:00:25] seco INFO: 52/80
+[08/12 00:00:27] seco INFO: 53/80
+[08/12 00:00:27] seco INFO: 54/80
+[08/12 00:00:27] seco INFO: 55/80
+[08/12 00:00:27] seco INFO: 56/80
+[08/12 00:00:27] seco INFO: 57/80
+[08/12 00:00:27] seco INFO: 58/80
+[08/12 00:00:27] seco INFO: 59/80
+[08/12 00:00:27] seco INFO: 60/80
+[08/12 00:00:30] seco INFO: 61/80
+[08/12 00:00:30] seco INFO: 62/80
+[08/12 00:00:30] seco INFO: 63/80
+[08/12 00:00:30] seco INFO: 64/80
+[08/12 00:00:30] seco INFO: 65/80
+[08/12 00:00:30] seco INFO: 66/80
+[08/12 00:00:31] seco INFO: 67/80
+[08/12 00:00:31] seco INFO: 68/80
+[08/12 00:00:32] seco INFO: 69/80
+[08/12 00:00:32] seco INFO: 70/80
+[08/12 00:00:32] seco INFO: 71/80
+[08/12 00:00:32] seco INFO: 72/80
+[08/12 00:00:32] seco INFO: 73/80
+[08/12 00:00:32] seco INFO: 74/80
+[08/12 00:00:32] seco INFO: 75/80
+[08/12 00:00:32] seco INFO: 76/80
+[08/12 00:00:33] seco INFO: 77/80
+[08/12 00:00:33] seco INFO: 78/80
+[08/12 00:00:33] seco INFO: 79/80
+[08/12 00:03:32] seco INFO: Full config saved to ./video-contrastive-learning/results_gs_double_data\config.json
+[08/12 00:03:32] seco INFO: using data: 400
+[08/12 00:03:33] seco INFO: model init done
+[08/12 00:04:04] seco INFO: 0/400
+[08/12 00:04:06] seco INFO: 1/400
+[08/12 00:04:06] seco INFO: 2/400
+[08/12 00:04:06] seco INFO: 3/400
+[08/12 00:04:06] seco INFO: 4/400
+[08/12 00:04:06] seco INFO: 5/400
+[08/12 00:04:06] seco INFO: 6/400
+[08/12 00:04:06] seco INFO: 7/400
+[08/12 00:04:07] seco INFO: 8/400
+[08/12 00:04:07] seco INFO: 9/400
+[08/12 00:04:07] seco INFO: 10/400
+[08/12 00:04:07] seco INFO: 11/400
+[08/12 00:04:07] seco INFO: 12/400
+[08/12 00:04:07] seco INFO: 13/400
+[08/12 00:04:07] seco INFO: 14/400
+[08/12 00:04:07] seco INFO: 15/400
+[08/12 00:04:07] seco INFO: 16/400
+[08/12 00:04:07] seco INFO: 17/400
+[08/12 00:04:07] seco INFO: 18/400
+[08/12 00:04:07] seco INFO: 19/400
+[08/12 00:04:07] seco INFO: 20/400
+[08/12 00:04:07] seco INFO: 21/400
+[08/12 00:04:08] seco INFO: 22/400
+[08/12 00:04:08] seco INFO: 23/400
+[08/12 00:04:08] seco INFO: 24/400
+[08/12 00:04:08] seco INFO: 25/400
+[08/12 00:04:08] seco INFO: 26/400
+[08/12 00:04:08] seco INFO: 27/400
+[08/12 00:04:08] seco INFO: 28/400
+[08/12 00:04:08] seco INFO: 29/400
+[08/12 00:04:08] seco INFO: 30/400
+[08/12 00:04:08] seco INFO: 31/400
+[08/12 00:04:08] seco INFO: 32/400
+[08/12 00:04:08] seco INFO: 33/400
+[08/12 00:04:08] seco INFO: 34/400
+[08/12 00:04:08] seco INFO: 35/400
+[08/12 00:04:08] seco INFO: 36/400
+[08/12 00:04:09] seco INFO: 37/400
+[08/12 00:04:09] seco INFO: 38/400
+[08/12 00:04:09] seco INFO: 39/400
+[08/12 00:04:09] seco INFO: 40/400
+[08/12 00:04:09] seco INFO: 41/400
+[08/12 00:04:09] seco INFO: 42/400
+[08/12 00:04:09] seco INFO: 43/400
+[08/12 00:04:09] seco INFO: 44/400
+[08/12 00:04:09] seco INFO: 45/400
+[08/12 00:04:09] seco INFO: 46/400
+[08/12 00:04:09] seco INFO: 47/400
+[08/12 00:04:09] seco INFO: 48/400
+[08/12 00:04:09] seco INFO: 49/400
+[08/12 00:04:09] seco INFO: 50/400
+[08/12 00:04:10] seco INFO: 51/400
+[08/12 00:04:10] seco INFO: 52/400
+[08/12 00:04:10] seco INFO: 53/400
+[08/12 00:04:10] seco INFO: 54/400
+[08/12 00:04:10] seco INFO: 55/400
+[08/12 00:04:10] seco INFO: 56/400
+[08/12 00:04:10] seco INFO: 57/400
+[08/12 00:04:10] seco INFO: 58/400
+[08/12 00:04:10] seco INFO: 59/400
+[08/12 00:04:10] seco INFO: 60/400
+[08/12 00:04:10] seco INFO: 61/400
+[08/12 00:04:10] seco INFO: 62/400
+[08/12 00:04:10] seco INFO: 63/400
+[08/12 00:04:10] seco INFO: 64/400
+[08/12 00:04:11] seco INFO: 65/400
+[08/12 00:04:11] seco INFO: 66/400
+[08/12 00:04:11] seco INFO: 67/400
+[08/12 00:04:11] seco INFO: 68/400
+[08/12 00:04:11] seco INFO: 69/400
+[08/12 00:04:11] seco INFO: 70/400
+[08/12 00:04:11] seco INFO: 71/400
+[08/12 00:04:11] seco INFO: 72/400
+[08/12 00:04:11] seco INFO: 73/400
+[08/12 00:04:11] seco INFO: 74/400
+[08/12 00:04:11] seco INFO: 75/400
+[08/12 00:04:11] seco INFO: 76/400
+[08/12 00:04:11] seco INFO: 77/400
+[08/12 00:04:11] seco INFO: 78/400
+[08/12 00:04:12] seco INFO: 79/400
+[08/12 00:04:12] seco INFO: 80/400
+[08/12 00:04:12] seco INFO: 81/400
+[08/12 00:04:12] seco INFO: 82/400
+[08/12 00:04:12] seco INFO: 83/400
+[08/12 00:04:12] seco INFO: 84/400
+[08/12 00:04:12] seco INFO: 85/400
+[08/12 00:04:12] seco INFO: 86/400
+[08/12 00:04:12] seco INFO: 87/400
+[08/12 00:04:12] seco INFO: 88/400
+[08/12 00:04:12] seco INFO: 89/400
+[08/12 00:04:12] seco INFO: 90/400
+[08/12 00:04:12] seco INFO: 91/400
+[08/12 00:04:12] seco INFO: 92/400
+[08/12 00:04:12] seco INFO: 93/400
+[08/12 00:04:13] seco INFO: 94/400
+[08/12 00:04:13] seco INFO: 95/400
+[08/12 00:04:13] seco INFO: 96/400
+[08/12 00:04:13] seco INFO: 97/400
+[08/12 00:04:13] seco INFO: 98/400
+[08/12 00:04:13] seco INFO: 99/400
+[08/12 00:04:13] seco INFO: 100/400
+[08/12 00:04:13] seco INFO: 101/400
+[08/12 00:04:13] seco INFO: 102/400
+[08/12 00:04:13] seco INFO: 103/400
+[08/12 00:04:13] seco INFO: 104/400
+[08/12 00:04:13] seco INFO: 105/400
+[08/12 00:04:13] seco INFO: 106/400
+[08/12 00:04:13] seco INFO: 107/400
+[08/12 00:04:14] seco INFO: 108/400
+[08/12 00:04:14] seco INFO: 109/400
+[08/12 00:04:14] seco INFO: 110/400
+[08/12 00:04:14] seco INFO: 111/400
+[08/12 00:04:14] seco INFO: 112/400
+[08/12 00:04:14] seco INFO: 113/400
+[08/12 00:04:14] seco INFO: 114/400
+[08/12 00:04:14] seco INFO: 115/400
+[08/12 00:04:14] seco INFO: 116/400
+[08/12 00:04:14] seco INFO: 117/400
+[08/12 00:04:14] seco INFO: 118/400
+[08/12 00:04:14] seco INFO: 119/400
+[08/12 00:04:14] seco INFO: 120/400
+[08/12 00:04:14] seco INFO: 121/400
+[08/12 00:04:15] seco INFO: 122/400
+[08/12 00:04:15] seco INFO: 123/400
+[08/12 00:04:15] seco INFO: 124/400
+[08/12 00:04:15] seco INFO: 125/400
+[08/12 00:04:15] seco INFO: 126/400
+[08/12 00:04:15] seco INFO: 127/400
+[08/12 00:04:15] seco INFO: 128/400
+[08/12 00:04:15] seco INFO: 129/400
+[08/12 00:04:15] seco INFO: 130/400
+[08/12 00:04:15] seco INFO: 131/400
+[08/12 00:04:15] seco INFO: 132/400
+[08/12 00:04:15] seco INFO: 133/400
+[08/12 00:04:15] seco INFO: 134/400
+[08/12 00:04:15] seco INFO: 135/400
+[08/12 00:04:15] seco INFO: 136/400
+[08/12 00:04:16] seco INFO: 137/400
+[08/12 00:04:16] seco INFO: 138/400
+[08/12 00:04:16] seco INFO: 139/400
+[08/12 00:04:16] seco INFO: 140/400
+[08/12 00:04:16] seco INFO: 141/400
+[08/12 00:04:16] seco INFO: 142/400
+[08/12 00:04:16] seco INFO: 143/400
+[08/12 00:04:16] seco INFO: 144/400
+[08/12 00:04:16] seco INFO: 145/400
+[08/12 00:04:16] seco INFO: 146/400
+[08/12 00:04:16] seco INFO: 147/400
+[08/12 00:04:16] seco INFO: 148/400
+[08/12 00:04:16] seco INFO: 149/400
+[08/12 00:04:16] seco INFO: 150/400
+[08/12 00:04:17] seco INFO: 151/400
+[08/12 00:04:17] seco INFO: 152/400
+[08/12 00:04:17] seco INFO: 153/400
+[08/12 00:04:17] seco INFO: 154/400
+[08/12 00:04:17] seco INFO: 155/400
+[08/12 00:04:17] seco INFO: 156/400
+[08/12 00:04:17] seco INFO: 157/400
+[08/12 00:04:17] seco INFO: 158/400
+[08/12 00:04:17] seco INFO: 159/400
+[08/12 00:04:17] seco INFO: 160/400
+[08/12 00:04:17] seco INFO: 161/400
+[08/12 00:04:17] seco INFO: 162/400
+[08/12 00:04:17] seco INFO: 163/400
+[08/12 00:04:17] seco INFO: 164/400
+[08/12 00:04:18] seco INFO: 165/400
+[08/12 00:04:18] seco INFO: 166/400
+[08/12 00:04:18] seco INFO: 167/400
+[08/12 00:04:18] seco INFO: 168/400
+[08/12 00:04:18] seco INFO: 169/400
+[08/12 00:04:18] seco INFO: 170/400
+[08/12 00:04:18] seco INFO: 171/400
+[08/12 00:04:18] seco INFO: 172/400
+[08/12 00:04:18] seco INFO: 173/400
+[08/12 00:04:18] seco INFO: 174/400
+[08/12 00:04:18] seco INFO: 175/400
+[08/12 00:04:18] seco INFO: 176/400
+[08/12 00:04:18] seco INFO: 177/400
+[08/12 00:04:18] seco INFO: 178/400
+[08/12 00:04:19] seco INFO: 179/400
+[08/12 00:04:19] seco INFO: 180/400
+[08/12 00:04:19] seco INFO: 181/400
+[08/12 00:04:19] seco INFO: 182/400
+[08/12 00:04:19] seco INFO: 183/400
+[08/12 00:04:19] seco INFO: 184/400
+[08/12 00:04:19] seco INFO: 185/400
+[08/12 00:04:19] seco INFO: 186/400
+[08/12 00:04:19] seco INFO: 187/400
+[08/12 00:04:19] seco INFO: 188/400
+[08/12 00:04:19] seco INFO: 189/400
+[08/12 00:04:19] seco INFO: 190/400
+[08/12 00:04:19] seco INFO: 191/400
+[08/12 00:04:19] seco INFO: 192/400
+[08/12 00:04:19] seco INFO: 193/400
+[08/12 00:04:20] seco INFO: 194/400
+[08/12 00:04:20] seco INFO: 195/400
+[08/12 00:04:20] seco INFO: 196/400
+[08/12 00:04:20] seco INFO: 197/400
+[08/12 00:04:20] seco INFO: 198/400
+[08/12 00:04:20] seco INFO: 199/400
+[08/12 00:04:20] seco INFO: 200/400
+[08/12 00:04:20] seco INFO: 201/400
+[08/12 00:04:20] seco INFO: 202/400
+[08/12 00:04:20] seco INFO: 203/400
+[08/12 00:04:20] seco INFO: 204/400
+[08/12 00:04:20] seco INFO: 205/400
+[08/12 00:04:20] seco INFO: 206/400
+[08/12 00:04:20] seco INFO: 207/400
+[08/12 00:04:21] seco INFO: 208/400
+[08/12 00:04:21] seco INFO: 209/400
+[08/12 00:04:21] seco INFO: 210/400
+[08/12 00:04:21] seco INFO: 211/400
+[08/12 00:04:21] seco INFO: 212/400
+[08/12 00:04:21] seco INFO: 213/400
+[08/12 00:04:21] seco INFO: 214/400
+[08/12 00:04:21] seco INFO: 215/400
+[08/12 00:04:21] seco INFO: 216/400
+[08/12 00:04:21] seco INFO: 217/400
+[08/12 00:04:21] seco INFO: 218/400
+[08/12 00:04:21] seco INFO: 219/400
+[08/12 00:04:21] seco INFO: 220/400
+[08/12 00:04:21] seco INFO: 221/400
+[08/12 00:04:22] seco INFO: 222/400
+[08/12 00:04:22] seco INFO: 223/400
+[08/12 00:04:22] seco INFO: 224/400
+[08/12 00:04:22] seco INFO: 225/400
+[08/12 00:04:22] seco INFO: 226/400
+[08/12 00:04:22] seco INFO: 227/400
+[08/12 00:04:22] seco INFO: 228/400
+[08/12 00:04:22] seco INFO: 229/400
+[08/12 00:04:22] seco INFO: 230/400
+[08/12 00:04:22] seco INFO: 231/400
+[08/12 00:04:22] seco INFO: 232/400
+[08/12 00:04:22] seco INFO: 233/400
+[08/12 00:04:22] seco INFO: 234/400
+[08/12 00:04:22] seco INFO: 235/400
+[08/12 00:04:22] seco INFO: 236/400
+[08/12 00:04:23] seco INFO: 237/400
+[08/12 00:04:23] seco INFO: 238/400
+[08/12 00:04:23] seco INFO: 239/400
+[08/12 00:04:23] seco INFO: 240/400
+[08/12 00:04:23] seco INFO: 241/400
+[08/12 00:04:23] seco INFO: 242/400
+[08/12 00:04:23] seco INFO: 243/400
+[08/12 00:04:23] seco INFO: 244/400
+[08/12 00:04:23] seco INFO: 245/400
+[08/12 00:04:23] seco INFO: 246/400
+[08/12 00:04:23] seco INFO: 247/400
+[08/12 00:04:23] seco INFO: 248/400
+[08/12 00:04:23] seco INFO: 249/400
+[08/12 00:04:23] seco INFO: 250/400
+[08/12 00:04:24] seco INFO: 251/400
+[08/12 00:04:24] seco INFO: 252/400
+[08/12 00:04:24] seco INFO: 253/400
+[08/12 00:04:24] seco INFO: 254/400
+[08/12 00:04:24] seco INFO: 255/400
+[08/12 00:04:24] seco INFO: 256/400
+[08/12 00:04:24] seco INFO: 257/400
+[08/12 00:04:24] seco INFO: 258/400
+[08/12 00:04:24] seco INFO: 259/400
+[08/12 00:04:24] seco INFO: 260/400
+[08/12 00:04:24] seco INFO: 261/400
+[08/12 00:04:24] seco INFO: 262/400
+[08/12 00:04:24] seco INFO: 263/400
+[08/12 00:04:24] seco INFO: 264/400
+[08/12 00:04:25] seco INFO: 265/400
+[08/12 00:04:25] seco INFO: 266/400
+[08/12 00:04:25] seco INFO: 267/400
+[08/12 00:04:25] seco INFO: 268/400
+[08/12 00:04:25] seco INFO: 269/400
+[08/12 00:04:25] seco INFO: 270/400
+[08/12 00:04:25] seco INFO: 271/400
+[08/12 00:04:25] seco INFO: 272/400
+[08/12 00:04:25] seco INFO: 273/400
+[08/12 00:04:25] seco INFO: 274/400
+[08/12 00:04:25] seco INFO: 275/400
+[08/12 00:04:25] seco INFO: 276/400
+[08/12 00:04:25] seco INFO: 277/400
+[08/12 00:04:25] seco INFO: 278/400
+[08/12 00:04:26] seco INFO: 279/400
+[08/12 00:04:26] seco INFO: 280/400
+[08/12 00:04:26] seco INFO: 281/400
+[08/12 00:04:26] seco INFO: 282/400
+[08/12 00:04:26] seco INFO: 283/400
+[08/12 00:04:26] seco INFO: 284/400
+[08/12 00:04:26] seco INFO: 285/400
+[08/12 00:04:26] seco INFO: 286/400
+[08/12 00:04:26] seco INFO: 287/400
+[08/12 00:04:26] seco INFO: 288/400
+[08/12 00:04:26] seco INFO: 289/400
+[08/12 00:04:26] seco INFO: 290/400
+[08/12 00:04:26] seco INFO: 291/400
+[08/12 00:04:26] seco INFO: 292/400
+[08/12 00:04:26] seco INFO: 293/400
+[08/12 00:04:27] seco INFO: 294/400
+[08/12 00:04:27] seco INFO: 295/400
+[08/12 00:04:27] seco INFO: 296/400
+[08/12 00:04:27] seco INFO: 297/400
+[08/12 00:04:27] seco INFO: 298/400
+[08/12 00:04:27] seco INFO: 299/400
+[08/12 00:04:27] seco INFO: 300/400
+[08/12 00:04:27] seco INFO: 301/400
+[08/12 00:04:27] seco INFO: 302/400
+[08/12 00:04:27] seco INFO: 303/400
+[08/12 00:04:27] seco INFO: 304/400
+[08/12 00:04:27] seco INFO: 305/400
+[08/12 00:04:27] seco INFO: 306/400
+[08/12 00:04:27] seco INFO: 307/400
+[08/12 00:04:28] seco INFO: 308/400
+[08/12 00:04:28] seco INFO: 309/400
+[08/12 00:04:28] seco INFO: 310/400
+[08/12 00:04:28] seco INFO: 311/400
+[08/12 00:04:28] seco INFO: 312/400
+[08/12 00:04:28] seco INFO: 313/400
+[08/12 00:04:28] seco INFO: 314/400
+[08/12 00:04:28] seco INFO: 315/400
+[08/12 00:04:28] seco INFO: 316/400
+[08/12 00:04:28] seco INFO: 317/400
+[08/12 00:04:28] seco INFO: 318/400
+[08/12 00:04:28] seco INFO: 319/400
+[08/12 00:04:28] seco INFO: 320/400
+[08/12 00:04:28] seco INFO: 321/400
+[08/12 00:04:29] seco INFO: 322/400
+[08/12 00:04:29] seco INFO: 323/400
+[08/12 00:04:29] seco INFO: 324/400
+[08/12 00:04:29] seco INFO: 325/400
+[08/12 00:04:29] seco INFO: 326/400
+[08/12 00:04:29] seco INFO: 327/400
+[08/12 00:04:29] seco INFO: 328/400
+[08/12 00:04:29] seco INFO: 329/400
+[08/12 00:04:29] seco INFO: 330/400
+[08/12 00:04:29] seco INFO: 331/400
+[08/12 00:04:29] seco INFO: 332/400
+[08/12 00:04:29] seco INFO: 333/400
+[08/12 00:04:29] seco INFO: 334/400
+[08/12 00:04:29] seco INFO: 335/400
+[08/12 00:04:30] seco INFO: 336/400
+[08/12 00:04:30] seco INFO: 337/400
+[08/12 00:04:30] seco INFO: 338/400
+[08/12 00:04:30] seco INFO: 339/400
+[08/12 00:04:30] seco INFO: 340/400
+[08/12 00:04:30] seco INFO: 341/400
+[08/12 00:04:30] seco INFO: 342/400
+[08/12 00:04:30] seco INFO: 343/400
+[08/12 00:04:30] seco INFO: 344/400
+[08/12 00:04:30] seco INFO: 345/400
+[08/12 00:04:30] seco INFO: 346/400
+[08/12 00:04:30] seco INFO: 347/400
+[08/12 00:04:30] seco INFO: 348/400
+[08/12 00:04:30] seco INFO: 349/400
+[08/12 00:04:31] seco INFO: 350/400
+[08/12 00:04:31] seco INFO: 351/400
+[08/12 00:04:31] seco INFO: 352/400
+[08/12 00:04:31] seco INFO: 353/400
+[08/12 00:04:31] seco INFO: 354/400
+[08/12 00:04:31] seco INFO: 355/400
+[08/12 00:04:31] seco INFO: 356/400
+[08/12 00:04:31] seco INFO: 357/400
+[08/12 00:04:31] seco INFO: 358/400
+[08/12 00:04:31] seco INFO: 359/400
+[08/12 00:04:31] seco INFO: 360/400
+[08/12 00:04:31] seco INFO: 361/400
+[08/12 00:04:31] seco INFO: 362/400
+[08/12 00:04:31] seco INFO: 363/400
+[08/12 00:04:31] seco INFO: 364/400
+[08/12 00:04:32] seco INFO: 365/400
+[08/12 00:04:32] seco INFO: 366/400
+[08/12 00:04:32] seco INFO: 367/400
+[08/12 00:04:32] seco INFO: 368/400
+[08/12 00:04:32] seco INFO: 369/400
+[08/12 00:04:32] seco INFO: 370/400
+[08/12 00:04:32] seco INFO: 371/400
+[08/12 00:04:32] seco INFO: 372/400
+[08/12 00:04:32] seco INFO: 373/400
+[08/12 00:04:32] seco INFO: 374/400
+[08/12 00:04:32] seco INFO: 375/400
+[08/12 00:04:32] seco INFO: 376/400
+[08/12 00:04:32] seco INFO: 377/400
+[08/12 00:04:32] seco INFO: 378/400
+[08/12 00:04:33] seco INFO: 379/400
+[08/12 00:04:33] seco INFO: 380/400
+[08/12 00:04:33] seco INFO: 381/400
+[08/12 00:04:33] seco INFO: 382/400
+[08/12 00:04:33] seco INFO: 383/400
+[08/12 00:04:33] seco INFO: 384/400
+[08/12 00:04:33] seco INFO: 385/400
+[08/12 00:04:33] seco INFO: 386/400
+[08/12 00:04:33] seco INFO: 387/400
+[08/12 00:04:33] seco INFO: 388/400
+[08/12 00:04:33] seco INFO: 389/400
+[08/12 00:04:33] seco INFO: 390/400
+[08/12 00:04:33] seco INFO: 391/400
+[08/12 00:04:33] seco INFO: 392/400
+[08/12 00:04:34] seco INFO: 393/400
+[08/12 00:04:34] seco INFO: 394/400
+[08/12 00:04:34] seco INFO: 395/400
+[08/12 00:04:34] seco INFO: 396/400
+[08/12 00:04:34] seco INFO: 397/400
+[08/12 00:04:34] seco INFO: 398/400
+[08/12 00:04:34] seco INFO: 399/400
+[08/12 00:04:40] seco INFO: Full config saved to ./video-contrastive-learning/results_gs_double_data\config.json
+[08/12 00:04:40] seco INFO: using data: 80
+[08/12 00:04:41] seco INFO: model init done
+[08/12 00:05:11] seco INFO: 0/80
+[08/12 00:05:13] seco INFO: 1/80
+[08/12 00:05:13] seco INFO: 2/80
+[08/12 00:05:13] seco INFO: 3/80
+[08/12 00:05:13] seco INFO: 4/80
+[08/12 00:05:14] seco INFO: 5/80
+[08/12 00:05:14] seco INFO: 6/80
+[08/12 00:05:14] seco INFO: 7/80
+[08/12 00:05:14] seco INFO: 8/80
+[08/12 00:05:14] seco INFO: 9/80
+[08/12 00:05:14] seco INFO: 10/80
+[08/12 00:05:14] seco INFO: 11/80
+[08/12 00:05:14] seco INFO: 12/80
+[08/12 00:05:14] seco INFO: 13/80
+[08/12 00:05:14] seco INFO: 14/80
+[08/12 00:05:14] seco INFO: 15/80
+[08/12 00:05:14] seco INFO: 16/80
+[08/12 00:05:14] seco INFO: 17/80
+[08/12 00:05:14] seco INFO: 18/80
+[08/12 00:05:14] seco INFO: 19/80
+[08/12 00:05:15] seco INFO: 20/80
+[08/12 00:05:15] seco INFO: 21/80
+[08/12 00:05:15] seco INFO: 22/80
+[08/12 00:05:15] seco INFO: 23/80
+[08/12 00:05:15] seco INFO: 24/80
+[08/12 00:05:15] seco INFO: 25/80
+[08/12 00:05:15] seco INFO: 26/80
+[08/12 00:05:15] seco INFO: 27/80
+[08/12 00:05:15] seco INFO: 28/80
+[08/12 00:05:15] seco INFO: 29/80
+[08/12 00:05:15] seco INFO: 30/80
+[08/12 00:05:15] seco INFO: 31/80
+[08/12 00:05:15] seco INFO: 32/80
+[08/12 00:05:15] seco INFO: 33/80
+[08/12 00:05:16] seco INFO: 34/80
+[08/12 00:05:16] seco INFO: 35/80
+[08/12 00:05:16] seco INFO: 36/80
+[08/12 00:05:16] seco INFO: 37/80
+[08/12 00:05:16] seco INFO: 38/80
+[08/12 00:05:16] seco INFO: 39/80
+[08/12 00:05:16] seco INFO: 40/80
+[08/12 00:05:16] seco INFO: 41/80
+[08/12 00:05:16] seco INFO: 42/80
+[08/12 00:05:16] seco INFO: 43/80
+[08/12 00:05:16] seco INFO: 44/80
+[08/12 00:05:16] seco INFO: 45/80
+[08/12 00:05:16] seco INFO: 46/80
+[08/12 00:05:16] seco INFO: 47/80
+[08/12 00:05:17] seco INFO: 48/80
+[08/12 00:05:17] seco INFO: 49/80
+[08/12 00:05:17] seco INFO: 50/80
+[08/12 00:05:17] seco INFO: 51/80
+[08/12 00:05:17] seco INFO: 52/80
+[08/12 00:05:17] seco INFO: 53/80
+[08/12 00:05:17] seco INFO: 54/80
+[08/12 00:05:17] seco INFO: 55/80
+[08/12 00:05:17] seco INFO: 56/80
+[08/12 00:05:17] seco INFO: 57/80
+[08/12 00:05:17] seco INFO: 58/80
+[08/12 00:05:17] seco INFO: 59/80
+[08/12 00:05:17] seco INFO: 60/80
+[08/12 00:05:17] seco INFO: 61/80
+[08/12 00:05:18] seco INFO: 62/80
+[08/12 00:05:18] seco INFO: 63/80
+[08/12 00:05:18] seco INFO: 64/80
+[08/12 00:05:18] seco INFO: 65/80
+[08/12 00:05:18] seco INFO: 66/80
+[08/12 00:05:18] seco INFO: 67/80
+[08/12 00:05:18] seco INFO: 68/80
+[08/12 00:05:18] seco INFO: 69/80
+[08/12 00:05:18] seco INFO: 70/80
+[08/12 00:05:18] seco INFO: 71/80
+[08/12 00:05:18] seco INFO: 72/80
+[08/12 00:05:18] seco INFO: 73/80
+[08/12 00:05:18] seco INFO: 74/80
+[08/12 00:05:18] seco INFO: 75/80
+[08/12 00:05:19] seco INFO: 76/80
+[08/12 00:05:19] seco INFO: 77/80
+[08/12 00:05:19] seco INFO: 78/80
+[08/12 00:05:19] seco INFO: 79/80
+[08/12 00:06:38] seco INFO: Full config saved to ./video-contrastive-learning/results_gs_double_data\config.json
+[08/12 00:06:38] seco INFO: using data: 400
+[08/12 00:06:39] seco INFO: model init done
+[08/12 00:07:09] seco INFO: 0/400
+[08/12 00:07:11] seco INFO: 1/400
+[08/12 00:07:11] seco INFO: 2/400
+[08/12 00:07:11] seco INFO: 3/400
+[08/12 00:07:11] seco INFO: 4/400
+[08/12 00:07:11] seco INFO: 5/400
+[08/12 00:07:11] seco INFO: 6/400
+[08/12 00:07:11] seco INFO: 7/400
+[08/12 00:07:11] seco INFO: 8/400
+[08/12 00:07:12] seco INFO: 9/400
+[08/12 00:07:12] seco INFO: 10/400
+[08/12 00:07:12] seco INFO: 11/400
+[08/12 00:07:12] seco INFO: 12/400
+[08/12 00:07:12] seco INFO: 13/400
+[08/12 00:07:12] seco INFO: 14/400
+[08/12 00:07:12] seco INFO: 15/400
+[08/12 00:07:12] seco INFO: 16/400
+[08/12 00:07:12] seco INFO: 17/400
+[08/12 00:07:12] seco INFO: 18/400
+[08/12 00:07:12] seco INFO: 19/400
+[08/12 00:07:12] seco INFO: 20/400
+[08/12 00:07:12] seco INFO: 21/400
+[08/12 00:07:12] seco INFO: 22/400
+[08/12 00:07:13] seco INFO: 23/400
+[08/12 00:07:13] seco INFO: 24/400
+[08/12 00:07:13] seco INFO: 25/400
+[08/12 00:07:13] seco INFO: 26/400
+[08/12 00:07:13] seco INFO: 27/400
+[08/12 00:07:13] seco INFO: 28/400
+[08/12 00:07:13] seco INFO: 29/400
+[08/12 00:07:13] seco INFO: 30/400
+[08/12 00:07:13] seco INFO: 31/400
+[08/12 00:07:13] seco INFO: 32/400
+[08/12 00:07:13] seco INFO: 33/400
+[08/12 00:07:13] seco INFO: 34/400
+[08/12 00:07:13] seco INFO: 35/400
+[08/12 00:07:13] seco INFO: 36/400
+[08/12 00:07:14] seco INFO: 37/400
+[08/12 00:07:14] seco INFO: 38/400
+[08/12 00:07:14] seco INFO: 39/400
+[08/12 00:07:14] seco INFO: 40/400
+[08/12 00:07:14] seco INFO: 41/400
+[08/12 00:07:14] seco INFO: 42/400
+[08/12 00:07:14] seco INFO: 43/400
+[08/12 00:07:14] seco INFO: 44/400
+[08/12 00:07:14] seco INFO: 45/400
+[08/12 00:07:14] seco INFO: 46/400
+[08/12 00:07:14] seco INFO: 47/400
+[08/12 00:07:14] seco INFO: 48/400
+[08/12 00:07:14] seco INFO: 49/400
+[08/12 00:07:14] seco INFO: 50/400
+[08/12 00:07:15] seco INFO: 51/400
+[08/12 00:07:15] seco INFO: 52/400
+[08/12 00:07:15] seco INFO: 53/400
+[08/12 00:07:15] seco INFO: 54/400
+[08/12 00:07:15] seco INFO: 55/400
+[08/12 00:07:15] seco INFO: 56/400
+[08/12 00:07:15] seco INFO: 57/400
+[08/12 00:07:15] seco INFO: 58/400
+[08/12 00:07:15] seco INFO: 59/400
+[08/12 00:07:15] seco INFO: 60/400
+[08/12 00:07:15] seco INFO: 61/400
+[08/12 00:07:15] seco INFO: 62/400
+[08/12 00:07:15] seco INFO: 63/400
+[08/12 00:07:15] seco INFO: 64/400
+[08/12 00:07:16] seco INFO: 65/400
+[08/12 00:07:16] seco INFO: 66/400
+[08/12 00:07:16] seco INFO: 67/400
+[08/12 00:07:16] seco INFO: 68/400
+[08/12 00:07:16] seco INFO: 69/400
+[08/12 00:07:16] seco INFO: 70/400
+[08/12 00:07:16] seco INFO: 71/400
+[08/12 00:07:16] seco INFO: 72/400
+[08/12 00:07:16] seco INFO: 73/400
+[08/12 00:07:16] seco INFO: 74/400
+[08/12 00:07:16] seco INFO: 75/400
+[08/12 00:07:16] seco INFO: 76/400
+[08/12 00:07:16] seco INFO: 77/400
+[08/12 00:07:16] seco INFO: 78/400
+[08/12 00:07:16] seco INFO: 79/400
+[08/12 00:07:17] seco INFO: 80/400
+[08/12 00:07:17] seco INFO: 81/400
+[08/12 00:07:17] seco INFO: 82/400
+[08/12 00:07:17] seco INFO: 83/400
+[08/12 00:07:17] seco INFO: 84/400
+[08/12 00:07:17] seco INFO: 85/400
+[08/12 00:07:17] seco INFO: 86/400
+[08/12 00:07:17] seco INFO: 87/400
+[08/12 00:07:17] seco INFO: 88/400
+[08/12 00:07:17] seco INFO: 89/400
+[08/12 00:07:17] seco INFO: 90/400
+[08/12 00:07:17] seco INFO: 91/400
+[08/12 00:07:17] seco INFO: 92/400
+[08/12 00:07:17] seco INFO: 93/400
+[08/12 00:07:18] seco INFO: 94/400
+[08/12 00:07:18] seco INFO: 95/400
+[08/12 00:07:18] seco INFO: 96/400
+[08/12 00:07:18] seco INFO: 97/400
+[08/12 00:07:18] seco INFO: 98/400
+[08/12 00:07:18] seco INFO: 99/400
+[08/12 00:07:18] seco INFO: 100/400
+[08/12 00:07:18] seco INFO: 101/400
+[08/12 00:07:18] seco INFO: 102/400
+[08/12 00:07:18] seco INFO: 103/400
+[08/12 00:07:18] seco INFO: 104/400
+[08/12 00:07:18] seco INFO: 105/400
+[08/12 00:07:18] seco INFO: 106/400
+[08/12 00:07:18] seco INFO: 107/400
+[08/12 00:07:19] seco INFO: 108/400
+[08/12 00:07:19] seco INFO: 109/400
+[08/12 00:07:19] seco INFO: 110/400
+[08/12 00:07:19] seco INFO: 111/400
+[08/12 00:07:19] seco INFO: 112/400
+[08/12 00:07:19] seco INFO: 113/400
+[08/12 00:07:19] seco INFO: 114/400
+[08/12 00:07:19] seco INFO: 115/400
+[08/12 00:07:19] seco INFO: 116/400
+[08/12 00:07:19] seco INFO: 117/400
+[08/12 00:07:19] seco INFO: 118/400
+[08/12 00:07:19] seco INFO: 119/400
+[08/12 00:07:19] seco INFO: 120/400
+[08/12 00:07:19] seco INFO: 121/400
+[08/12 00:07:20] seco INFO: 122/400
+[08/12 00:07:20] seco INFO: 123/400
+[08/12 00:07:20] seco INFO: 124/400
+[08/12 00:07:20] seco INFO: 125/400
+[08/12 00:07:20] seco INFO: 126/400
+[08/12 00:07:20] seco INFO: 127/400
+[08/12 00:07:20] seco INFO: 128/400
+[08/12 00:07:20] seco INFO: 129/400
+[08/12 00:07:20] seco INFO: 130/400
+[08/12 00:07:20] seco INFO: 131/400
+[08/12 00:07:20] seco INFO: 132/400
+[08/12 00:07:20] seco INFO: 133/400
+[08/12 00:07:20] seco INFO: 134/400
+[08/12 00:07:20] seco INFO: 135/400
+[08/12 00:07:21] seco INFO: 136/400
+[08/12 00:07:21] seco INFO: 137/400
+[08/12 00:07:21] seco INFO: 138/400
+[08/12 00:07:21] seco INFO: 139/400
+[08/12 00:07:21] seco INFO: 140/400
+[08/12 00:07:21] seco INFO: 141/400
+[08/12 00:07:21] seco INFO: 142/400
+[08/12 00:07:21] seco INFO: 143/400
+[08/12 00:07:21] seco INFO: 144/400
+[08/12 00:07:21] seco INFO: 145/400
+[08/12 00:07:21] seco INFO: 146/400
+[08/12 00:07:21] seco INFO: 147/400
+[08/12 00:07:21] seco INFO: 148/400
+[08/12 00:07:21] seco INFO: 149/400
+[08/12 00:07:22] seco INFO: 150/400
+[08/12 00:07:22] seco INFO: 151/400
+[08/12 00:07:22] seco INFO: 152/400
+[08/12 00:07:22] seco INFO: 153/400
+[08/12 00:07:22] seco INFO: 154/400
+[08/12 00:07:22] seco INFO: 155/400
+[08/12 00:07:22] seco INFO: 156/400
+[08/12 00:07:22] seco INFO: 157/400
+[08/12 00:07:22] seco INFO: 158/400
+[08/12 00:07:22] seco INFO: 159/400
+[08/12 00:07:22] seco INFO: 160/400
+[08/12 00:07:22] seco INFO: 161/400
+[08/12 00:07:22] seco INFO: 162/400
+[08/12 00:07:22] seco INFO: 163/400
+[08/12 00:07:23] seco INFO: 164/400
+[08/12 00:07:23] seco INFO: 165/400
+[08/12 00:07:23] seco INFO: 166/400
+[08/12 00:07:23] seco INFO: 167/400
+[08/12 00:07:23] seco INFO: 168/400
+[08/12 00:07:23] seco INFO: 169/400
+[08/12 00:07:23] seco INFO: 170/400
+[08/12 00:07:23] seco INFO: 171/400
+[08/12 00:07:23] seco INFO: 172/400
+[08/12 00:07:23] seco INFO: 173/400
+[08/12 00:07:23] seco INFO: 174/400
+[08/12 00:07:23] seco INFO: 175/400
+[08/12 00:07:23] seco INFO: 176/400
+[08/12 00:07:23] seco INFO: 177/400
+[08/12 00:07:23] seco INFO: 178/400
+[08/12 00:07:24] seco INFO: 179/400
+[08/12 00:07:24] seco INFO: 180/400
+[08/12 00:07:24] seco INFO: 181/400
+[08/12 00:07:24] seco INFO: 182/400
+[08/12 00:07:24] seco INFO: 183/400
+[08/12 00:07:24] seco INFO: 184/400
+[08/12 00:07:24] seco INFO: 185/400
+[08/12 00:07:24] seco INFO: 186/400
+[08/12 00:07:24] seco INFO: 187/400
+[08/12 00:07:24] seco INFO: 188/400
+[08/12 00:07:24] seco INFO: 189/400
+[08/12 00:07:24] seco INFO: 190/400
+[08/12 00:07:24] seco INFO: 191/400
+[08/12 00:07:24] seco INFO: 192/400
+[08/12 00:07:25] seco INFO: 193/400
+[08/12 00:07:25] seco INFO: 194/400
+[08/12 00:07:25] seco INFO: 195/400
+[08/12 00:07:25] seco INFO: 196/400
+[08/12 00:07:25] seco INFO: 197/400
+[08/12 00:07:25] seco INFO: 198/400
+[08/12 00:07:25] seco INFO: 199/400
+[08/12 00:07:25] seco INFO: 200/400
+[08/12 00:07:25] seco INFO: 201/400
+[08/12 00:07:25] seco INFO: 202/400
+[08/12 00:07:25] seco INFO: 203/400
+[08/12 00:07:25] seco INFO: 204/400
+[08/12 00:07:25] seco INFO: 205/400
+[08/12 00:07:25] seco INFO: 206/400
+[08/12 00:07:26] seco INFO: 207/400
+[08/12 00:07:26] seco INFO: 208/400
+[08/12 00:07:26] seco INFO: 209/400
+[08/12 00:07:26] seco INFO: 210/400
+[08/12 00:07:26] seco INFO: 211/400
+[08/12 00:07:26] seco INFO: 212/400
+[08/12 00:07:26] seco INFO: 213/400
+[08/12 00:07:26] seco INFO: 214/400
+[08/12 00:07:26] seco INFO: 215/400
+[08/12 00:07:26] seco INFO: 216/400
+[08/12 00:07:26] seco INFO: 217/400
+[08/12 00:07:26] seco INFO: 218/400
+[08/12 00:07:26] seco INFO: 219/400
+[08/12 00:07:26] seco INFO: 220/400
+[08/12 00:07:27] seco INFO: 221/400
+[08/12 00:07:27] seco INFO: 222/400
+[08/12 00:07:27] seco INFO: 223/400
+[08/12 00:07:27] seco INFO: 224/400
+[08/12 00:07:27] seco INFO: 225/400
+[08/12 00:07:27] seco INFO: 226/400
+[08/12 00:07:27] seco INFO: 227/400
+[08/12 00:07:27] seco INFO: 228/400
+[08/12 00:07:27] seco INFO: 229/400
+[08/12 00:07:27] seco INFO: 230/400
+[08/12 00:07:27] seco INFO: 231/400
+[08/12 00:07:27] seco INFO: 232/400
+[08/12 00:07:27] seco INFO: 233/400
+[08/12 00:07:27] seco INFO: 234/400
+[08/12 00:07:28] seco INFO: 235/400
+[08/12 00:07:28] seco INFO: 236/400
+[08/12 00:07:28] seco INFO: 237/400
+[08/12 00:07:28] seco INFO: 238/400
+[08/12 00:07:28] seco INFO: 239/400
+[08/12 00:07:28] seco INFO: 240/400
+[08/12 00:07:28] seco INFO: 241/400
+[08/12 00:07:28] seco INFO: 242/400
+[08/12 00:07:28] seco INFO: 243/400
+[08/12 00:07:28] seco INFO: 244/400
+[08/12 00:07:28] seco INFO: 245/400
+[08/12 00:07:28] seco INFO: 246/400
+[08/12 00:07:28] seco INFO: 247/400
+[08/12 00:07:28] seco INFO: 248/400
+[08/12 00:07:29] seco INFO: 249/400
+[08/12 00:07:29] seco INFO: 250/400
+[08/12 00:07:29] seco INFO: 251/400
+[08/12 00:07:29] seco INFO: 252/400
+[08/12 00:07:29] seco INFO: 253/400
+[08/12 00:07:29] seco INFO: 254/400
+[08/12 00:07:29] seco INFO: 255/400
+[08/12 00:07:29] seco INFO: 256/400
+[08/12 00:07:29] seco INFO: 257/400
+[08/12 00:07:29] seco INFO: 258/400
+[08/12 00:07:29] seco INFO: 259/400
+[08/12 00:07:29] seco INFO: 260/400
+[08/12 00:07:29] seco INFO: 261/400
+[08/12 00:07:29] seco INFO: 262/400
+[08/12 00:07:30] seco INFO: 263/400
+[08/12 00:07:30] seco INFO: 264/400
+[08/12 00:07:30] seco INFO: 265/400
+[08/12 00:07:30] seco INFO: 266/400
+[08/12 00:07:30] seco INFO: 267/400
+[08/12 00:07:30] seco INFO: 268/400
+[08/12 00:07:30] seco INFO: 269/400
+[08/12 00:07:30] seco INFO: 270/400
+[08/12 00:07:30] seco INFO: 271/400
+[08/12 00:07:30] seco INFO: 272/400
+[08/12 00:07:30] seco INFO: 273/400
+[08/12 00:07:30] seco INFO: 274/400
+[08/12 00:07:30] seco INFO: 275/400
+[08/12 00:07:30] seco INFO: 276/400
+[08/12 00:07:31] seco INFO: 277/400
+[08/12 00:07:31] seco INFO: 278/400
+[08/12 00:07:31] seco INFO: 279/400
+[08/12 00:07:31] seco INFO: 280/400
+[08/12 00:07:31] seco INFO: 281/400
+[08/12 00:07:31] seco INFO: 282/400
+[08/12 00:07:31] seco INFO: 283/400
+[08/12 00:07:31] seco INFO: 284/400
+[08/12 00:07:31] seco INFO: 285/400
+[08/12 00:07:31] seco INFO: 286/400
+[08/12 00:07:31] seco INFO: 287/400
+[08/12 00:07:31] seco INFO: 288/400
+[08/12 00:07:31] seco INFO: 289/400
+[08/12 00:07:31] seco INFO: 290/400
+[08/12 00:07:32] seco INFO: 291/400
+[08/12 00:07:32] seco INFO: 292/400
+[08/12 00:07:32] seco INFO: 293/400
+[08/12 00:07:32] seco INFO: 294/400
+[08/12 00:07:32] seco INFO: 295/400
+[08/12 00:07:32] seco INFO: 296/400
+[08/12 00:07:32] seco INFO: 297/400
+[08/12 00:07:32] seco INFO: 298/400
+[08/12 00:07:32] seco INFO: 299/400
+[08/12 00:07:32] seco INFO: 300/400
+[08/12 00:07:32] seco INFO: 301/400
+[08/12 00:07:32] seco INFO: 302/400
+[08/12 00:07:32] seco INFO: 303/400
+[08/12 00:07:32] seco INFO: 304/400
+[08/12 00:07:33] seco INFO: 305/400
+[08/12 00:07:33] seco INFO: 306/400
+[08/12 00:07:33] seco INFO: 307/400
+[08/12 00:07:33] seco INFO: 308/400
+[08/12 00:07:33] seco INFO: 309/400
+[08/12 00:07:33] seco INFO: 310/400
+[08/12 00:07:33] seco INFO: 311/400
+[08/12 00:07:33] seco INFO: 312/400
+[08/12 00:07:33] seco INFO: 313/400
+[08/12 00:07:33] seco INFO: 314/400
+[08/12 00:07:33] seco INFO: 315/400
+[08/12 00:07:33] seco INFO: 316/400
+[08/12 00:07:33] seco INFO: 317/400
+[08/12 00:07:33] seco INFO: 318/400
+[08/12 00:07:33] seco INFO: 319/400
+[08/12 00:07:34] seco INFO: 320/400
+[08/12 00:07:34] seco INFO: 321/400
+[08/12 00:07:34] seco INFO: 322/400
+[08/12 00:07:34] seco INFO: 323/400
+[08/12 00:07:34] seco INFO: 324/400
+[08/12 00:07:34] seco INFO: 325/400
+[08/12 00:07:34] seco INFO: 326/400
+[08/12 00:07:34] seco INFO: 327/400
+[08/12 00:07:34] seco INFO: 328/400
+[08/12 00:07:34] seco INFO: 329/400
+[08/12 00:07:34] seco INFO: 330/400
+[08/12 00:07:34] seco INFO: 331/400
+[08/12 00:07:34] seco INFO: 332/400
+[08/12 00:07:34] seco INFO: 333/400
+[08/12 00:07:35] seco INFO: 334/400
+[08/12 00:07:35] seco INFO: 335/400
+[08/12 00:07:35] seco INFO: 336/400
+[08/12 00:07:35] seco INFO: 337/400
+[08/12 00:07:35] seco INFO: 338/400
+[08/12 00:07:35] seco INFO: 339/400
+[08/12 00:07:35] seco INFO: 340/400
+[08/12 00:07:35] seco INFO: 341/400
+[08/12 00:07:35] seco INFO: 342/400
+[08/12 00:07:35] seco INFO: 343/400
+[08/12 00:07:35] seco INFO: 344/400
+[08/12 00:07:35] seco INFO: 345/400
+[08/12 00:07:35] seco INFO: 346/400
+[08/12 00:07:35] seco INFO: 347/400
+[08/12 00:07:36] seco INFO: 348/400
+[08/12 00:07:36] seco INFO: 349/400
+[08/12 00:07:36] seco INFO: 350/400
+[08/12 00:07:36] seco INFO: 351/400
+[08/12 00:07:36] seco INFO: 352/400
+[08/12 00:07:36] seco INFO: 353/400
+[08/12 00:07:36] seco INFO: 354/400
+[08/12 00:07:36] seco INFO: 355/400
+[08/12 00:07:36] seco INFO: 356/400
+[08/12 00:07:36] seco INFO: 357/400
+[08/12 00:07:36] seco INFO: 358/400
+[08/12 00:07:36] seco INFO: 359/400
+[08/12 00:07:36] seco INFO: 360/400
+[08/12 00:07:36] seco INFO: 361/400
+[08/12 00:07:37] seco INFO: 362/400
+[08/12 00:07:37] seco INFO: 363/400
+[08/12 00:07:37] seco INFO: 364/400
+[08/12 00:07:37] seco INFO: 365/400
+[08/12 00:07:37] seco INFO: 366/400
+[08/12 00:07:37] seco INFO: 367/400
+[08/12 00:07:37] seco INFO: 368/400
+[08/12 00:07:37] seco INFO: 369/400
+[08/12 00:07:37] seco INFO: 370/400
+[08/12 00:07:37] seco INFO: 371/400
+[08/12 00:07:37] seco INFO: 372/400
+[08/12 00:07:37] seco INFO: 373/400
+[08/12 00:07:37] seco INFO: 374/400
+[08/12 00:07:37] seco INFO: 375/400
+[08/12 00:07:38] seco INFO: 376/400
+[08/12 00:07:38] seco INFO: 377/400
+[08/12 00:07:38] seco INFO: 378/400
+[08/12 00:07:38] seco INFO: 379/400
+[08/12 00:07:38] seco INFO: 380/400
+[08/12 00:07:38] seco INFO: 381/400
+[08/12 00:07:38] seco INFO: 382/400
+[08/12 00:07:38] seco INFO: 383/400
+[08/12 00:07:38] seco INFO: 384/400
+[08/12 00:07:38] seco INFO: 385/400
+[08/12 00:07:38] seco INFO: 386/400
+[08/12 00:07:38] seco INFO: 387/400
+[08/12 00:07:38] seco INFO: 388/400
+[08/12 00:07:38] seco INFO: 389/400
+[08/12 00:07:39] seco INFO: 390/400
+[08/12 00:07:39] seco INFO: 391/400
+[08/12 00:07:39] seco INFO: 392/400
+[08/12 00:07:39] seco INFO: 393/400
+[08/12 00:07:39] seco INFO: 394/400
+[08/12 00:07:39] seco INFO: 395/400
+[08/12 00:07:39] seco INFO: 396/400
+[08/12 00:07:39] seco INFO: 397/400
+[08/12 00:07:39] seco INFO: 398/400
+[08/12 00:07:39] seco INFO: 399/400
+[08/12 00:07:45] seco INFO: Full config saved to ./video-contrastive-learning/results_gs_double_data\config.json
+[08/12 00:07:45] seco INFO: using data: 80
+[08/12 00:07:46] seco INFO: model init done
+[08/12 00:08:17] seco INFO: 0/80
+[08/12 00:08:19] seco INFO: 1/80
+[08/12 00:08:19] seco INFO: 2/80
+[08/12 00:08:19] seco INFO: 3/80
+[08/12 00:08:19] seco INFO: 4/80
+[08/12 00:08:19] seco INFO: 5/80
+[08/12 00:08:19] seco INFO: 6/80
+[08/12 00:08:19] seco INFO: 7/80
+[08/12 00:08:20] seco INFO: 8/80
+[08/12 00:08:20] seco INFO: 9/80
+[08/12 00:08:20] seco INFO: 10/80
+[08/12 00:08:20] seco INFO: 11/80
+[08/12 00:08:20] seco INFO: 12/80
+[08/12 00:08:20] seco INFO: 13/80
+[08/12 00:08:20] seco INFO: 14/80
+[08/12 00:08:20] seco INFO: 15/80
+[08/12 00:08:20] seco INFO: 16/80
+[08/12 00:08:20] seco INFO: 17/80
+[08/12 00:08:20] seco INFO: 18/80
+[08/12 00:08:20] seco INFO: 19/80
+[08/12 00:08:20] seco INFO: 20/80
+[08/12 00:08:20] seco INFO: 21/80
+[08/12 00:08:21] seco INFO: 22/80
+[08/12 00:08:21] seco INFO: 23/80
+[08/12 00:08:21] seco INFO: 24/80
+[08/12 00:08:21] seco INFO: 25/80
+[08/12 00:08:21] seco INFO: 26/80
+[08/12 00:08:21] seco INFO: 27/80
+[08/12 00:08:21] seco INFO: 28/80
+[08/12 00:08:21] seco INFO: 29/80
+[08/12 00:08:21] seco INFO: 30/80
+[08/12 00:08:21] seco INFO: 31/80
+[08/12 00:08:21] seco INFO: 32/80
+[08/12 00:08:21] seco INFO: 33/80
+[08/12 00:08:21] seco INFO: 34/80
+[08/12 00:08:21] seco INFO: 35/80
+[08/12 00:08:22] seco INFO: 36/80
+[08/12 00:08:22] seco INFO: 37/80
+[08/12 00:08:22] seco INFO: 38/80
+[08/12 00:08:22] seco INFO: 39/80
+[08/12 00:08:22] seco INFO: 40/80
+[08/12 00:08:22] seco INFO: 41/80
+[08/12 00:08:22] seco INFO: 42/80
+[08/12 00:08:22] seco INFO: 43/80
+[08/12 00:08:22] seco INFO: 44/80
+[08/12 00:08:22] seco INFO: 45/80
+[08/12 00:08:22] seco INFO: 46/80
+[08/12 00:08:22] seco INFO: 47/80
+[08/12 00:08:22] seco INFO: 48/80
+[08/12 00:08:22] seco INFO: 49/80
+[08/12 00:08:23] seco INFO: 50/80
+[08/12 00:08:23] seco INFO: 51/80
+[08/12 00:08:23] seco INFO: 52/80
+[08/12 00:08:23] seco INFO: 53/80
+[08/12 00:08:23] seco INFO: 54/80
+[08/12 00:08:23] seco INFO: 55/80
+[08/12 00:08:23] seco INFO: 56/80
+[08/12 00:08:23] seco INFO: 57/80
+[08/12 00:08:23] seco INFO: 58/80
+[08/12 00:08:23] seco INFO: 59/80
+[08/12 00:08:23] seco INFO: 60/80
+[08/12 00:08:23] seco INFO: 61/80
+[08/12 00:08:23] seco INFO: 62/80
+[08/12 00:08:23] seco INFO: 63/80
+[08/12 00:08:24] seco INFO: 64/80
+[08/12 00:08:24] seco INFO: 65/80
+[08/12 00:08:24] seco INFO: 66/80
+[08/12 00:08:24] seco INFO: 67/80
+[08/12 00:08:24] seco INFO: 68/80
+[08/12 00:08:24] seco INFO: 69/80
+[08/12 00:08:24] seco INFO: 70/80
+[08/12 00:08:24] seco INFO: 71/80
+[08/12 00:08:24] seco INFO: 72/80
+[08/12 00:08:24] seco INFO: 73/80
+[08/12 00:08:24] seco INFO: 74/80
+[08/12 00:08:24] seco INFO: 75/80
+[08/12 00:08:24] seco INFO: 76/80
+[08/12 00:08:24] seco INFO: 77/80
+[08/12 00:08:25] seco INFO: 78/80
+[08/12 00:08:25] seco INFO: 79/80

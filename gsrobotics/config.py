@@ -23,6 +23,9 @@ class ConfigModel(BaseModel):
     use_gpu: bool
     video_save_path: str = None  # Optional path for saving video recordings
     use_device_id: bool = False  # Whether to use device ID for camera selection
+    n_recordings: int
+    n_frames: int
+    
 
 
 default_config = ConfigModel(
@@ -43,6 +46,8 @@ default_config = ConfigModel(
     use_gpu=False,
     video_save_path="videos/triangle/",  # Default path for saving videos
     use_device_id=False,  # Default to using device ID for camera selection
+    n_recordings=50,
+    n_frames = 150
 
 )
 

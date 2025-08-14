@@ -1,0 +1,1136 @@
+[08/12 00:09:30] vclr INFO: Full config saved to ./video-contrastive-learning/results_gs_double_data_2\config.json
+[08/12 00:09:30] vclr INFO: length of training dataset: 400
+[08/12 00:09:32] vclr INFO: ResNet(
+  (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (relu): ReLU(inplace=True)
+  (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+  (layer1): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer2): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (3): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer3): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (3): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (4): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (5): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer4): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
+  (fc_inter): Head(
+    (0): Linear(in_features=2048, out_features=2048, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Linear(in_features=2048, out_features=128, bias=True)
+  )
+  (fc_intra): Head(
+    (0): Linear(in_features=2048, out_features=2048, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Linear(in_features=2048, out_features=128, bias=True)
+  )
+  (fc_order): Head(
+    (0): Linear(in_features=2048, out_features=2048, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Linear(in_features=2048, out_features=128, bias=True)
+  )
+  (fc_order_classifier): Linear(in_features=768, out_features=4, bias=True)
+  (fc_tsn): Head(
+    (0): Linear(in_features=2048, out_features=2048, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Linear(in_features=2048, out_features=128, bias=True)
+  )
+)
+[08/12 00:09:32] vclr INFO: Training
+[08/12 00:14:45] vclr INFO: Train: [  1]/[   0/  25] BT=312.095/312.095 Loss=13.916 6.550 1.240 1.474 4.653/13.916
+[08/12 00:15:25] vclr INFO: Train: [  1]/[  10/  25] BT=352.970/333.159 Loss=12.346 5.422 0.902 1.350 4.671/12.129
+[08/12 00:16:03] vclr INFO: Train: [  1]/[  20/  25] BT=390.382/352.761 Loss=14.134 6.470 0.712 1.394 5.558/12.761
+[08/12 00:16:21] vclr INFO: epoch 1, total time 408.42, loss=13.022022323608399
+[08/12 00:16:21] vclr INFO: ==> Saving...
+[08/12 00:17:30] vclr INFO: Train: [  2]/[   0/  25] BT=60.165/60.165 Loss=14.765 6.778 0.694 1.468 5.825/14.765
+[08/12 00:18:03] vclr INFO: Train: [  2]/[  10/  25] BT=93.293/77.391 Loss=15.574 7.208 0.695 1.460 6.210/15.162
+[08/12 00:18:36] vclr INFO: Train: [  2]/[  20/  25] BT=126.116/93.296 Loss=16.264 7.511 0.693 1.573 6.488/15.488
+[08/12 00:18:52] vclr INFO: epoch 2, total time 559.52, loss=15.604043197631835
+[08/12 00:18:52] vclr INFO: ==> Saving...
+[08/12 00:19:55] vclr INFO: Train: [  3]/[   0/  25] BT=60.552/60.552 Loss=16.290 7.634 0.693 1.361 6.602/16.290
+[08/12 00:20:32] vclr INFO: Train: [  3]/[  10/  25] BT=97.152/79.211 Loss=16.883 7.842 0.693 1.549 6.798/16.577
+[08/12 00:21:09] vclr INFO: Train: [  3]/[  20/  25] BT=134.286/97.412 Loss=17.187 8.015 0.694 1.517 6.962/16.759
+[08/12 00:21:34] vclr INFO: epoch 3, total time 721.76, loss=16.83653007507324
+[08/12 00:21:34] vclr INFO: ==> Saving...
+[08/12 00:22:50] vclr INFO: Train: [  4]/[   0/  25] BT=72.925/72.925 Loss=17.181 8.091 0.693 1.363 7.034/17.181
+[08/12 00:23:29] vclr INFO: Train: [  4]/[  10/  25] BT=112.169/92.596 Loss=17.575 8.228 0.693 1.488 7.166/17.416
+[08/12 00:24:08] vclr INFO: Train: [  4]/[  20/  25] BT=150.688/112.006 Loss=17.822 8.348 0.693 1.499 7.282/17.552
+[08/12 00:24:28] vclr INFO: epoch 4, total time 895.59, loss=17.60213523864746
+[08/12 00:24:28] vclr INFO: ==> Saving...
+[08/12 00:25:42] vclr INFO: Train: [  5]/[   0/  25] BT=72.569/72.569 Loss=18.069 8.403 0.693 1.638 7.335/18.069
+[08/12 00:26:23] vclr INFO: Train: [  5]/[  10/  25] BT=113.211/92.712 Loss=18.226 8.505 0.693 1.594 7.434/18.044
+[08/12 00:27:03] vclr INFO: Train: [  5]/[  20/  25] BT=152.685/112.816 Loss=18.256 8.598 0.693 1.442 7.523/18.154
+[08/12 00:27:24] vclr INFO: epoch 5, total time 1071.18, loss=18.201839141845703
+[08/12 00:27:24] vclr INFO: ==> Saving...
+[08/12 00:28:35] vclr INFO: Train: [  6]/[   0/  25] BT=67.949/67.949 Loss=18.587 8.641 0.693 1.688 7.565/18.587
+[08/12 00:29:18] vclr INFO: Train: [  6]/[  10/  25] BT=110.647/89.174 Loss=18.702 8.722 0.693 1.643 7.644/18.502
+[08/12 00:29:58] vclr INFO: Train: [  6]/[  20/  25] BT=151.206/110.023 Loss=18.924 8.797 0.693 1.716 7.717/18.696
+[08/12 00:30:19] vclr INFO: epoch 6, total time 1246.58, loss=18.716893997192383
+[08/12 00:30:19] vclr INFO: ==> Saving...
+[08/12 00:31:27] vclr INFO: Train: [  7]/[   0/  25] BT=65.751/65.751 Loss=18.849 8.833 0.693 1.571 7.752/18.849
+[08/12 00:32:13] vclr INFO: Train: [  7]/[  10/  25] BT=111.866/88.989 Loss=18.802 8.900 0.693 1.391 7.818/18.949
+[08/12 00:32:58] vclr INFO: Train: [  7]/[  20/  25] BT=156.276/111.409 Loss=19.017 8.963 0.693 1.482 7.879/19.011
+[08/12 00:33:19] vclr INFO: epoch 7, total time 1426.12, loss=19.020245361328126
+[08/12 00:33:19] vclr INFO: ==> Saving...
+[08/12 00:34:30] vclr INFO: Train: [  8]/[   0/  25] BT=68.872/68.872 Loss=19.038 8.994 0.693 1.443 7.909/19.038
+[08/12 00:35:24] vclr INFO: Train: [  8]/[  10/  25] BT=123.158/97.831 Loss=19.673 9.051 0.693 1.963 7.965/19.189
+[08/12 00:36:09] vclr INFO: Train: [  8]/[  20/  25] BT=168.222/121.591 Loss=19.164 9.106 0.693 1.347 8.018/19.193
+[08/12 00:36:31] vclr INFO: epoch 8, total time 1618.19, loss=19.208901748657226
+[08/12 00:36:31] vclr INFO: ==> Saving...
+[08/12 00:37:42] vclr INFO: Train: [  9]/[   0/  25] BT=68.117/68.117 Loss=19.488 9.132 0.693 1.619 8.043/19.488
+[08/12 00:38:31] vclr INFO: Train: [  9]/[  10/  25] BT=117.724/92.481 Loss=19.455 9.182 0.693 1.487 8.092/19.444
+[08/12 00:39:21] vclr INFO: Train: [  9]/[  20/  25] BT=167.829/117.423 Loss=19.351 9.230 0.693 1.289 8.139/19.478
+[08/12 00:39:49] vclr INFO: epoch 9, total time 1816.66, loss=19.49467399597168
+[08/12 00:39:49] vclr INFO: ==> Saving...
+[08/12 00:41:35] vclr INFO: Train: [ 10]/[   0/  25] BT=101.779/101.779 Loss=19.780 9.253 0.693 1.672 8.161/19.780
+[08/12 00:42:26] vclr INFO: Train: [ 10]/[  10/  25] BT=153.241/127.481 Loss=19.969 9.298 0.693 1.773 8.205/19.672
+[08/12 00:43:17] vclr INFO: Train: [ 10]/[  20/  25] BT=204.612/153.404 Loss=19.827 9.341 0.693 1.547 8.246/19.741
+[08/12 00:44:02] vclr INFO: epoch 10, total time 2069.91, loss=19.78057731628418
+[08/12 00:44:02] vclr INFO: ==> Saving...
+[08/12 00:45:35] vclr INFO: Train: [ 11]/[   0/  25] BT=81.777/81.777 Loss=20.568 9.362 0.693 2.247 8.266/20.568
+[08/12 00:46:28] vclr INFO: Train: [ 11]/[  10/  25] BT=135.017/108.755 Loss=19.888 9.402 0.693 1.488 8.305/20.141
+[08/12 00:47:18] vclr INFO: Train: [ 11]/[  20/  25] BT=185.040/134.499 Loss=19.793 9.440 0.693 1.318 8.342/20.099
+[08/12 00:47:47] vclr INFO: epoch 11, total time 2294.18, loss=20.11145477294922
+[08/12 00:47:47] vclr INFO: ==> Saving...
+[08/12 00:48:56] vclr INFO: Train: [ 12]/[   0/  25] BT=66.133/66.133 Loss=19.791 9.459 0.693 1.279 8.360/19.791
+[08/12 00:49:48] vclr INFO: Train: [ 12]/[  10/  25] BT=117.432/91.600 Loss=20.461 9.496 0.693 1.878 8.395/20.463
+[08/12 00:50:38] vclr INFO: Train: [ 12]/[  20/  25] BT=168.125/117.194 Loss=20.184 9.531 0.693 1.533 8.428/20.334
+[08/12 00:51:07] vclr INFO: epoch 12, total time 2494.21, loss=20.348684158325195
+[08/12 00:51:07] vclr INFO: ==> Saving...
+[08/12 00:52:25] vclr INFO: Train: [ 13]/[   0/  25] BT=75.599/75.599 Loss=20.399 9.548 0.693 1.714 8.444/20.399
+[08/12 00:53:14] vclr INFO: Train: [ 13]/[  10/  25] BT=124.180/99.929 Loss=20.235 9.581 0.693 1.486 8.475/20.400
+[08/12 00:54:03] vclr INFO: Train: [ 13]/[  20/  25] BT=173.318/124.288 Loss=20.192 9.613 0.693 1.380 8.505/20.366
+[08/12 00:54:28] vclr INFO: epoch 13, total time 2695.97, loss=20.37236961364746
+[08/12 00:54:28] vclr INFO: ==> Saving...
+[08/12 00:55:22] vclr INFO: Train: [ 14]/[   0/  25] BT=49.384/49.384 Loss=20.125 9.629 0.693 1.283 8.520/20.125
+[08/12 00:56:25] vclr INFO: Train: [ 14]/[  10/  25] BT=112.607/81.203 Loss=20.879 9.660 0.693 1.978 8.548/20.517
+[08/12 00:57:26] vclr INFO: Train: [ 14]/[  20/  25] BT=173.624/112.227 Loss=20.770 9.689 0.693 1.813 8.575/20.522
+[08/12 00:57:52] vclr INFO: epoch 14, total time 2899.23, loss=20.49591911315918
+[08/12 00:57:52] vclr INFO: ==> Saving...
+[08/12 00:58:48] vclr INFO: Train: [ 15]/[   0/  25] BT=53.589/53.589 Loss=20.469 9.704 0.693 1.484 8.588/20.469
+[08/12 00:59:51] vclr INFO: Train: [ 15]/[  10/  25] BT=116.313/85.233 Loss=20.351 9.732 0.693 1.312 8.613/20.518
+[08/12 01:00:51] vclr INFO: Train: [ 15]/[  20/  25] BT=176.377/116.020 Loss=20.747 9.760 0.693 1.657 8.637/20.606
+[08/12 01:01:24] vclr INFO: epoch 15, total time 3111.58, loss=20.606596069335936
+[08/12 01:01:24] vclr INFO: ==> Saving...
+[08/12 01:02:20] vclr INFO: Train: [ 16]/[   0/  25] BT=51.994/51.994 Loss=21.017 9.773 0.693 1.903 8.648/21.017
+[08/12 01:03:27] vclr INFO: Train: [ 16]/[  10/  25] BT=118.959/86.054 Loss=20.745 9.800 0.693 1.581 8.671/20.743
+[08/12 01:04:35] vclr INFO: Train: [ 16]/[  20/  25] BT=187.718/119.752 Loss=20.751 9.826 0.693 1.540 8.692/20.794
+[08/12 01:05:09] vclr INFO: epoch 16, total time 3336.96, loss=20.82493751525879
+[08/12 01:05:09] vclr INFO: ==> Saving...
+[08/12 01:06:05] vclr INFO: Train: [ 17]/[   0/  25] BT=53.094/53.094 Loss=20.750 9.838 0.693 1.516 8.703/20.750
+[08/12 01:07:14] vclr INFO: Train: [ 17]/[  10/  25] BT=121.349/87.071 Loss=20.945 9.863 0.693 1.667 8.722/20.861
+[08/12 01:08:20] vclr INFO: Train: [ 17]/[  20/  25] BT=187.785/120.781 Loss=20.848 9.887 0.693 1.528 8.740/20.808
+[08/12 01:08:53] vclr INFO: epoch 17, total time 3560.59, loss=20.805453567504884
+[08/12 01:08:53] vclr INFO: ==> Saving...
+[08/12 01:09:49] vclr INFO: Train: [ 18]/[   0/  25] BT=52.672/52.672 Loss=20.734 9.899 0.693 1.394 8.748/20.734
+[08/12 01:11:37] vclr INFO: Train: [ 18]/[  10/  25] BT=160.162/103.545 Loss=21.348 9.922 0.693 1.969 8.765/20.860
+[08/12 01:13:05] vclr INFO: Train: [ 18]/[  20/  25] BT=248.398/153.261 Loss=20.934 9.944 0.693 1.520 8.777/20.913
+[08/12 01:13:54] vclr INFO: epoch 18, total time 3861.47, loss=20.939934844970704
+[08/12 01:13:54] vclr INFO: ==> Saving...
+[08/12 01:14:57] vclr INFO: Train: [ 19]/[   0/  25] BT=60.064/60.064 Loss=20.958 9.955 0.693 1.526 8.784/20.958
+[08/12 01:16:24] vclr INFO: Train: [ 19]/[  10/  25] BT=146.892/102.163 Loss=21.262 9.977 0.693 1.798 8.794/21.035
+[08/12 01:17:48] vclr INFO: Train: [ 19]/[  20/  25] BT=231.628/146.961 Loss=20.684 9.998 0.693 1.191 8.802/21.054
+[08/12 01:18:31] vclr INFO: epoch 19, total time 4138.69, loss=21.055507736206053
+[08/12 01:18:31] vclr INFO: ==> Saving...
+[08/12 01:19:34] vclr INFO: Train: [ 20]/[   0/  25] BT=59.497/59.497 Loss=21.028 10.008 0.693 1.522 8.805/21.028
+[08/12 01:21:40] vclr INFO: Train: [ 20]/[  10/  25] BT=186.049/122.559 Loss=21.111 10.028 0.693 1.583 8.806/21.038
+[08/12 01:23:42] vclr INFO: Train: [ 20]/[  20/  25] BT=307.722/183.932 Loss=21.328 10.047 0.693 1.783 8.805/21.036
+[08/12 01:24:35] vclr INFO: epoch 20, total time 4502.27, loss=21.07980895996094
+[08/12 01:24:35] vclr INFO: ==> Saving...
+[08/12 01:26:15] vclr INFO: Train: [ 21]/[   0/  25] BT=91.143/91.143 Loss=21.057 10.057 0.693 1.503 8.803/21.057
+[08/12 01:28:21] vclr INFO: Train: [ 21]/[  10/  25] BT=217.139/154.082 Loss=21.029 10.076 0.693 1.464 8.796/21.309
+[08/12 01:30:29] vclr INFO: Train: [ 21]/[  20/  25] BT=344.644/217.465 Loss=21.845 10.094 0.693 2.278 8.780/21.447
+[08/12 01:31:20] vclr INFO: epoch 21, total time 4908.03, loss=21.448154678344725
+[08/12 01:31:20] vclr INFO: ==> Saving...
+[08/12 01:32:17] vclr INFO: Train: [ 22]/[   0/  25] BT=53.895/53.895 Loss=21.401 10.102 0.693 1.834 8.772/21.401
+[08/12 01:34:16] vclr INFO: Train: [ 22]/[  10/  25] BT=172.199/112.899 Loss=20.929 10.120 0.693 1.360 8.755/21.334
+[08/12 01:36:09] vclr INFO: Train: [ 22]/[  20/  25] BT=285.727/171.893 Loss=21.240 10.136 0.693 1.693 8.718/21.249
+[08/12 01:36:57] vclr INFO: epoch 22, total time 5244.41, loss=21.206867599487303
+[08/12 01:36:57] vclr INFO: ==> Saving...
+[08/12 01:37:52] vclr INFO: Train: [ 23]/[   0/  25] BT=52.621/52.621 Loss=21.061 10.144 0.693 1.525 8.700/21.061
+[08/12 01:39:44] vclr INFO: Train: [ 23]/[  10/  25] BT=164.626/108.889 Loss=20.814 10.160 0.694 1.293 8.666/21.004
+[08/12 01:41:36] vclr INFO: Train: [ 23]/[  20/  25] BT=276.940/164.983 Loss=20.951 10.175 0.693 1.452 8.631/21.050
+[08/12 01:42:24] vclr INFO: epoch 23, total time 5571.87, loss=21.04484359741211
+[08/12 01:42:24] vclr INFO: ==> Saving...
+[08/12 01:43:19] vclr INFO: Train: [ 24]/[   0/  25] BT=52.260/52.260 Loss=21.198 10.183 0.693 1.705 8.617/21.198
+[08/12 01:45:10] vclr INFO: Train: [ 24]/[  10/  25] BT=163.331/108.983 Loss=20.928 10.197 0.693 1.451 8.587/21.008
+[08/12 01:47:03] vclr INFO: Train: [ 24]/[  20/  25] BT=276.409/163.983 Loss=21.203 10.210 0.692 1.731 8.569/21.036
+[08/12 01:47:54] vclr INFO: epoch 24, total time 5901.16, loss=21.028251571655275
+[08/12 01:47:54] vclr INFO: ==> Saving...
+[08/12 01:48:56] vclr INFO: Train: [ 25]/[   0/  25] BT=56.088/56.088 Loss=21.085 10.216 0.693 1.612 8.564/21.085
+[08/12 01:50:44] vclr INFO: Train: [ 25]/[  10/  25] BT=163.782/112.084 Loss=20.862 10.230 0.694 1.395 8.544/21.022
+[08/12 01:52:13] vclr INFO: Train: [ 25]/[  20/  25] BT=252.934/160.157 Loss=21.005 10.241 0.693 1.538 8.534/20.993
+[08/12 01:52:52] vclr INFO: epoch 25, total time 6199.46, loss=20.981679306030273
+[08/12 01:52:52] vclr INFO: ==> Saving...
+[08/12 01:53:57] vclr INFO: Train: [ 26]/[   0/  25] BT=62.815/62.815 Loss=20.628 10.246 0.693 1.170 8.519/20.628
+[08/12 01:55:23] vclr INFO: Train: [ 26]/[  10/  25] BT=148.810/102.714 Loss=21.313 10.256 0.693 1.860 8.504/21.054
+[08/12 01:56:45] vclr INFO: Train: [ 26]/[  20/  25] BT=231.095/146.470 Loss=20.799 10.264 0.693 1.352 8.489/21.115
+[08/12 01:57:21] vclr INFO: epoch 26, total time 6468.61, loss=21.114616928100585
+[08/12 01:57:21] vclr INFO: ==> Saving...
+[08/12 01:58:30] vclr INFO: Train: [ 27]/[   0/  25] BT=66.485/66.485 Loss=21.076 10.268 0.693 1.631 8.483/21.076
+[08/12 02:00:00] vclr INFO: Train: [ 27]/[  10/  25] BT=155.569/111.700 Loss=21.290 10.274 0.691 1.856 8.469/21.117
+[08/12 02:01:33] vclr INFO: Train: [ 27]/[  20/  25] BT=249.460/157.237 Loss=20.880 10.278 0.692 1.457 8.453/21.033
+[08/12 02:02:11] vclr INFO: epoch 27, total time 6758.90, loss=21.00715759277344
+[08/12 02:02:11] vclr INFO: ==> Saving...
+[08/12 02:03:08] vclr INFO: Train: [ 28]/[   0/  25] BT=54.760/54.760 Loss=20.870 10.280 0.693 1.453 8.445/20.870
+[08/12 02:04:30] vclr INFO: Train: [ 28]/[  10/  25] BT=136.240/95.749 Loss=20.756 10.280 0.694 1.347 8.436/20.924
+[08/12 02:05:45] vclr INFO: Train: [ 28]/[  20/  25] BT=212.043/134.960 Loss=20.990 10.278 0.694 1.592 8.425/20.897
+[08/12 02:06:23] vclr INFO: epoch 28, total time 7010.17, loss=20.899440460205078
+[08/12 02:06:23] vclr INFO: ==> Saving...
+[08/12 02:07:17] vclr INFO: Train: [ 29]/[   0/  25] BT=50.444/50.444 Loss=20.779 10.276 0.691 1.398 8.414/20.779
+[08/12 02:08:37] vclr INFO: Train: [ 29]/[  10/  25] BT=130.316/90.377 Loss=21.201 10.269 0.694 1.838 8.401/20.917
+[08/12 02:09:57] vclr INFO: Train: [ 29]/[  20/  25] BT=210.339/129.904 Loss=21.664 10.260 0.693 2.324 8.388/20.960
+[08/12 02:10:32] vclr INFO: epoch 29, total time 7259.12, loss=20.96537567138672
+[08/12 02:10:32] vclr INFO: ==> Saving...
+[08/12 02:11:25] vclr INFO: Train: [ 30]/[   0/  25] BT=51.029/51.029 Loss=20.933 10.252 0.691 1.613 8.377/20.933
+[08/12 02:12:49] vclr INFO: Train: [ 30]/[  10/  25] BT=135.026/91.824 Loss=20.732 10.235 0.691 1.437 8.368/20.902
+[08/12 02:14:17] vclr INFO: Train: [ 30]/[  20/  25] BT=222.606/135.081 Loss=20.960 10.214 0.694 1.703 8.350/20.858
+[08/12 02:14:53] vclr INFO: epoch 30, total time 7521.03, loss=20.857878494262696
+[08/12 02:14:53] vclr INFO: ==> Saving...
+[08/12 02:15:52] vclr INFO: Train: [ 31]/[   0/  25] BT=50.171/50.171 Loss=20.654 10.200 0.692 1.420 8.343/20.654
+[08/12 02:17:08] vclr INFO: Train: [ 31]/[  10/  25] BT=126.235/88.059 Loss=20.885 10.172 0.695 1.680 8.338/20.914
+[08/12 02:18:23] vclr INFO: Train: [ 31]/[  20/  25] BT=201.495/125.744 Loss=20.663 10.138 0.691 1.519 8.315/20.878
+[08/12 02:18:57] vclr INFO: epoch 31, total time 7764.69, loss=20.84427146911621
+[08/12 02:18:57] vclr INFO: ==> Saving...
+[08/12 02:19:51] vclr INFO: Train: [ 32]/[   0/  25] BT=50.221/50.221 Loss=20.586 10.123 0.694 1.448 8.321/20.586
+[08/12 02:21:08] vclr INFO: Train: [ 32]/[  10/  25] BT=127.973/89.145 Loss=20.969 10.089 0.694 1.898 8.288/20.638
+[08/12 02:22:27] vclr INFO: Train: [ 32]/[  20/  25] BT=206.251/128.202 Loss=20.653 10.062 0.690 1.625 8.275/20.617
+[08/12 02:23:02] vclr INFO: epoch 32, total time 8009.87, loss=20.596575622558593
+[08/12 02:23:02] vclr INFO: ==> Saving...
+[08/12 02:23:56] vclr INFO: Train: [ 33]/[   0/  25] BT=50.775/50.775 Loss=20.847 10.046 0.691 1.832 8.278/20.847
+[08/12 02:25:19] vclr INFO: Train: [ 33]/[  10/  25] BT=134.464/92.819 Loss=20.786 10.025 0.691 1.804 8.266/20.610
+[08/12 02:26:43] vclr INFO: Train: [ 33]/[  20/  25] BT=217.816/134.433 Loss=20.425 10.000 0.695 1.489 8.241/20.627
+[08/12 02:27:21] vclr INFO: epoch 33, total time 8268.16, loss=20.622149810791015
+[08/12 02:27:21] vclr INFO: ==> Saving...
+[08/12 02:28:15] vclr INFO: Train: [ 34]/[   0/  25] BT=50.870/50.870 Loss=20.382 9.992 0.694 1.450 8.247/20.382
+[08/12 02:29:33] vclr INFO: Train: [ 34]/[  10/  25] BT=129.234/90.322 Loss=20.991 9.973 0.696 2.092 8.229/20.643
+[08/12 02:30:47] vclr INFO: Train: [ 34]/[  20/  25] BT=203.260/128.341 Loss=20.247 9.954 0.693 1.381 8.219/20.705
+[08/12 02:31:26] vclr INFO: epoch 34, total time 8513.40, loss=20.664557571411134
+[08/12 02:31:26] vclr INFO: ==> Saving...
+[08/12 02:33:00] vclr INFO: Train: [ 35]/[   0/  25] BT=90.875/90.875 Loss=21.032 9.946 0.692 2.192 8.201/21.032
+[08/12 02:34:31] vclr INFO: Train: [ 35]/[  10/  25] BT=181.585/136.392 Loss=20.380 9.931 0.693 1.559 8.197/20.475
+[08/12 02:35:49] vclr INFO: Train: [ 35]/[  20/  25] BT=259.950/178.536 Loss=20.268 9.903 0.693 1.503 8.169/20.450
+[08/12 02:36:32] vclr INFO: epoch 35, total time 8819.83, loss=20.43344207763672
+[08/12 02:36:32] vclr INFO: ==> Saving...
+[08/12 02:37:56] vclr INFO: Train: [ 36]/[   0/  25] BT=80.247/80.247 Loss=20.113 9.892 0.695 1.365 8.161/20.113
+[08/12 02:39:11] vclr INFO: Train: [ 36]/[  10/  25] BT=154.402/116.966 Loss=20.325 9.868 0.693 1.608 8.155/20.318
+[08/12 02:40:23] vclr INFO: Train: [ 36]/[  20/  25] BT=226.961/153.947 Loss=20.296 9.841 0.694 1.611 8.149/20.308
+[08/12 02:41:04] vclr INFO: epoch 36, total time 9091.90, loss=20.28226219177246
+[08/12 02:41:04] vclr INFO: ==> Saving...
+[08/12 02:42:35] vclr INFO: Train: [ 37]/[   0/  25] BT=86.035/86.035 Loss=19.943 9.833 0.694 1.288 8.128/19.943
+[08/12 02:43:49] vclr INFO: Train: [ 37]/[  10/  25] BT=160.725/124.087 Loss=20.281 9.810 0.694 1.664 8.113/20.104
+[08/12 02:45:05] vclr INFO: Train: [ 37]/[  20/  25] BT=236.113/161.801 Loss=20.084 9.782 0.698 1.502 8.102/20.164
+[08/12 02:45:41] vclr INFO: epoch 37, total time 9368.64, loss=20.199460372924804
+[08/12 02:45:41] vclr INFO: ==> Saving...
+[08/12 02:47:16] vclr INFO: Train: [ 38]/[   0/  25] BT=90.521/90.521 Loss=20.057 9.778 0.693 1.481 8.105/20.057
+[08/12 02:48:30] vclr INFO: Train: [ 38]/[  10/  25] BT=164.208/127.609 Loss=20.248 9.744 0.696 1.717 8.092/20.088
+[08/12 02:49:43] vclr INFO: Train: [ 38]/[  20/  25] BT=237.722/164.255 Loss=20.146 9.724 0.693 1.654 8.075/20.059
+[08/12 02:50:22] vclr INFO: epoch 38, total time 9649.10, loss=20.03865020751953
+[08/12 02:50:22] vclr INFO: ==> Saving...
+[08/12 02:52:03] vclr INFO: Train: [ 39]/[   0/  25] BT=96.994/96.994 Loss=20.136 9.705 0.691 1.675 8.066/20.136
+[08/12 02:53:35] vclr INFO: Train: [ 39]/[  10/  25] BT=189.468/142.467 Loss=20.090 9.685 0.693 1.653 8.058/20.214
+[08/12 02:55:02] vclr INFO: Train: [ 39]/[  20/  25] BT=276.162/188.655 Loss=19.916 9.658 0.695 1.522 8.040/20.105
+[08/12 02:55:42] vclr INFO: epoch 39, total time 9969.91, loss=20.08056999206543
+[08/12 02:55:42] vclr INFO: ==> Saving...
+[08/12 02:57:37] vclr INFO: Train: [ 40]/[   0/  25] BT=110.873/110.873 Loss=19.799 9.642 0.691 1.421 8.045/19.799
+[08/12 02:59:09] vclr INFO: Train: [ 40]/[  10/  25] BT=203.087/154.506 Loss=19.968 9.623 0.692 1.621 8.032/19.917
+[08/12 03:00:37] vclr INFO: Train: [ 40]/[  20/  25] BT=291.048/200.689 Loss=19.858 9.603 0.696 1.535 8.024/19.858
+[08/12 03:01:21] vclr INFO: epoch 40, total time 10308.72, loss=19.846597442626955
+[08/12 03:01:21] vclr INFO: ==> Saving...
+[08/12 03:03:11] vclr INFO: Train: [ 41]/[   0/  25] BT=98.027/98.027 Loss=19.749 9.580 0.696 1.456 8.017/19.749
+[08/12 03:04:44] vclr INFO: Train: [ 41]/[  10/  25] BT=191.545/146.913 Loss=19.745 9.565 0.691 1.490 7.999/19.719
+[08/12 03:06:07] vclr INFO: Train: [ 41]/[  20/  25] BT=274.614/190.113 Loss=19.822 9.523 0.697 1.634 7.969/19.755
+[08/12 03:06:51] vclr INFO: epoch 41, total time 10638.44, loss=19.771531524658204
+[08/12 03:06:51] vclr INFO: ==> Saving...
+[08/12 03:07:49] vclr INFO: Train: [ 42]/[   0/  25] BT=54.106/54.106 Loss=19.597 9.509 0.695 1.407 7.986/19.597
+[08/12 03:09:06] vclr INFO: Train: [ 42]/[  10/  25] BT=131.003/92.859 Loss=19.665 9.484 0.693 1.523 7.966/19.881
+[08/12 03:10:21] vclr INFO: Train: [ 42]/[  20/  25] BT=205.864/130.649 Loss=19.537 9.464 0.691 1.401 7.980/19.845
+[08/12 03:10:59] vclr INFO: epoch 42, total time 10886.74, loss=19.851590423583986
+[08/12 03:10:59] vclr INFO: ==> Saving...
+[08/12 03:12:17] vclr INFO: Train: [ 43]/[   0/  25] BT=73.654/73.654 Loss=19.395 9.450 0.690 1.293 7.962/19.395
+[08/12 03:13:33] vclr INFO: Train: [ 43]/[  10/  25] BT=149.317/111.677 Loss=19.466 9.418 0.692 1.415 7.941/19.625
+[08/12 03:14:47] vclr INFO: Train: [ 43]/[  20/  25] BT=223.869/149.013 Loss=19.551 9.390 0.693 1.542 7.925/19.630
+[08/12 03:15:25] vclr INFO: epoch 43, total time 11152.12, loss=19.626648788452147
+[08/12 03:15:25] vclr INFO: ==> Saving...
+[08/12 03:16:21] vclr INFO: Train: [ 44]/[   0/  25] BT=51.564/51.564 Loss=19.460 9.378 0.697 1.454 7.931/19.460
+[08/12 03:17:39] vclr INFO: Train: [ 44]/[  10/  25] BT=129.537/90.471 Loss=19.579 9.354 0.692 1.636 7.897/19.583
+[08/12 03:18:54] vclr INFO: Train: [ 44]/[  20/  25] BT=204.776/128.928 Loss=19.446 9.319 0.693 1.535 7.899/19.540
+[08/12 03:19:37] vclr INFO: epoch 44, total time 11404.82, loss=19.54851257324219
+[08/12 03:19:37] vclr INFO: ==> Saving...
+[08/12 03:21:19] vclr INFO: Train: [ 45]/[   0/  25] BT=97.348/97.348 Loss=19.773 9.321 0.689 1.862 7.902/19.773
+[08/12 03:22:34] vclr INFO: Train: [ 45]/[  10/  25] BT=172.700/135.873 Loss=19.213 9.285 0.689 1.356 7.884/19.549
+[08/12 03:23:51] vclr INFO: Train: [ 45]/[  20/  25] BT=249.447/173.705 Loss=19.401 9.255 0.697 1.577 7.872/19.520
+[08/12 03:24:26] vclr INFO: epoch 45, total time 11693.16, loss=19.483537216186523
+[08/12 03:24:26] vclr INFO: ==> Saving...
+[08/12 03:25:48] vclr INFO: Train: [ 46]/[   0/  25] BT=78.338/78.338 Loss=19.381 9.244 0.687 1.586 7.864/19.381
+[08/12 03:27:20] vclr INFO: Train: [ 46]/[  10/  25] BT=170.101/122.509 Loss=19.796 9.228 0.689 2.025 7.853/19.473
+[08/12 03:29:00] vclr INFO: Train: [ 46]/[  20/  25] BT=269.553/170.799 Loss=19.711 9.182 0.701 1.965 7.863/19.415
+[08/12 03:29:46] vclr INFO: epoch 46, total time 12013.41, loss=19.426831588745117
+[08/12 03:29:46] vclr INFO: ==> Saving...
+[08/12 03:31:16] vclr INFO: Train: [ 47]/[   0/  25] BT=86.713/86.713 Loss=19.494 9.188 0.688 1.775 7.843/19.494
+[08/12 03:32:33] vclr INFO: Train: [ 47]/[  10/  25] BT=163.998/125.808 Loss=19.205 9.173 0.694 1.503 7.834/19.322
+[08/12 03:33:53] vclr INFO: Train: [ 47]/[  20/  25] BT=243.659/164.904 Loss=19.462 9.158 0.700 1.764 7.840/19.294
+[08/12 03:34:30] vclr INFO: epoch 47, total time 12297.71, loss=19.286739349365234
+[08/12 03:34:30] vclr INFO: ==> Saving...
+[08/12 03:35:33] vclr INFO: Train: [ 48]/[   0/  25] BT=58.610/58.610 Loss=19.055 9.126 0.696 1.394 7.839/19.055
+[08/12 03:36:54] vclr INFO: Train: [ 48]/[  10/  25] BT=139.997/99.973 Loss=19.908 9.117 0.700 2.250 7.841/19.162
+[08/12 03:38:18] vclr INFO: Train: [ 48]/[  20/  25] BT=223.930/141.136 Loss=19.429 9.090 0.690 1.807 7.842/19.191
+[08/12 03:38:51] vclr INFO: epoch 48, total time 12558.71, loss=19.166033782958984
+[08/12 03:38:51] vclr INFO: ==> Saving...
+[08/12 03:39:43] vclr INFO: Train: [ 49]/[   0/  25] BT=49.853/49.853 Loss=18.995 9.072 0.690 1.432 7.801/18.995
+[08/12 03:41:06] vclr INFO: Train: [ 49]/[  10/  25] BT=132.385/91.774 Loss=19.126 9.073 0.688 1.557 7.808/19.014
+[08/12 03:42:24] vclr INFO: Train: [ 49]/[  20/  25] BT=210.414/131.592 Loss=19.216 9.043 0.692 1.674 7.806/19.057
+[08/12 03:42:56] vclr INFO: epoch 49, total time 12803.22, loss=19.0539461517334
+[08/12 03:42:56] vclr INFO: ==> Saving...
+[08/12 03:43:46] vclr INFO: Train: [ 50]/[   0/  25] BT=49.020/49.020 Loss=19.181 9.032 0.693 1.661 7.795/19.181
+[08/12 03:45:01] vclr INFO: Train: [ 50]/[  10/  25] BT=123.254/85.297 Loss=19.484 9.011 0.691 1.980 7.802/19.061
+[08/12 03:46:17] vclr INFO: Train: [ 50]/[  20/  25] BT=199.104/123.304 Loss=19.024 8.980 0.691 1.558 7.795/19.030
+[08/12 03:46:52] vclr INFO: epoch 50, total time 13040.05, loss=19.027201232910155
+[08/12 03:46:52] vclr INFO: ==> Saving...
+[08/12 03:48:13] vclr INFO: Train: [ 51]/[   0/  25] BT=71.153/71.153 Loss=19.087 8.992 0.691 1.609 7.796/19.087
+[08/12 03:49:32] vclr INFO: Train: [ 51]/[  10/  25] BT=151.068/111.301 Loss=18.853 8.961 0.699 1.421 7.772/19.040
+[08/12 03:50:53] vclr INFO: Train: [ 51]/[  20/  25] BT=231.494/151.329 Loss=18.882 8.947 0.690 1.471 7.775/18.972
+[08/12 03:51:33] vclr INFO: epoch 51, total time 13320.68, loss=18.99461112976074
+[08/12 03:51:33] vclr INFO: ==> Saving...
+[08/12 03:52:30] vclr INFO: Train: [ 52]/[   0/  25] BT=54.563/54.563 Loss=18.979 8.945 0.699 1.569 7.766/18.979
+[08/12 03:53:46] vclr INFO: Train: [ 52]/[  10/  25] BT=130.323/91.970 Loss=19.120 8.918 0.682 1.753 7.766/19.123
+[08/12 03:55:00] vclr INFO: Train: [ 52]/[  20/  25] BT=204.060/129.447 Loss=19.356 8.919 0.698 1.964 7.776/19.136
+[08/12 03:55:33] vclr INFO: epoch 52, total time 13561.07, loss=19.134232635498048
+[08/12 03:55:33] vclr INFO: ==> Saving...
+[08/12 03:56:25] vclr INFO: Train: [ 53]/[   0/  25] BT=48.640/48.640 Loss=18.978 8.889 0.699 1.623 7.767/18.978
+[08/12 03:57:30] vclr INFO: Train: [ 53]/[  10/  25] BT=114.334/81.828 Loss=19.491 8.885 0.698 2.168 7.740/19.303
+[08/12 03:58:37] vclr INFO: Train: [ 53]/[  20/  25] BT=180.874/114.561 Loss=18.683 8.848 0.696 1.399 7.740/19.202
+[08/12 03:59:08] vclr INFO: epoch 53, total time 13775.16, loss=19.174849548339843
+[08/12 03:59:08] vclr INFO: ==> Saving...
+[08/12 03:59:58] vclr INFO: Train: [ 54]/[   0/  25] BT=47.713/47.713 Loss=19.121 8.864 0.699 1.810 7.748/19.121
+[08/12 04:01:01] vclr INFO: Train: [ 54]/[  10/  25] BT=110.774/79.093 Loss=18.813 8.850 0.694 1.529 7.740/18.877
+[08/12 04:02:04] vclr INFO: Train: [ 54]/[  20/  25] BT=173.815/110.698 Loss=18.963 8.849 0.692 1.662 7.760/18.933
+[08/12 04:02:31] vclr INFO: epoch 54, total time 13978.98, loss=18.933837890625
+[08/12 04:02:31] vclr INFO: ==> Saving...
+[08/12 04:03:22] vclr INFO: Train: [ 55]/[   0/  25] BT=47.917/47.917 Loss=19.130 8.820 0.693 1.884 7.732/19.130
+[08/12 04:04:27] vclr INFO: Train: [ 55]/[  10/  25] BT=112.223/79.769 Loss=18.521 8.834 0.693 1.264 7.730/18.835
+[08/12 04:05:31] vclr INFO: Train: [ 55]/[  20/  25] BT=176.851/112.094 Loss=18.711 8.794 0.692 1.496 7.730/18.756
+[08/12 04:06:02] vclr INFO: epoch 55, total time 14189.48, loss=18.74275909423828
+[08/12 04:06:02] vclr INFO: ==> Saving...
+[08/12 04:06:57] vclr INFO: Train: [ 56]/[   0/  25] BT=52.031/52.031 Loss=18.697 8.796 0.700 1.481 7.720/18.697
+[08/12 04:08:07] vclr INFO: Train: [ 56]/[  10/  25] BT=121.729/87.067 Loss=18.478 8.765 0.700 1.285 7.729/18.745
+[08/12 04:09:15] vclr INFO: Train: [ 56]/[  20/  25] BT=189.747/121.406 Loss=18.522 8.751 0.697 1.355 7.719/18.790
+[08/12 04:09:47] vclr INFO: epoch 56, total time 14414.53, loss=18.78109489440918
+[08/12 04:09:47] vclr INFO: ==> Saving...
+[08/12 04:10:39] vclr INFO: Train: [ 57]/[   0/  25] BT=48.691/48.691 Loss=18.790 8.805 0.683 1.584 7.717/18.790
+[08/12 04:11:46] vclr INFO: Train: [ 57]/[  10/  25] BT=115.739/82.534 Loss=18.866 8.750 0.692 1.707 7.718/18.762
+[08/12 04:12:52] vclr INFO: Train: [ 57]/[  20/  25] BT=181.894/115.713 Loss=18.523 8.756 0.689 1.384 7.694/18.780
+[08/12 04:13:23] vclr INFO: epoch 57, total time 14630.17, loss=18.761919708251952
+[08/12 04:13:23] vclr INFO: ==> Saving...
+[08/12 04:14:13] vclr INFO: Train: [ 58]/[   0/  25] BT=48.215/48.215 Loss=18.552 8.748 0.691 1.380 7.734/18.552
+[08/12 04:15:13] vclr INFO: Train: [ 58]/[  10/  25] BT=107.927/78.299 Loss=18.605 8.724 0.697 1.498 7.687/18.690
+[08/12 04:16:12] vclr INFO: Train: [ 58]/[  20/  25] BT=167.721/108.057 Loss=18.493 8.697 0.695 1.401 7.699/18.649
+[08/12 04:16:42] vclr INFO: epoch 58, total time 14829.38, loss=18.63716812133789
+[08/12 04:16:42] vclr INFO: ==> Saving...
+[08/12 04:17:33] vclr INFO: Train: [ 59]/[   0/  25] BT=47.558/47.558 Loss=18.514 8.705 0.691 1.419 7.698/18.514
+[08/12 04:18:28] vclr INFO: Train: [ 59]/[  10/  25] BT=103.315/75.616 Loss=18.367 8.692 0.694 1.285 7.697/18.517
+[08/12 04:19:25] vclr INFO: Train: [ 59]/[  20/  25] BT=159.913/103.670 Loss=18.697 8.696 0.694 1.619 7.688/18.602
+[08/12 04:19:52] vclr INFO: epoch 59, total time 15019.28, loss=18.605221786499023
+[08/12 04:19:52] vclr INFO: ==> Saving...
+[08/12 04:20:44] vclr INFO: Train: [ 60]/[   0/  25] BT=49.543/49.543 Loss=18.579 8.699 0.689 1.504 7.687/18.579
+[08/12 04:21:38] vclr INFO: Train: [ 60]/[  10/  25] BT=103.796/76.509 Loss=18.432 8.697 0.692 1.337 7.704/18.695
+[08/12 04:22:35] vclr INFO: Train: [ 60]/[  20/  25] BT=160.386/104.169 Loss=18.418 8.691 0.691 1.355 7.681/18.635
+[08/12 04:23:01] vclr INFO: epoch 60, total time 15208.28, loss=18.626629104614256
+[08/12 04:23:01] vclr INFO: ==> Saving...
+[08/12 04:23:59] vclr INFO: Train: [ 61]/[   0/  25] BT=48.064/48.064 Loss=18.766 8.669 0.698 1.715 7.685/18.766
+[08/12 04:24:55] vclr INFO: Train: [ 61]/[  10/  25] BT=104.032/76.014 Loss=18.554 8.655 0.695 1.531 7.673/18.693
+[08/12 04:25:51] vclr INFO: Train: [ 61]/[  20/  25] BT=159.939/103.776 Loss=19.054 8.691 0.695 1.975 7.692/18.700
+[08/12 04:26:21] vclr INFO: epoch 61, total time 15409.01, loss=18.67154624938965
+[08/12 04:26:21] vclr INFO: ==> Saving...
+[08/12 04:27:14] vclr INFO: Train: [ 62]/[   0/  25] BT=48.948/48.948 Loss=18.440 8.651 0.690 1.410 7.690/18.440
+[08/12 04:28:18] vclr INFO: Train: [ 62]/[  10/  25] BT=112.919/81.542 Loss=18.451 8.659 0.690 1.416 7.685/18.457
+[08/12 04:29:21] vclr INFO: Train: [ 62]/[  20/  25] BT=175.842/112.979 Loss=18.388 8.622 0.691 1.402 7.673/18.444
+[08/12 04:29:50] vclr INFO: epoch 62, total time 15618.01, loss=18.438344650268554
+[08/12 04:29:50] vclr INFO: ==> Saving...
+[08/12 04:30:43] vclr INFO: Train: [ 63]/[   0/  25] BT=50.329/50.329 Loss=18.472 8.610 0.699 1.493 7.670/18.472
+[08/12 04:31:57] vclr INFO: Train: [ 63]/[  10/  25] BT=123.748/87.173 Loss=18.390 8.607 0.688 1.443 7.652/18.517
+[08/12 04:33:08] vclr INFO: Train: [ 63]/[  20/  25] BT=194.693/123.242 Loss=18.446 8.616 0.697 1.474 7.659/18.483
+[08/12 04:33:48] vclr INFO: epoch 63, total time 15855.33, loss=18.468186798095704
+[08/12 04:33:48] vclr INFO: ==> Saving...
+[08/12 04:35:45] vclr INFO: Train: [ 64]/[   0/  25] BT=112.255/112.255 Loss=18.765 8.618 0.697 1.805 7.646/18.765
+[08/12 04:37:07] vclr INFO: Train: [ 64]/[  10/  25] BT=194.149/154.237 Loss=19.395 8.628 0.692 2.425 7.651/18.712
+[08/12 04:38:28] vclr INFO: Train: [ 64]/[  20/  25] BT=275.277/194.593 Loss=18.553 8.567 0.693 1.645 7.648/18.763
+[08/12 04:39:32] vclr INFO: epoch 64, total time 16199.99, loss=18.748272094726563
+[08/12 04:39:32] vclr INFO: ==> Saving...
+[08/12 04:42:20] vclr INFO: Train: [ 65]/[   0/  25] BT=160.932/160.932 Loss=18.566 8.594 0.690 1.618 7.664/18.566
+[08/12 04:43:44] vclr INFO: Train: [ 65]/[  10/  25] BT=245.426/203.053 Loss=18.435 8.573 0.699 1.524 7.640/18.633
+[08/12 04:45:09] vclr INFO: Train: [ 65]/[  20/  25] BT=330.339/245.623 Loss=18.277 8.567 0.691 1.364 7.654/18.580
+[08/12 04:45:54] vclr INFO: epoch 65, total time 16581.92, loss=18.559305267333983
+[08/12 04:45:54] vclr INFO: ==> Saving...
+[08/12 04:47:56] vclr INFO: Train: [ 66]/[   0/  25] BT=104.268/104.268 Loss=18.420 8.587 0.690 1.510 7.632/18.420
+[08/12 04:50:09] vclr INFO: Train: [ 66]/[  10/  25] BT=236.858/171.215 Loss=18.371 8.561 0.694 1.476 7.639/18.417
+[08/12 04:52:20] vclr INFO: Train: [ 66]/[  20/  25] BT=368.077/236.253 Loss=18.050 8.572 0.696 1.136 7.646/18.419
+[08/12 04:53:31] vclr INFO: epoch 66, total time 17038.99, loss=18.440299072265624
+[08/12 04:53:31] vclr INFO: ==> Saving...
+[08/12 04:55:42] vclr INFO: Train: [ 67]/[   0/  25] BT=123.018/123.018 Loss=18.365 8.543 0.691 1.482 7.649/18.365
+[08/12 04:58:09] vclr INFO: Train: [ 67]/[  10/  25] BT=269.730/198.964 Loss=18.790 8.543 0.691 1.901 7.654/18.506
+[08/12 05:00:22] vclr INFO: Train: [ 67]/[  20/  25] BT=403.044/267.624 Loss=18.063 8.565 0.691 1.169 7.637/18.505
+[08/12 05:01:31] vclr INFO: epoch 67, total time 17518.13, loss=18.48900421142578
+[08/12 05:01:31] vclr INFO: ==> Saving...
+[08/12 05:03:25] vclr INFO: Train: [ 68]/[   0/  25] BT=106.521/106.521 Loss=18.228 8.553 0.692 1.348 7.635/18.228
+[08/12 05:05:29] vclr INFO: Train: [ 68]/[  10/  25] BT=230.364/168.663 Loss=18.380 8.522 0.690 1.529 7.639/18.341
+[08/12 05:07:37] vclr INFO: Train: [ 68]/[  20/  25] BT=358.853/231.440 Loss=18.506 8.556 0.691 1.634 7.625/18.355
+[08/12 05:08:42] vclr INFO: epoch 68, total time 17949.35, loss=18.367324142456056
+[08/12 05:08:42] vclr INFO: ==> Saving...
+[08/12 05:11:08] vclr INFO: Train: [ 69]/[   0/  25] BT=138.910/138.910 Loss=18.500 8.515 0.691 1.663 7.631/18.500
+[08/12 05:13:23] vclr INFO: Train: [ 69]/[  10/  25] BT=273.048/206.651 Loss=18.354 8.519 0.697 1.504 7.635/18.400
+[08/12 05:15:38] vclr INFO: Train: [ 69]/[  20/  25] BT=408.598/273.998 Loss=18.584 8.527 0.689 1.741 7.627/18.389
+[08/12 05:16:43] vclr INFO: epoch 69, total time 18430.30, loss=18.389999237060547
+[08/12 05:16:43] vclr INFO: ==> Saving...
+[08/12 05:19:51] vclr INFO: Train: [ 70]/[   0/  25] BT=180.781/180.781 Loss=18.326 8.527 0.695 1.469 7.636/18.326
+[08/12 05:21:58] vclr INFO: Train: [ 70]/[  10/  25] BT=307.572/244.686 Loss=18.568 8.527 0.694 1.716 7.631/18.382
+[08/12 05:24:04] vclr INFO: Train: [ 70]/[  20/  25] BT=434.199/308.025 Loss=18.320 8.529 0.694 1.473 7.624/18.380
+[08/12 05:25:04] vclr INFO: epoch 70, total time 18932.05, loss=18.36353561401367
+[08/12 05:25:04] vclr INFO: ==> Saving...
+[08/12 05:27:21] vclr INFO: Train: [ 71]/[   0/  25] BT=117.501/117.501 Loss=18.423 8.483 0.692 1.636 7.612/18.423
+[08/12 05:29:34] vclr INFO: Train: [ 71]/[  10/  25] BT=251.318/184.371 Loss=18.420 8.477 0.696 1.644 7.603/18.430
+[08/12 05:31:45] vclr INFO: Train: [ 71]/[  20/  25] BT=381.995/250.511 Loss=18.229 8.506 0.696 1.404 7.623/18.414
+[08/12 05:32:44] vclr INFO: epoch 71, total time 19392.04, loss=18.447385025024413
+[08/12 05:32:44] vclr INFO: ==> Saving...
+[08/12 05:34:12] vclr INFO: Train: [ 72]/[   0/  25] BT=81.822/81.822 Loss=18.534 8.498 0.699 1.702 7.635/18.534
+[08/12 05:36:24] vclr INFO: Train: [ 72]/[  10/  25] BT=213.888/147.833 Loss=18.378 8.459 0.694 1.603 7.622/18.524
+[08/12 05:38:37] vclr INFO: Train: [ 72]/[  20/  25] BT=346.833/214.123 Loss=18.289 8.453 0.696 1.537 7.603/18.485
+[08/12 05:39:39] vclr INFO: epoch 72, total time 19807.03, loss=18.468608016967774
+[08/12 05:39:39] vclr INFO: ==> Saving...
+[08/12 05:40:40] vclr INFO: Train: [ 73]/[   0/  25] BT=57.436/57.436 Loss=18.581 8.472 0.700 1.781 7.628/18.581
+[08/12 05:42:53] vclr INFO: Train: [ 73]/[  10/  25] BT=191.132/125.080 Loss=18.211 8.463 0.689 1.439 7.620/18.323
+[08/12 05:45:14] vclr INFO: Train: [ 73]/[  20/  25] BT=331.267/193.910 Loss=18.654 8.474 0.687 1.852 7.639/18.298
+[08/12 05:46:12] vclr INFO: epoch 73, total time 20199.31, loss=18.291803817749024
+[08/12 05:46:12] vclr INFO: ==> Saving...
+[08/12 05:47:09] vclr INFO: Train: [ 74]/[   0/  25] BT=54.304/54.304 Loss=18.174 8.447 0.694 1.423 7.610/18.174
+[08/12 05:49:25] vclr INFO: Train: [ 74]/[  10/  25] BT=190.352/121.988 Loss=18.481 8.446 0.691 1.741 7.602/18.352
+[08/12 05:51:39] vclr INFO: Train: [ 74]/[  20/  25] BT=324.052/189.447 Loss=18.353 8.479 0.691 1.565 7.618/18.321
+[08/12 05:52:37] vclr INFO: epoch 74, total time 20584.43, loss=18.3144132232666
+[08/12 05:52:37] vclr INFO: ==> Saving...
+[08/12 05:53:40] vclr INFO: Train: [ 75]/[   0/  25] BT=60.217/60.217 Loss=18.245 8.436 0.692 1.503 7.615/18.245
+[08/12 05:55:52] vclr INFO: Train: [ 75]/[  10/  25] BT=192.636/126.022 Loss=18.236 8.459 0.691 1.483 7.603/18.231
+[08/12 05:58:03] vclr INFO: Train: [ 75]/[  20/  25] BT=323.726/192.181 Loss=18.564 8.436 0.689 1.846 7.593/18.341
+[08/12 05:59:02] vclr INFO: epoch 75, total time 20969.47, loss=18.352799530029298
+[08/12 05:59:02] vclr INFO: ==> Saving...
+[08/12 06:00:00] vclr INFO: Train: [ 76]/[   0/  25] BT=55.074/55.074 Loss=18.201 8.435 0.690 1.479 7.597/18.201
+[08/12 06:02:14] vclr INFO: Train: [ 76]/[  10/  25] BT=188.381/121.558 Loss=18.192 8.419 0.692 1.479 7.602/18.447
+[08/12 06:04:27] vclr INFO: Train: [ 76]/[  20/  25] BT=321.656/188.423 Loss=19.470 8.429 0.691 2.759 7.591/18.428
+[08/12 06:05:23] vclr INFO: epoch 76, total time 21350.68, loss=18.41951416015625
+[08/12 06:05:23] vclr INFO: ==> Saving...
+[08/12 06:06:23] vclr INFO: Train: [ 77]/[   0/  25] BT=57.221/57.221 Loss=18.319 8.396 0.694 1.633 7.596/18.319
+[08/12 06:08:35] vclr INFO: Train: [ 77]/[  10/  25] BT=189.341/124.764 Loss=18.259 8.409 0.699 1.557 7.594/18.329
+[08/12 06:10:48] vclr INFO: Train: [ 77]/[  20/  25] BT=321.902/189.458 Loss=18.006 8.407 0.695 1.318 7.587/18.295
+[08/12 06:11:43] vclr INFO: epoch 77, total time 21730.72, loss=18.301863708496093
+[08/12 06:11:43] vclr INFO: ==> Saving...
+[08/12 06:12:52] vclr INFO: Train: [ 78]/[   0/  25] BT=65.874/65.874 Loss=18.307 8.436 0.696 1.587 7.588/18.307
+[08/12 06:15:11] vclr INFO: Train: [ 78]/[  10/  25] BT=204.798/137.347 Loss=18.169 8.436 0.692 1.457 7.584/18.186
+[08/12 06:17:25] vclr INFO: Train: [ 78]/[  20/  25] BT=338.425/204.531 Loss=18.128 8.412 0.693 1.431 7.591/18.178
+[08/12 06:18:37] vclr INFO: epoch 78, total time 22144.44, loss=18.182580032348632
+[08/12 06:18:37] vclr INFO: ==> Saving...
+[08/12 06:20:36] vclr INFO: Train: [ 79]/[   0/  25] BT=114.064/114.064 Loss=18.315 8.427 0.695 1.604 7.589/18.315
+[08/12 06:22:46] vclr INFO: Train: [ 79]/[  10/  25] BT=244.266/179.069 Loss=18.193 8.408 0.693 1.517 7.575/18.225
+[08/12 06:24:57] vclr INFO: Train: [ 79]/[  20/  25] BT=374.512/243.925 Loss=18.107 8.413 0.693 1.402 7.600/18.181
+[08/12 06:25:54] vclr INFO: epoch 79, total time 22581.11, loss=18.176641540527342
+[08/12 06:25:54] vclr INFO: ==> Saving...
+[08/12 06:27:35] vclr INFO: Train: [ 80]/[   0/  25] BT=96.194/96.194 Loss=18.043 8.424 0.689 1.347 7.583/18.043
+[08/12 06:29:44] vclr INFO: Train: [ 80]/[  10/  25] BT=225.180/160.883 Loss=18.361 8.416 0.694 1.652 7.598/18.246
+[08/12 06:31:56] vclr INFO: Train: [ 80]/[  20/  25] BT=357.183/226.305 Loss=18.132 8.384 0.700 1.463 7.584/18.214
+[08/12 06:33:29] vclr INFO: epoch 80, total time 23036.78, loss=18.19941909790039
+[08/12 06:33:29] vclr INFO: ==> Saving...
+[08/12 06:35:48] vclr INFO: Train: [ 81]/[   0/  25] BT=123.598/123.598 Loss=18.026 8.371 0.693 1.373 7.588/18.026
+[08/12 06:37:53] vclr INFO: Train: [ 81]/[  10/  25] BT=248.751/188.542 Loss=18.340 8.373 0.693 1.696 7.579/18.183
+[08/12 06:40:04] vclr INFO: Train: [ 81]/[  20/  25] BT=379.929/251.666 Loss=17.991 8.353 0.688 1.346 7.604/18.177
+[08/12 06:40:59] vclr INFO: epoch 81, total time 23486.44, loss=18.181956100463868
+[08/12 06:40:59] vclr INFO: ==> Saving...
+[08/12 06:42:01] vclr INFO: Train: [ 82]/[   0/  25] BT=59.341/59.341 Loss=18.383 8.354 0.690 1.749 7.590/18.383
+[08/12 06:44:01] vclr INFO: Train: [ 82]/[  10/  25] BT=179.246/120.403 Loss=18.468 8.349 0.695 1.838 7.585/18.225
+[08/12 06:46:07] vclr INFO: Train: [ 82]/[  20/  25] BT=305.235/181.365 Loss=17.998 8.349 0.694 1.361 7.593/18.307
+[08/12 06:47:02] vclr INFO: epoch 82, total time 23849.56, loss=18.31460174560547
+[08/12 06:47:02] vclr INFO: ==> Saving...
+[08/12 06:47:59] vclr INFO: Train: [ 83]/[   0/  25] BT=54.674/54.674 Loss=18.076 8.376 0.692 1.424 7.583/18.076
+[08/12 06:50:05] vclr INFO: Train: [ 83]/[  10/  25] BT=179.946/117.256 Loss=18.056 8.364 0.697 1.401 7.595/18.205
+[08/12 06:52:08] vclr INFO: Train: [ 83]/[  20/  25] BT=303.093/179.346 Loss=17.992 8.373 0.691 1.330 7.598/18.165
+[08/12 06:53:01] vclr INFO: epoch 83, total time 24208.47, loss=18.142605514526366
+[08/12 06:53:01] vclr INFO: ==> Saving...
+[08/12 06:53:58] vclr INFO: Train: [ 84]/[   0/  25] BT=54.336/54.336 Loss=18.223 8.376 0.697 1.565 7.585/18.223
+[08/12 06:56:01] vclr INFO: Train: [ 84]/[  10/  25] BT=177.239/116.258 Loss=17.938 8.376 0.692 1.294 7.575/18.197
+[08/12 06:58:04] vclr INFO: Train: [ 84]/[  20/  25] BT=299.830/177.228 Loss=18.435 8.339 0.696 1.810 7.590/18.200
+[08/12 06:58:56] vclr INFO: epoch 84, total time 24563.91, loss=18.187871475219726
+[08/12 06:58:56] vclr INFO: ==> Saving...
+[08/12 06:59:55] vclr INFO: Train: [ 85]/[   0/  25] BT=55.878/55.878 Loss=18.216 8.373 0.694 1.564 7.585/18.216
+[08/12 07:01:56] vclr INFO: Train: [ 85]/[  10/  25] BT=177.590/116.468 Loss=17.951 8.361 0.693 1.311 7.586/18.162
+[08/12 07:03:47] vclr INFO: Train: [ 85]/[  20/  25] BT=288.597/174.329 Loss=18.186 8.357 0.695 1.547 7.587/18.190
+[08/12 07:04:37] vclr INFO: epoch 85, total time 24904.43, loss=18.219086151123047
+[08/12 07:04:37] vclr INFO: ==> Saving...
+[08/12 07:05:30] vclr INFO: Train: [ 86]/[   0/  25] BT=49.954/49.954 Loss=18.144 8.331 0.693 1.551 7.569/18.144
+[08/12 07:07:34] vclr INFO: Train: [ 86]/[  10/  25] BT=174.025/111.920 Loss=17.977 8.320 0.690 1.397 7.570/18.137
+[08/12 07:09:38] vclr INFO: Train: [ 86]/[  20/  25] BT=298.640/175.131 Loss=18.060 8.338 0.695 1.454 7.573/18.161
+[08/12 07:10:33] vclr INFO: epoch 86, total time 25260.59, loss=18.147515182495116
+[08/12 07:10:33] vclr INFO: ==> Saving...
+[08/12 07:11:31] vclr INFO: Train: [ 87]/[   0/  25] BT=55.468/55.468 Loss=18.255 8.319 0.697 1.645 7.593/18.255
+[08/12 07:13:44] vclr INFO: Train: [ 87]/[  10/  25] BT=187.776/122.032 Loss=17.965 8.328 0.696 1.365 7.576/18.268
+[08/12 07:15:56] vclr INFO: Train: [ 87]/[  20/  25] BT=320.309/187.974 Loss=18.252 8.311 0.693 1.675 7.574/18.235
+[08/12 07:16:53] vclr INFO: epoch 87, total time 25640.43, loss=18.208537216186524
+[08/12 07:16:53] vclr INFO: ==> Saving...
+[08/12 07:17:54] vclr INFO: Train: [ 88]/[   0/  25] BT=57.918/57.918 Loss=17.959 8.324 0.695 1.357 7.584/17.959
+[08/12 07:20:08] vclr INFO: Train: [ 88]/[  10/  25] BT=191.956/125.281 Loss=18.329 8.326 0.688 1.751 7.564/18.216
+[08/12 07:22:19] vclr INFO: Train: [ 88]/[  20/  25] BT=323.150/190.963 Loss=17.943 8.308 0.694 1.346 7.595/18.217
+[08/12 07:23:14] vclr INFO: epoch 88, total time 26021.64, loss=18.2049308013916
+[08/12 07:23:14] vclr INFO: ==> Saving...
+[08/12 07:24:13] vclr INFO: Train: [ 89]/[   0/  25] BT=55.505/55.505 Loss=18.016 8.296 0.691 1.453 7.576/18.016
+[08/12 07:26:24] vclr INFO: Train: [ 89]/[  10/  25] BT=186.672/120.869 Loss=17.967 8.294 0.694 1.412 7.567/18.314
+[08/12 07:28:33] vclr INFO: Train: [ 89]/[  20/  25] BT=315.837/185.657 Loss=17.988 8.296 0.692 1.426 7.573/18.202
+[08/12 07:29:30] vclr INFO: epoch 89, total time 26398.05, loss=18.179590530395508
+[08/12 07:29:30] vclr INFO: ==> Saving...
+[08/12 07:30:54] vclr INFO: Train: [ 90]/[   0/  25] BT=79.956/79.956 Loss=18.133 8.301 0.698 1.551 7.583/18.133
+[08/12 07:33:07] vclr INFO: Train: [ 90]/[  10/  25] BT=213.085/148.396 Loss=17.998 8.302 0.691 1.430 7.575/18.069
+[08/12 07:35:23] vclr INFO: Train: [ 90]/[  20/  25] BT=348.757/214.983 Loss=17.953 8.302 0.691 1.395 7.565/18.068
+[08/12 07:36:29] vclr INFO: epoch 90, total time 26816.54, loss=18.06301094055176
+[08/12 07:36:29] vclr INFO: ==> Saving...
+[08/12 07:38:05] vclr INFO: Train: [ 91]/[   0/  25] BT=85.551/85.551 Loss=18.078 8.322 0.695 1.479 7.581/18.078
+[08/12 07:40:21] seco INFO: Full config saved to ./video-contrastive-learning/results_gs_double_data_2\config.json
+[08/12 07:40:22] seco INFO: using data: 400
+[08/12 07:40:28] seco INFO: model init done
+[08/12 07:41:03] seco INFO: 0/400
+[08/12 07:41:08] seco INFO: 1/400
+[08/12 07:41:08] seco INFO: 2/400
+[08/12 07:41:08] seco INFO: 3/400
+[08/12 07:41:08] seco INFO: 4/400
+[08/12 07:41:08] seco INFO: 5/400
+[08/12 07:41:09] seco INFO: 6/400
+[08/12 07:41:09] seco INFO: 7/400
+[08/12 07:41:09] seco INFO: 8/400
+[08/12 07:41:09] seco INFO: 9/400
+[08/12 07:41:09] seco INFO: 10/400
+[08/12 07:41:09] seco INFO: 11/400
+[08/12 07:41:09] seco INFO: 12/400
+[08/12 07:41:09] seco INFO: 13/400
+[08/12 07:41:09] seco INFO: 14/400
+[08/12 07:41:09] seco INFO: 15/400
+[08/12 07:41:09] seco INFO: 16/400
+[08/12 07:41:09] seco INFO: 17/400
+[08/12 07:41:09] seco INFO: 18/400
+[08/12 07:41:09] seco INFO: 19/400
+[08/12 07:41:10] seco INFO: 20/400
+[08/12 07:41:10] seco INFO: 21/400
+[08/12 07:41:10] seco INFO: 22/400
+[08/12 07:41:10] seco INFO: 23/400
+[08/12 07:41:10] seco INFO: 24/400
+[08/12 07:41:11] seco INFO: 25/400
+[08/12 07:41:11] seco INFO: 26/400
+[08/12 07:41:11] seco INFO: 27/400
+[08/12 07:41:11] seco INFO: 28/400
+[08/12 07:41:12] seco INFO: 29/400
+[08/12 07:41:12] seco INFO: 30/400
+[08/12 07:41:13] seco INFO: 31/400
+[08/12 07:41:13] seco INFO: 32/400
+[08/12 07:41:13] seco INFO: 33/400
+[08/12 07:41:13] seco INFO: 34/400
+[08/12 07:41:13] seco INFO: 35/400
+[08/12 07:41:13] seco INFO: 36/400
+[08/12 07:41:13] seco INFO: 37/400
+[08/12 07:41:14] seco INFO: 38/400
+[08/12 07:41:14] seco INFO: 39/400
+[08/12 07:41:14] seco INFO: 40/400
+[08/12 07:41:14] seco INFO: 41/400
+[08/12 07:41:14] seco INFO: 42/400
+[08/12 07:41:15] seco INFO: 43/400
+[08/12 07:41:15] seco INFO: 44/400
+[08/12 07:41:15] seco INFO: 45/400
+[08/12 07:41:17] seco INFO: 46/400
+[08/12 07:41:17] seco INFO: 47/400
+[08/12 07:41:17] seco INFO: 48/400
+[08/12 07:41:18] seco INFO: 49/400
+[08/12 07:41:18] seco INFO: 50/400
+[08/12 07:41:18] seco INFO: 51/400
+[08/12 07:41:18] seco INFO: 52/400
+[08/12 07:41:18] seco INFO: 53/400
+[08/12 07:41:19] seco INFO: 54/400
+[08/12 07:41:19] seco INFO: 55/400
+[08/12 07:41:19] seco INFO: 56/400
+[08/12 07:41:19] seco INFO: 57/400
+[08/12 07:41:19] seco INFO: 58/400
+[08/12 07:41:19] seco INFO: 59/400
+[08/12 07:41:19] seco INFO: 60/400
+[08/12 07:41:20] seco INFO: 61/400
+[08/12 07:41:20] seco INFO: 62/400
+[08/12 07:41:20] seco INFO: 63/400
+[08/12 07:41:20] seco INFO: 64/400
+[08/12 07:41:21] seco INFO: 65/400
+[08/12 07:41:21] seco INFO: 66/400
+[08/12 07:41:21] seco INFO: 67/400
+[08/12 07:41:21] seco INFO: 68/400
+[08/12 07:41:21] seco INFO: 69/400
+[08/12 07:41:22] seco INFO: 70/400
+[08/12 07:41:22] seco INFO: 71/400
+[08/12 07:41:23] seco INFO: 72/400
+[08/12 07:41:23] seco INFO: 73/400
+[08/12 07:41:23] seco INFO: 74/400
+[08/12 07:41:23] seco INFO: 75/400
+[08/12 07:41:23] seco INFO: 76/400
+[08/12 07:41:23] seco INFO: 77/400
+[08/12 07:41:24] seco INFO: 78/400
+[08/12 07:41:24] seco INFO: 79/400
+[08/12 07:41:24] seco INFO: 80/400
+[08/12 07:41:24] seco INFO: 81/400
+[08/12 07:41:24] seco INFO: 82/400
+[08/12 07:41:24] seco INFO: 83/400
+[08/12 07:41:24] seco INFO: 84/400
+[08/12 07:41:24] seco INFO: 85/400
+[08/12 07:41:25] seco INFO: 86/400
+[08/12 07:41:26] seco INFO: 87/400
+[08/12 07:41:26] seco INFO: 88/400
+[08/12 07:41:26] seco INFO: 89/400
+[08/12 07:41:26] seco INFO: 90/400
+[08/12 07:41:26] seco INFO: 91/400
+[08/12 07:41:26] seco INFO: 92/400
+[08/12 07:41:26] seco INFO: 93/400
+[08/12 07:41:27] seco INFO: 94/400
+[08/12 07:41:27] seco INFO: 95/400
+[08/12 07:41:27] seco INFO: 96/400
+[08/12 07:41:27] seco INFO: 97/400
+[08/12 07:41:27] seco INFO: 98/400
+[08/12 07:41:27] seco INFO: 99/400
+[08/12 07:41:27] seco INFO: 100/400
+[08/12 07:41:27] seco INFO: 101/400
+[08/12 07:41:29] seco INFO: 102/400
+[08/12 07:41:29] seco INFO: 103/400
+[08/12 07:41:30] seco INFO: 104/400
+[08/12 07:41:30] seco INFO: 105/400
+[08/12 07:41:30] seco INFO: 106/400
+[08/12 07:41:30] seco INFO: 107/400
+[08/12 07:41:31] seco INFO: 108/400
+[08/12 07:41:31] seco INFO: 109/400
+[08/12 07:41:31] seco INFO: 110/400
+[08/12 07:41:31] seco INFO: 111/400
+[08/12 07:41:31] seco INFO: 112/400
+[08/12 07:41:31] seco INFO: 113/400
+[08/12 07:41:32] seco INFO: 114/400
+[08/12 07:41:32] seco INFO: 115/400
+[08/12 07:41:32] seco INFO: 116/400
+[08/12 07:41:32] seco INFO: 117/400
+[08/12 07:41:33] seco INFO: 118/400
+[08/12 07:41:33] seco INFO: 119/400
+[08/12 07:41:33] seco INFO: 120/400
+[08/12 07:41:33] seco INFO: 121/400
+[08/12 07:41:33] seco INFO: 122/400
+[08/12 07:41:33] seco INFO: 123/400
+[08/12 07:41:34] seco INFO: 124/400
+[08/12 07:41:34] seco INFO: 125/400
+[08/12 07:41:34] seco INFO: 126/400
+[08/12 07:41:34] seco INFO: 127/400
+[08/12 07:41:35] seco INFO: 128/400
+[08/12 07:41:35] seco INFO: 129/400
+[08/12 07:41:35] seco INFO: 130/400
+[08/12 07:41:35] seco INFO: 131/400
+[08/12 07:41:35] seco INFO: 132/400
+[08/12 07:41:35] seco INFO: 133/400
+[08/12 07:41:36] seco INFO: 134/400
+[08/12 07:41:36] seco INFO: 135/400
+[08/12 07:41:37] seco INFO: 136/400
+[08/12 07:41:37] seco INFO: 137/400
+[08/12 07:41:37] seco INFO: 138/400
+[08/12 07:41:37] seco INFO: 139/400
+[08/12 07:41:38] seco INFO: 140/400
+[08/12 07:41:38] seco INFO: 141/400
+[08/12 07:41:38] seco INFO: 142/400
+[08/12 07:41:39] seco INFO: 143/400
+[08/12 07:41:39] seco INFO: 144/400
+[08/12 07:41:39] seco INFO: 145/400
+[08/12 07:41:40] seco INFO: 146/400
+[08/12 07:41:40] seco INFO: 147/400
+[08/12 07:41:42] seco INFO: 148/400
+[08/12 07:41:42] seco INFO: 149/400
+[08/12 07:41:42] seco INFO: 150/400
+[08/12 07:41:42] seco INFO: 151/400
+[08/12 07:41:42] seco INFO: 152/400
+[08/12 07:41:42] seco INFO: 153/400
+[08/12 07:41:42] seco INFO: 154/400
+[08/12 07:41:42] seco INFO: 155/400
+[08/12 07:41:44] seco INFO: 156/400
+[08/12 07:41:44] seco INFO: 157/400
+[08/12 07:41:44] seco INFO: 158/400
+[08/12 07:41:44] seco INFO: 159/400
+[08/12 07:41:44] seco INFO: 160/400
+[08/12 07:41:44] seco INFO: 161/400
+[08/12 07:41:44] seco INFO: 162/400
+[08/12 07:41:44] seco INFO: 163/400
+[08/12 07:41:47] seco INFO: 164/400
+[08/12 07:41:47] seco INFO: 165/400
+[08/12 07:41:47] seco INFO: 166/400
+[08/12 07:41:47] seco INFO: 167/400
+[08/12 07:41:47] seco INFO: 168/400
+[08/12 07:41:47] seco INFO: 169/400
+[08/12 07:41:47] seco INFO: 170/400
+[08/12 07:41:47] seco INFO: 171/400
+[08/12 07:41:49] seco INFO: 172/400
+[08/12 07:41:49] seco INFO: 173/400
+[08/12 07:41:50] seco INFO: 174/400
+[08/12 07:41:50] seco INFO: 175/400
+[08/12 07:41:50] seco INFO: 176/400
+[08/12 07:41:50] seco INFO: 177/400
+[08/12 07:41:50] seco INFO: 178/400
+[08/12 07:41:50] seco INFO: 179/400
+[08/12 07:41:51] seco INFO: 180/400
+[08/12 07:41:51] seco INFO: 181/400
+[08/12 07:41:51] seco INFO: 182/400
+[08/12 07:41:51] seco INFO: 183/400
+[08/12 07:41:51] seco INFO: 184/400
+[08/12 07:41:52] seco INFO: 185/400
+[08/12 07:41:52] seco INFO: 186/400
+[08/12 07:41:52] seco INFO: 187/400
+[08/12 07:41:54] seco INFO: 188/400
+[08/12 07:41:54] seco INFO: 189/400
+[08/12 07:41:54] seco INFO: 190/400
+[08/12 07:41:54] seco INFO: 191/400
+[08/12 07:41:54] seco INFO: 192/400
+[08/12 07:41:54] seco INFO: 193/400
+[08/12 07:41:54] seco INFO: 194/400
+[08/12 07:41:54] seco INFO: 195/400
+[08/12 07:41:56] seco INFO: 196/400
+[08/12 07:41:56] seco INFO: 197/400
+[08/12 07:41:56] seco INFO: 198/400
+[08/12 07:41:57] seco INFO: 199/400
+[08/12 07:41:57] seco INFO: 200/400
+[08/12 07:41:57] seco INFO: 201/400
+[08/12 07:41:57] seco INFO: 202/400
+[08/12 07:41:57] seco INFO: 203/400
+[08/12 07:41:58] seco INFO: 204/400
+[08/12 07:41:58] seco INFO: 205/400
+[08/12 07:41:58] seco INFO: 206/400
+[08/12 07:41:58] seco INFO: 207/400
+[08/12 07:41:58] seco INFO: 208/400
+[08/12 07:41:58] seco INFO: 209/400
+[08/12 07:41:58] seco INFO: 210/400
+[08/12 07:41:58] seco INFO: 211/400
+[08/12 07:41:59] seco INFO: 212/400
+[08/12 07:41:59] seco INFO: 213/400
+[08/12 07:41:59] seco INFO: 214/400
+[08/12 07:41:59] seco INFO: 215/400
+[08/12 07:41:59] seco INFO: 216/400
+[08/12 07:41:59] seco INFO: 217/400
+[08/12 07:42:00] seco INFO: 218/400
+[08/12 07:42:00] seco INFO: 219/400
+[08/12 07:42:02] seco INFO: 220/400
+[08/12 07:42:02] seco INFO: 221/400
+[08/12 07:42:02] seco INFO: 222/400
+[08/12 07:42:02] seco INFO: 223/400
+[08/12 07:42:02] seco INFO: 224/400
+[08/12 07:42:02] seco INFO: 225/400
+[08/12 07:42:03] seco INFO: 226/400
+[08/12 07:42:03] seco INFO: 227/400
+[08/12 07:42:04] seco INFO: 228/400
+[08/12 07:42:04] seco INFO: 229/400
+[08/12 07:42:04] seco INFO: 230/400
+[08/12 07:42:04] seco INFO: 231/400
+[08/12 07:42:04] seco INFO: 232/400
+[08/12 07:42:04] seco INFO: 233/400
+[08/12 07:42:04] seco INFO: 234/400
+[08/12 07:42:05] seco INFO: 235/400
+[08/12 07:42:06] seco INFO: 236/400
+[08/12 07:42:06] seco INFO: 237/400
+[08/12 07:42:06] seco INFO: 238/400
+[08/12 07:42:06] seco INFO: 239/400
+[08/12 07:42:06] seco INFO: 240/400
+[08/12 07:42:06] seco INFO: 241/400
+[08/12 07:42:06] seco INFO: 242/400
+[08/12 07:42:06] seco INFO: 243/400
+[08/12 07:42:08] seco INFO: 244/400
+[08/12 07:42:08] seco INFO: 245/400
+[08/12 07:42:09] seco INFO: 246/400
+[08/12 07:42:09] seco INFO: 247/400
+[08/12 07:42:09] seco INFO: 248/400
+[08/12 07:42:09] seco INFO: 249/400
+[08/12 07:42:09] seco INFO: 250/400
+[08/12 07:42:09] seco INFO: 251/400
+[08/12 07:42:09] seco INFO: 252/400
+[08/12 07:42:09] seco INFO: 253/400
+[08/12 07:42:09] seco INFO: 254/400
+[08/12 07:42:09] seco INFO: 255/400
+[08/12 07:42:11] seco INFO: 256/400
+[08/12 07:42:11] seco INFO: 257/400
+[08/12 07:42:11] seco INFO: 258/400
+[08/12 07:42:11] seco INFO: 259/400
+[08/12 07:42:12] seco INFO: 260/400
+[08/12 07:42:12] seco INFO: 261/400
+[08/12 07:42:12] seco INFO: 262/400
+[08/12 07:42:12] seco INFO: 263/400
+[08/12 07:42:12] seco INFO: 264/400
+[08/12 07:42:12] seco INFO: 265/400
+[08/12 07:42:12] seco INFO: 266/400
+[08/12 07:42:12] seco INFO: 267/400
+[08/12 07:42:13] seco INFO: 268/400
+[08/12 07:42:13] seco INFO: 269/400
+[08/12 07:42:13] seco INFO: 270/400
+[08/12 07:42:13] seco INFO: 271/400
+[08/12 07:42:13] seco INFO: 272/400
+[08/12 07:42:13] seco INFO: 273/400
+[08/12 07:42:14] seco INFO: 274/400
+[08/12 07:42:14] seco INFO: 275/400
+[08/12 07:42:15] seco INFO: 276/400
+[08/12 07:42:15] seco INFO: 277/400
+[08/12 07:42:16] seco INFO: 278/400
+[08/12 07:42:16] seco INFO: 279/400
+[08/12 07:42:16] seco INFO: 280/400
+[08/12 07:42:16] seco INFO: 281/400
+[08/12 07:42:16] seco INFO: 282/400
+[08/12 07:42:16] seco INFO: 283/400
+[08/12 07:42:17] seco INFO: 284/400
+[08/12 07:42:17] seco INFO: 285/400
+[08/12 07:42:17] seco INFO: 286/400
+[08/12 07:42:17] seco INFO: 287/400
+[08/12 07:42:17] seco INFO: 288/400
+[08/12 07:42:17] seco INFO: 289/400
+[08/12 07:42:17] seco INFO: 290/400
+[08/12 07:42:17] seco INFO: 291/400
+[08/12 07:42:19] seco INFO: 292/400
+[08/12 07:42:20] seco INFO: 293/400
+[08/12 07:42:20] seco INFO: 294/400
+[08/12 07:42:20] seco INFO: 295/400
+[08/12 07:42:20] seco INFO: 296/400
+[08/12 07:42:20] seco INFO: 297/400
+[08/12 07:42:20] seco INFO: 298/400
+[08/12 07:42:20] seco INFO: 299/400
+[08/12 07:42:21] seco INFO: 300/400
+[08/12 07:42:21] seco INFO: 301/400
+[08/12 07:42:21] seco INFO: 302/400
+[08/12 07:42:21] seco INFO: 303/400
+[08/12 07:42:21] seco INFO: 304/400
+[08/12 07:42:22] seco INFO: 305/400
+[08/12 07:42:22] seco INFO: 306/400
+[08/12 07:42:22] seco INFO: 307/400
+[08/12 07:42:23] seco INFO: 308/400
+[08/12 07:42:23] seco INFO: 309/400
+[08/12 07:42:23] seco INFO: 310/400
+[08/12 07:42:23] seco INFO: 311/400
+[08/12 07:42:23] seco INFO: 312/400
+[08/12 07:42:23] seco INFO: 313/400
+[08/12 07:42:23] seco INFO: 314/400
+[08/12 07:42:23] seco INFO: 315/400
+[08/12 07:42:25] seco INFO: 316/400
+[08/12 07:42:25] seco INFO: 317/400
+[08/12 07:42:25] seco INFO: 318/400
+[08/12 07:42:25] seco INFO: 319/400
+[08/12 07:42:25] seco INFO: 320/400
+[08/12 07:42:25] seco INFO: 321/400
+[08/12 07:42:25] seco INFO: 322/400
+[08/12 07:42:25] seco INFO: 323/400
+[08/12 07:42:26] seco INFO: 324/400
+[08/12 07:42:26] seco INFO: 325/400
+[08/12 07:42:26] seco INFO: 326/400
+[08/12 07:42:27] seco INFO: 327/400
+[08/12 07:42:27] seco INFO: 328/400
+[08/12 07:42:27] seco INFO: 329/400
+[08/12 07:42:27] seco INFO: 330/400
+[08/12 07:42:27] seco INFO: 331/400
+[08/12 07:42:28] seco INFO: 332/400
+[08/12 07:42:28] seco INFO: 333/400
+[08/12 07:42:28] seco INFO: 334/400
+[08/12 07:42:28] seco INFO: 335/400
+[08/12 07:42:28] seco INFO: 336/400
+[08/12 07:42:28] seco INFO: 337/400
+[08/12 07:42:28] seco INFO: 338/400
+[08/12 07:42:28] seco INFO: 339/400
+[08/12 07:42:30] seco INFO: 340/400
+[08/12 07:42:30] seco INFO: 341/400
+[08/12 07:42:30] seco INFO: 342/400
+[08/12 07:42:30] seco INFO: 343/400
+[08/12 07:42:30] seco INFO: 344/400
+[08/12 07:42:30] seco INFO: 345/400
+[08/12 07:42:30] seco INFO: 346/400
+[08/12 07:42:31] seco INFO: 347/400
+[08/12 07:42:32] seco INFO: 348/400
+[08/12 07:42:32] seco INFO: 349/400
+[08/12 07:42:33] seco INFO: 350/400
+[08/12 07:42:33] seco INFO: 351/400
+[08/12 07:42:33] seco INFO: 352/400
+[08/12 07:42:33] seco INFO: 353/400
+[08/12 07:42:33] seco INFO: 354/400
+[08/12 07:42:33] seco INFO: 355/400
+[08/12 07:42:33] seco INFO: 356/400
+[08/12 07:42:33] seco INFO: 357/400
+[08/12 07:42:33] seco INFO: 358/400
+[08/12 07:42:33] seco INFO: 359/400
+[08/12 07:42:34] seco INFO: 360/400
+[08/12 07:42:34] seco INFO: 361/400
+[08/12 07:42:34] seco INFO: 362/400
+[08/12 07:42:34] seco INFO: 363/400
+[08/12 07:42:35] seco INFO: 364/400
+[08/12 07:42:35] seco INFO: 365/400
+[08/12 07:42:35] seco INFO: 366/400
+[08/12 07:42:35] seco INFO: 367/400
+[08/12 07:42:35] seco INFO: 368/400
+[08/12 07:42:35] seco INFO: 369/400
+[08/12 07:42:35] seco INFO: 370/400
+[08/12 07:42:35] seco INFO: 371/400
+[08/12 07:42:36] seco INFO: 372/400
+[08/12 07:42:36] seco INFO: 373/400
+[08/12 07:42:36] seco INFO: 374/400
+[08/12 07:42:36] seco INFO: 375/400
+[08/12 07:42:36] seco INFO: 376/400
+[08/12 07:42:36] seco INFO: 377/400
+[08/12 07:42:37] seco INFO: 378/400
+[08/12 07:42:37] seco INFO: 379/400
+[08/12 07:42:38] seco INFO: 380/400
+[08/12 07:42:38] seco INFO: 381/400
+[08/12 07:42:38] seco INFO: 382/400
+[08/12 07:42:38] seco INFO: 383/400
+[08/12 07:42:38] seco INFO: 384/400
+[08/12 07:42:38] seco INFO: 385/400
+[08/12 07:42:38] seco INFO: 386/400
+[08/12 07:42:38] seco INFO: 387/400
+[08/12 07:42:39] seco INFO: 388/400
+[08/12 07:42:39] seco INFO: 389/400
+[08/12 07:42:39] seco INFO: 390/400
+[08/12 07:42:39] seco INFO: 391/400
+[08/12 07:42:39] seco INFO: 392/400
+[08/12 07:42:39] seco INFO: 393/400
+[08/12 07:42:39] seco INFO: 394/400
+[08/12 07:42:39] seco INFO: 395/400
+[08/12 07:42:39] seco INFO: 396/400
+[08/12 07:42:39] seco INFO: 397/400
+[08/12 07:42:39] seco INFO: 398/400
+[08/12 07:42:40] seco INFO: 399/400
+[08/12 07:42:45] seco INFO: Full config saved to ./video-contrastive-learning/results_gs_double_data_2\config.json
+[08/12 07:42:46] seco INFO: using data: 80
+[08/12 07:42:46] seco INFO: model init done
+[08/12 07:43:18] seco INFO: 0/80
+[08/12 07:43:19] seco INFO: 1/80
+[08/12 07:43:19] seco INFO: 2/80
+[08/12 07:43:20] seco INFO: 3/80
+[08/12 07:43:20] seco INFO: 4/80
+[08/12 07:43:20] seco INFO: 5/80
+[08/12 07:43:20] seco INFO: 6/80
+[08/12 07:43:20] seco INFO: 7/80
+[08/12 07:43:20] seco INFO: 8/80
+[08/12 07:43:20] seco INFO: 9/80
+[08/12 07:43:20] seco INFO: 10/80
+[08/12 07:43:20] seco INFO: 11/80
+[08/12 07:43:20] seco INFO: 12/80
+[08/12 07:43:20] seco INFO: 13/80
+[08/12 07:43:20] seco INFO: 14/80
+[08/12 07:43:20] seco INFO: 15/80
+[08/12 07:43:21] seco INFO: 16/80
+[08/12 07:43:21] seco INFO: 17/80
+[08/12 07:43:21] seco INFO: 18/80
+[08/12 07:43:22] seco INFO: 19/80
+[08/12 07:43:23] seco INFO: 20/80
+[08/12 07:43:23] seco INFO: 21/80
+[08/12 07:43:23] seco INFO: 22/80
+[08/12 07:43:23] seco INFO: 23/80
+[08/12 07:43:24] seco INFO: 24/80
+[08/12 07:43:24] seco INFO: 25/80
+[08/12 07:43:24] seco INFO: 26/80
+[08/12 07:43:24] seco INFO: 27/80
+[08/12 07:43:26] seco INFO: 28/80
+[08/12 07:43:26] seco INFO: 29/80
+[08/12 07:43:26] seco INFO: 30/80
+[08/12 07:43:26] seco INFO: 31/80
+[08/12 07:43:26] seco INFO: 32/80
+[08/12 07:43:26] seco INFO: 33/80
+[08/12 07:43:26] seco INFO: 34/80
+[08/12 07:43:26] seco INFO: 35/80
+[08/12 07:43:28] seco INFO: 36/80
+[08/12 07:43:28] seco INFO: 37/80
+[08/12 07:43:28] seco INFO: 38/80
+[08/12 07:43:28] seco INFO: 39/80
+[08/12 07:43:28] seco INFO: 40/80
+[08/12 07:43:28] seco INFO: 41/80
+[08/12 07:43:28] seco INFO: 42/80
+[08/12 07:43:28] seco INFO: 43/80
+[08/12 07:43:30] seco INFO: 44/80
+[08/12 07:43:30] seco INFO: 45/80
+[08/12 07:43:30] seco INFO: 46/80
+[08/12 07:43:30] seco INFO: 47/80
+[08/12 07:43:30] seco INFO: 48/80
+[08/12 07:43:30] seco INFO: 49/80
+[08/12 07:43:30] seco INFO: 50/80
+[08/12 07:43:30] seco INFO: 51/80
+[08/12 07:43:32] seco INFO: 52/80
+[08/12 07:43:32] seco INFO: 53/80
+[08/12 07:43:32] seco INFO: 54/80
+[08/12 07:43:32] seco INFO: 55/80
+[08/12 07:43:32] seco INFO: 56/80
+[08/12 07:43:32] seco INFO: 57/80
+[08/12 07:43:32] seco INFO: 58/80
+[08/12 07:43:32] seco INFO: 59/80
+[08/12 07:43:34] seco INFO: 60/80
+[08/12 07:43:34] seco INFO: 61/80
+[08/12 07:43:34] seco INFO: 62/80
+[08/12 07:43:34] seco INFO: 63/80
+[08/12 07:43:34] seco INFO: 64/80
+[08/12 07:43:34] seco INFO: 65/80
+[08/12 07:43:35] seco INFO: 66/80
+[08/12 07:43:35] seco INFO: 67/80
+[08/12 07:43:36] seco INFO: 68/80
+[08/12 07:43:36] seco INFO: 69/80
+[08/12 07:43:36] seco INFO: 70/80
+[08/12 07:43:36] seco INFO: 71/80
+[08/12 07:43:36] seco INFO: 72/80
+[08/12 07:43:36] seco INFO: 73/80
+[08/12 07:43:36] seco INFO: 74/80
+[08/12 07:43:36] seco INFO: 75/80
+[08/12 07:43:37] seco INFO: 76/80
+[08/12 07:43:37] seco INFO: 77/80
+[08/12 07:43:37] seco INFO: 78/80
+[08/12 07:43:37] seco INFO: 79/80

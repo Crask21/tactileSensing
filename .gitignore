@@ -7,6 +7,10 @@ venv1/
 DataCollection/videos**
 DataCollection/train/
 DataCollection/val/
+DataCollection/data/
+DataCollection/pose_classification/
+DataCollection/pose_processed/
 model/
-video-contrastive-learning/results**
 video-contrastive-learning/pretrain/
+**ckpt**
+*.pth

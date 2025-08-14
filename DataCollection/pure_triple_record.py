@@ -148,7 +148,8 @@ def View3D(config: ConfigModel):
     try:
         # --------------------------- COLLECT N_RECORDINGS --------------------------- #
         while len([name for name in os.listdir(video_save_path) if os.path.isdir(os.path.join(video_save_path, name))]) < config.n_recordings:
-            log_message(f"RECORDING number: {len([name for name in os.listdir(video_save_path) if os.path.isdir(os.path.join(video_save_path, name))])}")
+            log_message("\n----------------------------------")
+            log_message(f"RECORDING number: {len([name for name in os.listdir(video_save_path) if os.path.isdir(os.path.join(video_save_path, name))]) + 1}")
             # Main loop: capture frames, compute depth map, and update the 3D view.
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             base, ext = os.path.splitext(video_save_path)
@@ -210,7 +211,8 @@ def View3D(config: ConfigModel):
             cv2.destroyAllWindows()
             if visualizer3D:
                 visualizer3D.visualizer.destroy_window()
-            input("Press enter to continue:")
+            if len([name for name in os.listdir(video_save_path) if os.path.isdir(os.path.join(video_save_path, name))]) % 10 == 0:
+                input("Press enter to continue:")
             
 
     except KeyboardInterrupt:

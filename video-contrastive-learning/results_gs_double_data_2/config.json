@@ -1,0 +1,11 @@
+{
+  "data_dir": "D:\\UNI\\Studentermedhjaelper\\Contrastive Learning\\tactileSensing\\DataCollection",
+  "dataset": "KineticsClipFolderDatasetMultiFrames",
+  "datasplit": "val",
+  "datasamplenum": 30,
+  "resize": 0,
+  "cropsize": 224,
+  "pretrained_model": "./video-contrastive-learning/results_gs_double_data_2/ckpt_epoch_90.pth",
+  "output_dir": "./video-contrastive-learning/results_gs_double_data_2",
+  "local_rank": null
+}

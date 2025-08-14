@@ -6,15 +6,15 @@ The depth scan/filter functions extract the matching images across all observati
 depth calculation based on the provided depth reconstruction nn provided by gelsight.
 """
 
-video_folder = r"./DataCollection/videos"
-save_folder = r"./DataCollection/data"
+video_folder = r"./DataCollection/val"
+save_file= r"./DataCollection/val.txt"
 
 
 
 def scan_folder_structure():
 
-    open(r"./DataCollection/train.txt", "w")
-    with open(r"./DataCollection/train.txt", "a") as f:
+    open(save_file, "w")
+    with open(save_file, "a") as f:
         for i, cls in enumerate(os.listdir(video_folder)):
             print(cls)
             if cls == "z_control":

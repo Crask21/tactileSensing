@@ -6,9 +6,9 @@
 # pretrained="./video-contrastive-learning/results/current.pth"
 
 data_dir="D:\UNI\Studentermedhjaelper\Contrastive Learning\tactileSensing\DataCollection"
-output_dir="./video-contrastive-learning/results_gs"
-eval_dir="./video-contrastive-learning/results_gs"
-pretrained="./video-contrastive-learning/results_gs/ckpt_epoch_1.pth"
+output_dir="./video-contrastive-learning/results_gs_double_data_2"
+eval_dir="./video-contrastive-learning/results_gs_double_data_2"
+pretrained="./video-contrastive-learning/results_gs_double_data_2/ckpt_epoch_90.pth"
 # pretrained="./video-contrastive-learning/pretrain/moco_v2_800ep_pretrain.pth.tar"
 
 num_replica=1
