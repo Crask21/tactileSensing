@@ -12,8 +12,8 @@ The depth scan/filter functions extract the matching images across all observati
 depth calculation based on the provided depth reconstruction nn provided by gelsight.
 """
 
-video_folder = r"./DataCollection/pose_classification"
-save_folder = r"./DataCollection/pose_processed"
+video_folder = r"./DataCollection/sh_gs"
+save_folder = r"./DataCollection/sh_gs_processed"
 # os.makedirs(save_folder, exist_ok=True)
 
 
@@ -77,8 +77,8 @@ def depth_scan():
         os.makedirs(os.path.join(save_folder,cls),exist_ok=True)
         # print(i, cls)
         folder_path = os.path.join(video_folder, cls)
-        # print(folder_path)
-        if len(os.listdir(folder_path)) > 3:
+        print(folder_path)
+        if len(os.listdir(folder_path)) > 4:
             for folder in os.listdir(folder_path):
                 print(folder)
                 os.makedirs(os.path.join(os.path.join(save_folder, cls),folder), exist_ok=True)

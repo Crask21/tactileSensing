@@ -10,7 +10,10 @@ DataCollection/val/
 DataCollection/data/
 DataCollection/pose_classification/
 DataCollection/pose_processed/
+DataCollection/sh_gs/
 model/
 video-contrastive-learning/pretrain/
 **ckpt**
 *.pth
+**/train/**
+**/val/**
