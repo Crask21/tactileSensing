@@ -1,0 +1,11 @@
+{
+  "data_dir": "D:/UNI/Studentermedhj\u00e6lper/Contrastive Learning/kinetics10_30fps_frames",
+  "dataset": "KineticsClipFolderDatasetMultiFrames",
+  "datasplit": "val",
+  "datasamplenum": 30,
+  "resize": 0,
+  "cropsize": 224,
+  "pretrained_model": "./video-contrastive-learning/results/ckpt_epoch_10.pth",
+  "output_dir": "./video-contrastive-learning/results_eval/eval_svm",
+  "local_rank": null
+}

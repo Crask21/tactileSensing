@@ -1,0 +1,11 @@
+{
+  "data_dir": "D:/UNI/Studentermedhj\u00e6lper/Contrastive Learning/kinetics10_30fps_frames",
+  "dataset": "KineticsClipFolderDatasetMultiFrames",
+  "datasplit": "train",
+  "datasamplenum": 30,
+  "resize": 0,
+  "cropsize": 224,
+  "pretrained_model": "./video-contrastive-learning/pretrain/moco_v2_800ep_pretrain.pth.tar",
+  "output_dir": "./video-contrastive-learning/results_pretrain",
+  "local_rank": null
+}

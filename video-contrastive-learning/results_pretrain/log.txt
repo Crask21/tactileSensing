@@ -1,0 +1,3 @@
+[07/28 18:25:18] seco INFO: Full config saved to ./video-contrastive-learning/results_pretrain\config.json
+[07/28 18:25:18] seco INFO: using data: 4592
+[07/28 18:25:20] seco INFO: model init done

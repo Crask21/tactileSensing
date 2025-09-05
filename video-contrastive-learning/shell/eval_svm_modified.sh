@@ -5,10 +5,10 @@
 # eval_dir="./video-contrastive-learning/results_eval/eval_svm"
 # pretrained="./video-contrastive-learning/results/current.pth"
 
-data_dir="D:/UNI/Studentermedhjælper/Contrastive Learning/kinetics10_30fps_frames"
-output_dir="./video-contrastive-learning/results_1"
-eval_dir="./video-contrastive-learning/results_1"
-pretrained="./video-contrastive-learning/results/ckpt_epoch_1.pth"
+data_dir="D:\UNI\Studentermedhjaelper\Contrastive Learning\tactileSensing\DataCollection"
+output_dir="./video-contrastive-learning/results_gs_double_data_2"
+eval_dir="./video-contrastive-learning/results_gs_double_data_2"
+pretrained="./video-contrastive-learning/results_gs_double_data_2/ckpt_epoch_90.pth"
 # pretrained="./video-contrastive-learning/pretrain/moco_v2_800ep_pretrain.pth.tar"
 
 num_replica=1

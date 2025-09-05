@@ -8,6 +8,7 @@ import argparse
 import os
 from sklearn.svm import LinearSVC
 from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
 
 def main():
     parser = argparse.ArgumentParser('svm_perf_sklearn')
@@ -65,11 +66,17 @@ def main():
     pred = clf.predict(feat_val)
     acc = accuracy_score(feat_val_cls, pred)
     print(f"Validation Accuracy: {acc:.4f}")
+    cm = confusion_matrix(feat_val_cls, pred)
+    print("Confusion Matrix:")
+    print(cm)
 
     # Save results
     results_path = model_path + ".txt"
     with open(results_path, 'w') as f:
         f.write(f'Validation Accuracy: {acc:.4f}\n')
+        f.write("Confusion Matrix:\n")
+        f.write(np.array2string(cm, separator=', '))
+        
     print(f"Results saved to {results_path}")
     print('Done')
 

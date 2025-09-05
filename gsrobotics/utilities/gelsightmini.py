@@ -238,6 +238,87 @@ class GelSightMini:
         self.recording = True
         self.frame_count = 0
         log_message(f"Started recording to {filepath}")
+    
+    def start_recording_frames(self, folderpath: str = None) -> None:
+        """
+        Start recording the camera feed as individual frames in a folder.
+
+        Args:
+            folderpath (str, optional): Directory path to save the frames. If not provided or invalid,
+                a default folder is created.
+        """
+        if not self.camera:
+            log_message("Please select a device first!")
+            return
+
+        if folderpath is None or not os.path.isdir(folderpath):
+            log_message("No valid folder path provided. Creating a folder on the Desktop.")
+            folderpath = self.create_folder()
+
+        # Create a subfolder for frames
+        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        LUT = {0:3, 2:1, 3:2}
+        frames_folder = os.path.join(folderpath, f"device_{LUT[self.camera.device]}\\")
+        # print(frames_folder)
+        os.makedirs(frames_folder, exist_ok=True)
+        self.record_filepath = frames_folder
+
+        self.recording = True
+        self.frame_count = 0
+        log_message(f"Started recording frames to {frames_folder}")
+
+    def update_frame(self, dt: float, max_frame:int = -1) -> Optional[MatLike]:
+        """
+        Capture and return a frame from the camera feed, update FPS, overlay FPS text, and save frame if enabled.
+
+        Args:
+            dt (float): Unused parameter; frame timing is computed internally.
+
+        Returns:
+            Optional[MatLike]: The current RGB frame with FPS overlay, or None on error.
+        """
+        # if max_frame >= 0 and self.frame_count >= max_frame:
+        #     log_message("Maximum frame count reached, stopping recording.")
+        #     self.stop_recording()
+        #     return None
+        if not self.camera:
+            return None
+
+        try:
+            frame = self.camera.read_frame()
+        except Exception as e:
+            log_message(f"Error reading frame from camera {self.camera.device}: {e}")
+            return None
+
+        time_now = time.time()
+        dt = time_now - self.time_prev
+        self.fps = 1.0 / dt if dt > 0 else 0
+        self.time_prev = time_now
+
+        self.current_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        self.frame_count += 1
+        self.current_frame = crop_and_resize(
+            image=self.current_frame,
+            target_size=(self.target_width, self.target_height),
+            border_fraction=self.border_fraction,
+        )
+        if self.recording and self.record_filepath is not None:
+            # print(self.camera.device)
+            filename = os.path.join(
+                self.record_filepath, f"frame_{self.frame_count:05d}.png"
+            )
+            
+            try:
+                b = cv2.imwrite(
+                    filename,
+                    self.current_frame
+                    # cv2.cvtColor(self.current_frame, cv2.COLOR_RGB2BGR),
+                )
+                # print(filename, b)
+            except Exception as e:
+                log_message(f"Failed to save frame: {e}")
+
+        return self.current_frame
 
     def stop_recording(self) -> None:
         """
@@ -266,7 +347,7 @@ class GelSightMini:
         try:
             frame = self.camera.read_frame()
         except Exception as e:
-            log_message(f"Error reading frame: {e}")
+            log_message(f"Error reading frame from camera {self.camera.device}: {e}")
             return None
 
         time_now = time.time()

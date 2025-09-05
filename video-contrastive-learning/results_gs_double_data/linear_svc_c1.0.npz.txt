@@ -1,0 +1,6 @@
+Validation Accuracy: 0.5875
+Confusion Matrix:
+[[10,  1,  8,  1],
+ [ 0, 18,  2,  0],
+ [ 5,  1, 14,  0],
+ [ 0,  6,  9,  5]]
