@@ -29,7 +29,9 @@ class Camera:
         Raises:
             RuntimeError: If the camera cannot be opened.
         """
-        self.cap = cv2.VideoCapture(self.device, cv2.CAP_DSHOW)
+        # self.cap = cv2.VideoCapture(self.device, cv2.CAP_DSHOW) # Remove to make it work on Linux
+        # print("trying to open device: ", self.device)
+        self.cap = cv2.VideoCapture(self.device)
         if not self.cap.isOpened():
             raise RuntimeError(f"Could not open camera device: {self.device}")
 
@@ -71,10 +73,17 @@ class Camera:
         """
         devices = {}
         os_name = platform.system()
+        # if os_name == "Linux":
+        #     paths = glob.glob("/dev/v4l/by-id/*")
+        #     for idx, path in enumerate(paths):
+        #         devices[idx] = path
+        # ----------------- temp modification to get the code to work ---------------- #
         if os_name == "Linux":
             paths = glob.glob("/dev/v4l/by-id/*")
             for idx, path in enumerate(paths):
-                devices[idx] = path
+                real_path = os.path.realpath(path)  # resolve symlink
+                devices[idx] = path, real_path
+        # ------------------------------------- - ------------------------------------ #
         else:
             for idx in range(6):
                 cap = cv2.VideoCapture(idx)
@@ -165,19 +174,19 @@ class GelSightMini:
                 if match:
                     self.serial_number = match.group()
 
-
         if platform.system() == "Linux":
             devices = Camera.list_devices()
-            for ix in range(0,len(devices)):
-                print("Device: ", devices[ix])
-            if isinstance(devices.get(device_idx), str):
-                device_id = devices[device_idx]
+            # for ix in range(0,len(devices)):
+            #     print("Device: ", devices[ix])
+            if isinstance(devices.get(device_idx)[0], str):
+                device_id = devices[device_idx][1]
         else:
             device_id = device_idx
 
         if self.camera:
             self.camera.release()
 
+        print(f"{device_id=}")
         self.camera = Camera(device=device_id)
         try:
             self.camera.open()
@@ -267,7 +276,30 @@ class GelSightMini:
         self.frame_count = 0
         log_message(f"Started recording frames to {frames_folder}")
 
-    def update_frame(self, dt: float, max_frame:int = -1) -> Optional[MatLike]:
+    def start_recording_frames_2(self, folderpath: str = None) -> None:
+        """
+        number '2' handles the different naming convention for the three camera setup
+        Start recording the camera feed as individual frames in a folder.
+
+        Args:
+            folderpath (str, optional): Directory path to save the frames. If not provided or invalid,
+                a default folder is created.
+        """
+        if not self.camera:
+            log_message("Please select a device first!")
+            return
+
+        if folderpath is None or not os.path.isdir(folderpath):
+            log_message("No valid folder path provided. Creating a folder on the Desktop.")
+            folderpath = self.create_folder()
+
+        self.record_filepath = folderpath
+
+        self.recording = True
+        self.frame_count = 0
+        # log_message(f"Started recording frames to {folderpath}")
+
+    def update_frame(self, dt: float = 0, max_frame:int = -1) -> Optional[MatLike]:
         """
         Capture and return a frame from the camera feed, update FPS, overlay FPS text, and save frame if enabled.
 
@@ -331,7 +363,7 @@ class GelSightMini:
             log_message(f"Recording saved to {self.record_filepath}")
             self.record_filepath = None
 
-    def update(self, dt: float) -> Optional[MatLike]:
+    def update(self, dt: float = 0) -> Optional[MatLike]:
         """
         Capture and return a frame from the camera feed, update FPS, overlay FPS text, and record if enabled.
 

@@ -1,0 +1,55 @@
+
+save_path/
+	train/
+		class/	
+			recording1/
+				cam1/
+					frame00000.png
+					frame00001.png
+					frame00002.png
+				cam2/
+					frame00000.png
+					frame00001.png
+					frame00002.png
+				cam3/
+					frame00000.png
+					frame00001.png
+					frame00002.png
+				time.csv
+				tactile.csv
+				pose.csv
+				
+				
+				
+
+save_path/
+	train/
+		class/	
+			time/
+				time0000.csv
+				time0001.csv
+				time0002.csv
+			tactile/
+				tactile0000.csv
+				tactile0001.csv
+				tactile0002.csv
+			pose/
+				pose0000.csv
+				pose0001.csv
+				pose0002.csv
+			videos/
+				recording1/
+					cam1/
+						frame00000.png
+						frame00001.png
+						frame00002.png
+					cam2/
+						frame00000.png
+						frame00001.png
+						frame00002.png
+					cam3/
+						frame00000.png
+						frame00001.png
+						frame00002.png
+				recording2/
+					...

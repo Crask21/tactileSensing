@@ -18,3 +18,4 @@ video-contrastive-learning/pretrain/
 *.pth
 **/train/**
 **/val/**
+data/

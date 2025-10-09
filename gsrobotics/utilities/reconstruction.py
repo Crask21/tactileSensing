@@ -90,13 +90,13 @@ class Reconstruction3D:
         self.net = net
         self.net.eval()
         return self.net
-
+    from typing import Tuple
     def get_depthmap(
         self,
         image: np.ndarray,
-        markers_threshold: Optional[tuple[int, int]] = None,
+        markers_threshold: Optional[Tuple[int, int]] = None,
         contact_mask: Optional[np.ndarray] = None,
-    ) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    ) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
         """
         Compute the depth map from an input image using the neural network.
 

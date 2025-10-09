@@ -101,10 +101,11 @@ def rescale(image: np.ndarray, scale: float = 1) -> np.ndarray:
 
     return image
 
+from typing import Tuple
 
 def crop_and_resize(
     image: np.ndarray,
-    target_size: Optional[tuple[int, int]] = None,
+    target_size: Optional[Tuple[int, int]] = None,
     border_fraction: float = 0.15,
 ) -> np.ndarray:
     """
@@ -220,7 +221,7 @@ def interpolate_grad(image: np.ndarray, mask: np.ndarray) -> np.ndarray:
 
 def remove_masked_area(
     gx: np.ndarray, gy: np.ndarray, mask: np.ndarray
-) -> tuple[np.ndarray, np.ndarray]:
+) -> Tuple[np.ndarray, np.ndarray]:
     """
     Interpolate x and y gradient components at masked location.
 
