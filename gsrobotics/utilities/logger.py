@@ -1,8 +1,8 @@
 import inspect
-from typing import Callable
+from typing import Callable, List
 
 # List of subscribed event handlers
-subscribers: list[Callable[[str], None]] = []
+subscribers: List[Callable[[str], None]] = []
 
 
 def log_message(message: str):

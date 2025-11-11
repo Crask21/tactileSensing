@@ -17,5 +17,8 @@
     "video_save_path": "TMP",
     "use_device_id": true,
     "n_recordings": 125,
-    "n_frames": 150
+    "n_frames": 150,
+    "cam1_id": "/dev/v4l/by-id/usb-Arducam_Technology_Co.__Ltd._GelSight_Mini_R0B_2GA3-X2Y2_2GA3X2Y2-video-index0",
+    "cam2_id": "/dev/v4l/by-id/usb-Arducam_Technology_Co.__Ltd._GelSight_Mini_R0B_2BBM-Z6JC_2BBMZ6JC-video-index0",
+    "cam3_id": "/dev/v4l/by-id/usb-Arducam_Technology_Co.__Ltd._GelSight_Mini_R0B_2G8V-4TXV_2G8V4TXV-video-index0"
 }

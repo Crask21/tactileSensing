@@ -13,10 +13,10 @@ from gsrobotics.utilities.visualization import Visualize3D
 from gsrobotics.utilities.gelsightmini import GelSightMini
 from gsrobotics.utilities.logger import log_message
 import time
-
+from typing import List
 
 def UpdateView(
-    images: list[np.ndarray],
+    images: List[np.ndarray],
     cam_stream: GelSightMini,
     reconstruction: Reconstruction3D,
     visualizer3D: Visualize3D,
@@ -117,30 +117,6 @@ def View3D(config: ConfigModel):
     cam3.fps = 30  # Set FPS for the camera
 
     # # Main loop: capture frames, compute depth map, and update the 3D view.
-    # dirname = os.path.dirname(os.path.abspath(__file__))
-    # video_save_path = os.path.join(dirname, config.video_save_path) 
-    # timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    # base, ext = os.path.splitext(video_save_path)
-    # path = f"{base}{timestamp}{ext}\\"
-    # # Create the directory for saving the video if it doesn't exist
-    # os.makedirs(os.path.dirname(path), exist_ok=True)
-    # print(f"Saving video to {path}")
-    # print(os.path.isdir(path))
-    # # cam1.start_recording(filepath=path)
-    # # cam2.start_recording(filepath=path)
-    # # cam3.start_recording(filepath=path)
-    # cam1.start_recording_frames(folderpath=path)
-    # cam2.start_recording_frames(folderpath=path)
-    # cam3.start_recording_frames(folderpath=path)
-
-
-    # Print the amount of folders in config.video_save_path
-    # if os.path.isdir(video_save_path):
-    #     num_folders = len([name for name in os.listdir(video_save_path) if os.path.isdir(os.path.join(video_save_path, name))])
-    #     print(f"Number of folders in '{video_save_path}': {num_folders}")
-    # else:
-    #     print(f"'{video_save_path}' is not a valid directory.")
-    
     
     dirname = os.path.dirname(os.path.abspath(__file__))
     video_save_path = os.path.join(dirname, config.video_save_path) 
@@ -158,9 +134,9 @@ def View3D(config: ConfigModel):
             os.makedirs(os.path.dirname(path), exist_ok=True)
             print(f"Saving video to {path}")
             print(os.path.isdir(path))
-            cam1.start_recording_frames(folderpath=path)
-            cam2.start_recording_frames(folderpath=path)
-            cam3.start_recording_frames(folderpath=path)
+            # cam1.start_recording_frames(folderpath=path)
+            # cam2.start_recording_frames(folderpath=path)
+            # cam3.start_recording_frames(folderpath=path)
 
             # --------------------------------- RECORDING -------------------------------- #
             while True:

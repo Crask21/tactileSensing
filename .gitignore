@@ -13,7 +13,9 @@ DataCollection/pose_processed/
 DataCollection/sh_gs/
 model/
 video-contrastive-learning/pretrain/
+**frame**
 **ckpt**
 *.pth
 **/train/**
 **/val/**
+data/

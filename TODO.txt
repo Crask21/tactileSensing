@@ -1,0 +1,12 @@
+TODO Casper 02/10/25
+- Refine the Gelsight / shadowhand tactile sensor recording so they record (preprocessed) straight to the hard drive. 
+	(07/10: almost done. Just need to finish gelsight_tracker.py to save all the data correctly)
+	(08/10: DONE)
+- Find a solution to the friction of the shadowhand on the gelsights
+	(I am going to try alcohol and gloves)
+	(08/10: DONE)
+- Improve the constant contact probing
+- create the first dataset for vclr
+	(08/10: gathered Square and Triangle)
+- prepare vclr for the gelsight / shadowhand 
+- Consider threading to increase the framerate above 10Hz
