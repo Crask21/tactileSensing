@@ -2,7 +2,7 @@
 
 # data_dir="D:/UNI/Studentermedhjælper/Contrastive Learning/kinetics10_30fps_frames"
 data_dir="D:/UNI/Studentermedhjaelper/Contrastive Learning/tactileSensing/DataCollection"
-output_dir="./video-contrastive-learning/results_gs_double_data_2"
+output_dir="./video-contrastive-learning/results/Test_Run"
 pretrained="video-contrastive-learning/pretrain/moco_v2_800ep_pretrain.pth.tar"
 
 mkdir -p "${output_dir}"
